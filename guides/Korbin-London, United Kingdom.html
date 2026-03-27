@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korbin's London Travel Guide | PLANPACKSTAY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #4993B1 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .brand {
+            color: #c9a96e;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #4993B1;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #c9a96e;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1a1a2e;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        h4 {
+            font-family: 'Playfair Display', serif;
+            color: #4993B1;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .trip-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #4993B1, #5aa3c1);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .day-card {
+            background: #f8f9fa;
+            border-left: 4px solid #4993B1;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .time-slot {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .time-slot h5 {
+            color: #c9a96e;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .restaurant-card, .hotel-card, .venue-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-card h4, .hotel-card h4, .venue-card h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-range {
+            color: #c9a96e;
+            font-weight: 600;
+        }
+        
+        .rating {
+            color: #4993B1;
+            font-weight: 600;
+        }
+        
+        .maps-link {
+            color: #4993B1;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .maps-link:hover {
+            color: #1a1a2e;
+            text-decoration: underline;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .budget-table th, .budget-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .budget-table th {
+            background: #4993B1;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .budget-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .packing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .packing-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #c9a96e;
+        }
+        
+        .packing-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .packing-category li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .packing-category li:before {
+            content: "✓";
+            color: #4993B1;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #c9a96e 0%, #c9a96e 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            padding: 0.1rem 0.2rem;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>London Adventure</h1>
+        <p>A Romantic LGBTQ+ Travel Guide for Korbin</p>
+        <p>March 27-31, 2026 | 2 Travelers | $2,500 Budget</p>
+        <div class="brand">PLANPACKSTAY</div>
+    </div>
+
+    <div class="container">
+        <!-- Section 1: Trip Overview -->
+        <div class="section">
+            <h2>🇬🇧 Trip Overview</h2>
+            
+            <div class="trip-stats">
+                <div class="stat-card">
+                    <h4>Duration</h4>
+                    <p>5 Days, 4 Nights</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Weather</h4>
+                    <p>8-15°C, Light Rain</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Currency</h4>
+                    <p>British Pound (£)</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Language</h4>
+                    <p>English</p>
+                </div>
+            </div>
+
+            <h3>🌦️ Weather Forecast</h3>
+            <p>Late March in London brings spring weather with temperatures ranging from 8-15°C (46-59°F). Expect occasional light rain showers, so pack layers and waterproof clothing. Days are getting longer with about 12 hours of daylight.</p>
+
+            <h3>💂 About London</h3>
+            <p>London is one of the world's most LGBTQ+-friendly cities with a vibrant queer scene, especially in areas like Soho, Shoreditch, and South London. The city offers incredible diversity, world-class museums, beautiful parks, and an amazing food scene perfect for your romantic getaway.</p>
+
+            <h3>🏳️‍🌈 LGBTQ+ Safety & Tips</h3>
+            <ul>
+                <li>London is very LGBTQ+-friendly with legal protections and widespread acceptance</li>
+                <li>Soho is the heart of London's gay scene with numerous bars, clubs, and restaurants</li>
+                <li>Same-sex marriage has been legal since 2014</li>
+                <li>Most hotels, restaurants, and attractions are very welcoming</li>
+                <li>Pride in London typically occurs in late June/early July</li>
+            </ul>
+
+            <h3>💷 Currency & Payments</h3>
+            <ul>
+                <li>Currency: British Pound Sterling (£ / GBP)</li>
+                <li>1 USD ≈ 0.79 GBP (rates fluctuate)</li>
+                <li>Contactless payments widely accepted</li>
+                <li>Tipping: 10-15% at restaurants if service charge not included</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Day-by-Day Itinerary -->
+        <div class="section">
+            <h2>📅 Day-by-Day Itinerary</h2>
+
+            <div class="day-card">
+                <h3>Day 1 - Thursday, March 27: Arrival & Central London</h3>
+                
+                <div class="time-slot">
+                    <h5>🌅 Morning (Arrival)</h5>
+                    <p><strong>Arrive at Heathrow Airport</strong> - Take the Heathrow Express to Paddington Station (15 mins, £25)</p>
+                    <p><strong>Check into hotel</strong> - Get settled and freshened up</p>
+                    <p><strong>Borough Market Exploration</strong> - Start with your special interest location</p>
+                    <a href="https://maps.google.com/?q=Borough+Market+London" class="maps-link" target="_blank">📍 View Borough Market on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌞 Afternoon</h5>
+                    <p><strong>Lunch at Gujarati Rasoi</strong> - Authentic vegetarian Indian cuisine near Borough Market</p>
+                    <p class="price-range">Indian • Vegetarian • £ • Rating: 4.6/5</p>
+                    <a href="https://maps.google.com/?q=Gujarati+Rasoi+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Thames Walk</strong> - Romantic stroll from Borough Market to Tower Bridge</p>
+                    <a href="https://maps.google.com/?q=Tower+Bridge+London" class="maps-link" target="_blank">📍 View Tower Bridge on Google Maps</a>
+                    
+                    <p><strong>Coffee at Monmouth Coffee</strong> - Famous Borough Market coffee roaster</p>
+                    <a href="https://maps.google.com/?q=Monmouth+Coffee+Borough+Market" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌙 Evening</h5>
+                    <p><strong>Dinner at Dishoom</strong> - Romantic Bombay-style café with excellent vegetarian options</p>
+                    <p class="price-range">Indian • Vegetarian-Friendly • ££ • Rating: 4.5/5</p>
+                    <a href="https://maps.google.com/?q=Dishoom+London+Tower+Bridge" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Evening drinks at The Shard</strong> - Sunset cocktails with panoramic city views</p>
+                    <a href="https://maps.google.com/?q=Aqua+Shard+London" class="maps-link" target="_blank">📍 View Aqua Shard on Google Maps</a>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 2 - Friday, March 28: Museums & Soho</h3>
+                
+                <div class="time-slot">
+                    <h5>🌅 Morning</h5>
+                    <p><strong>British Museum</strong> - World-class museum with free admission</p>
+                    <a href="https://maps.google.com/?q=British+Museum+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Coffee at The Espresso Room</strong> - Cozy café near the museum</p>
+                    <a href="https://maps.google.com/?q=The+Espresso+Room+Bloomsbury+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌞 Afternoon</h5>
+                    <p><strong>Lunch at Rasa W1</strong> - Exceptional South Indian vegetarian restaurant</p>
+                    <p class="price-range">Indian • Vegetarian • ££ • Rating: 4.4/5</p>
+                    <a href="https://maps.google.com/?q=Rasa+W1+Charlotte+Street+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Explore Soho</strong> - Heart of London's LGBTQ+ scene, browse vintage shops and record stores</p>
+                    <a href="https://maps.google.com/?q=Soho+London" class="maps-link" target="_blank">📍 View Soho on Google Maps</a>
+                    
+                    <p><strong>Gelato at Gelupo</strong> - Artisanal Italian gelato in the heart of Soho</p>
+                    <a href="https://maps.google.com/?q=Gelupo+Soho+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌙 Evening</h5>
+                    <p><strong>Pre-dinner drinks at G-A-Y Bar</strong> - Iconic LGBTQ+ venue in Soho</p>
+                    <a href="https://maps.google.com/?q=G-A-Y+Bar+Soho+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Dinner at Mildreds</strong> - Beloved vegetarian restaurant with global cuisine</p>
+                    <p class="price-range">Vegetarian • Global • ££ • Rating: 4.3/5</p>
+                    <a href="https://maps.google.com/?q=Mildreds+Soho+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Evening at Heaven Nightclub</strong> - Legendary LGBTQ+ club under the arches</p>
+                    <a href="https://maps.google.com/?q=Heaven+Nightclub+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 3 - Saturday, March 29: Parks & South London</h3>
+                
+                <div class="time-slot">
+                    <h5>🌅 Morning</h5>
+                    <p><strong>Hyde Park & Kensington Gardens</strong> - Romantic morning walk, visit Diana Memorial</p>
+                    <a href="https://maps.google.com/?q=Hyde+Park+London" class="maps-link" target="_blank">📍 View Hyde Park on Google Maps</a>
+                    
+                    <p><strong>Coffee at The Attendant</strong> - Unique café in a converted Victorian toilet</p>
+                    <a href="https://maps.google.com/?q=The+Attendant+Fitzrovia+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌞 Afternoon</h5>
+                    <p><strong>Lunch at Hoppers</strong> - Sri Lankan street food with excellent vegetarian options</p>
+                    <p class="price-range">Sri Lankan • Vegetarian-Friendly • ££ • Rating: 4.4/5</p>
+                    <a href="https://maps.google.com/?q=Hoppers+Soho+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Tate Modern</strong> - Contemporary art museum with Thames views</p>
+                    <a href="https://maps.google.com/?q=Tate+Modern+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Walk across Millennium Bridge</strong> - Romantic bridge walk to St. Paul's Cathedral</p>
+                    <a href="https://maps.google.com/?q=Millennium+Bridge+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌙 Evening</h5>
+                    <p><strong>Dinner at The Gate</strong> - Upscale vegetarian fine dining</p>
+                    <p class="price-range">Vegetarian • Fine Dining • £££ • Rating: 4.5/5</p>
+                    <a href="https://maps.google.com/?q=The+Gate+Hammersmith+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Cocktails at Dalston Superstore</strong> - Trendy LGBTQ+-friendly bar in East London</p>
+                    <a href="https://maps.google.com/?q=Dalston+Superstore+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 4 - Sunday, March 30: Markets & Greenwich</h3>
+                
+                <div class="time-slot">
+                    <h5>🌅 Morning</h5>
+                    <p><strong>Return to Borough Market</strong> - Sunday morning market exploration and breakfast</p>
+                    <a href="https://maps.google.com/?q=Borough+Market+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Coffee at Taylor St Baristas</strong> - Excellent coffee near Borough Market</p>
+                    <a href="https://maps.google.com/?q=Taylor+St+Baristas+Borough+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌞 Afternoon</h5>
+                    <p><strong>Thames Clipper to Greenwich</strong> - Scenic boat ride down the Thames</p>
+                    <a href="https://maps.google.com/?q=Greenwich+Pier+London" class="maps-link" target="_blank">📍 View Greenwich Pier on Google Maps</a>
+                    
+                    <p><strong>Lunch at Zizzi Greenwich</strong> - Italian chain with excellent vegetarian options</p>
+                    <p class="price-range">Italian • Vegetarian-Friendly • ££ • Rating: 4.2/5</p>
+                    <a href="https://maps.google.com/?q=Zizzi+Greenwich+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Greenwich Observatory & Park</strong> - Stand on the Prime Meridian, city views</p>
+                    <a href="https://maps.google.com/?q=Royal+Observatory+Greenwich" class="maps-link" target="_blank">📍 View Royal Observatory on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌙 Evening</h5>
+                    <p><strong>Dinner at Punjab Restaurant</strong> - Historic Covent Garden Indian restaurant since 1946</p>
+                    <p class="price-range">Indian • Traditional • ££ • Rating: 4.3/5</p>
+                    <a href="https://maps.google.com/?q=Punjab+Restaurant+Covent+Garden+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>West End Show</strong> - Book tickets for a romantic musical or play</p>
+                    <a href="https://maps.google.com/?q=West+End+Theatre+District+London" class="maps-link" target="_blank">📍 View West End on Google Maps</a>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <h3>Day 5 - Monday, March 31: Final Day & Departure</h3>
+                
+                <div class="time-slot">
+                    <h5>🌅 Morning</h5>
+                    <p><strong>Check out of hotel</strong> - Store luggage if needed</p>
+                    
+                    <p><strong>Covent Garden</strong> - Last-minute shopping and street performances</p>
+                    <a href="https://maps.google.com/?q=Covent+Garden+London" class="maps-link" target="_blank">📍 View Covent Garden on Google Maps</a>
+                    
+                    <p><strong>Final coffee at Fernandez & Wells</strong> - Perfect farewell coffee spot</p>
+                    <a href="https://maps.google.com/?q=Fernandez+Wells+Covent+Garden" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                </div>
+
+                <div class="time-slot">
+                    <h5>🌞 Afternoon</h5>
+                    <p><strong>Final Borough Market visit</strong> - Pick up any last souvenirs</p>
+                    <a href="https://maps.google.com/?q=Borough+Market+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Light lunch at Champor-Champor</strong> - Thai vegetarian options for departure meal</p>
+                    <p class="price-range">Thai • Vegetarian-Friendly • ££ • Rating: 4.3/5</p>
+                    <a href="https://maps.google.com/?q=Champor+Champor+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+                    
+                    <p><strong>Heathrow Express departure</strong> - Allow 2-3 hours for international flight</p>
+                    <a href="https://maps.google.com/?q=Paddington+Station+London" class="maps-link" target="_blank">📍 View Paddington Station on Google Maps</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Food and Drink -->
+        <div class="section">
+            <h2>🍽️ Food & Drink Guide</h2>
+
+            <h3>☕ Top 10 Coffee Shops</h3>
+            
+            <div class="restaurant-card">
+                <h4>Monmouth Coffee Company</h4>
+                <p>Specialty Coffee • Borough Market location • <span class="rating">4.6/5</span> • <span class="price-range">£</span></p>
+                <p>Historic coffee roaster with exceptional single-origin beans</p>
+                <a href="https://maps.google.com/?q=Monmouth+Coffee+Borough+Market" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>The Attendant</h4>
+                <p>Specialty Coffee • Fitzrovia • <span class="rating">4.5/5</span> • <span class="price-range">£</span></p>
+                <p>Unique café in converted Victorian toilets with excellent coffee</p>
+                <a href="https://maps.google.com/?q=The+Attendant+Fitzrovia+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Workshop Coffee</h4>
+                <p>Specialty Coffee • Multiple Locations • <span class="rating">4.4/5</span> • <span class="price-range">£</span></p>
+                <p>Australian-style coffee with excellent flat whites</p>
+                <a href="https://maps.google.com/?q=Workshop+Coffee+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Fernandez & Wells</h4>
+                <p>Specialty Coffee • Covent Garden • <span class="rating">4.3/5</span> • <span class="price-range">£</span></p>
+                <p>Artisan coffee with delicious pastries and light meals</p>
+                <a href="https://maps.google.com/?q=Fernandez+Wells+Covent+Garden" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Taylor St Baristas</h4>
+                <p>Specialty Coffee • Borough Market • <span class="rating">4.4/5</span> • <span class="price-range">£</span></p>
+                <p>Independent coffee roaster with strong espresso blends</p>
+                <a href="https://maps.google.com/?q=Taylor+St+Baristas+Borough+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Caravan</h4>
+                <p>Coffee & Food • King's Cross • <span class="rating">4.2/5</span> • <span class="price-range">££</span></p>
+                <p>Industrial-chic space with house-roasted coffee and brunch</p>
+                <a href="https://maps.google.com/?q=Caravan+Kings+Cross+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>The Espresso Room</h4>
+                <p>Specialty Coffee • Bloomsbury • <span class="rating">4.5/5</span> • <span class="price-range">£</span></p>
+                <p>Cozy neighborhood coffee shop with friendly atmosphere</p>
+                <a href="https://maps.google.com/?q=The+Espresso+Room+Bloomsbury+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Department of Coffee</h4>
+                <p>Specialty Coffee • Covent Garden • <span class="rating">4.3/5</span> • <span class="price-range">£</span></p>
+                <p>Small batch roastery with rotating single origins</p>
+                <a href="https://maps.google.com/?q=Department+of+Coffee+Covent+Garden" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Ozone Coffee Roasters</h4>
+                <p>Specialty Coffee • Shoreditch • <span class="rating">4.4/5</span> • <span class="price-range">££</span></p>
+                <p>New Zealand-style coffee in trendy East London location</p>
+                <a href="https://maps.google.com/?q=Ozone+Coffee+Roasters+Shoreditch" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Association Coffee</h4>
+                <p>Specialty Coffee • Creechurch Lane • <span class="rating">4.6/5</span> • <span class="price-range">£</span></p>
+                <p>Micro-roastery with exceptional attention to detail</p>
+                <a href="https://maps.google.com/?q=Association+Coffee+London" class="maps-link" target="_blank">📍 View on Google Maps</a>
+            </div>
+
+            <h3>🍽️ Top 10 Restaurants</h3>
+
+            <div class="restaurant-card">
+                <h4>Dishoom</h4>
+                <p>Indian • Bombay-style • <span class="rating">4.5/5</span> • <span class="price-range">££</span></p>
+                <p>Romantic Bombay café with excellent vegetarian options and amazing atmosphere</p>
+                <a href="https://maps.google.com/?q=Dishoom+London+Tower+Bridge"
