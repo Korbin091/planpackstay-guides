@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Travel Guide - PLANPACKSTAY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #FFFFFE;
+        }
+        
+        .brand {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+        
+        .section {
+            padding: 24px;
+            margin-bottom: 2px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section:nth-child(odd) {
+            background-color: #FFFFFE;
+        }
+        
+        .section:nth-child(even) {
+            background-color: #f8fafb;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: #1a1a2e;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #4a94b4;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 20px 0 10px 0;
+            font-size: 1.5em;
+        }
+        
+        .cover {
+            text-align: center;
+            background: linear-gradient(135deg, #4a94b4, #1a1a2e);
+            color: white;
+            padding: 60px 24px;
+            margin-bottom: 2px;
+        }
+        
+        .cover h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .trip-details {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .map-link {
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 2px dashed #4a94b4;
+        }
+        
+        .map-link:hover {
+            color: #1a1a2e;
+            border-bottom-color: #1a1a2e;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background-color: #4a94b4;
+            color: white;
+            padding: 12px;
+            font-weight: 700;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #eef5f9;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .day-section {
+            background-color: #f8fafb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4a94b4;
+        }
+        
+        .time-block {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 6px;
+        }
+        
+        .food-option {
+            background-color: #eef5f9;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 3px solid #c9a96e;
+        }
+        
+        .tip-section {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        
+        .tip-image {
+            width: 60px;
+            height: auto;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .membership-card {
+            background: linear-gradient(135deg, #4a94b4, #1a1a2e);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .membership-card.world-explorer {
+            background: linear-gradient(135deg, #1a1a2e, #000);
+        }
+        
+        .join-button {
+            background-color: #c9a96e;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .join-button:hover {
+            background-color: #b8956a;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            background-color: #f8fafb;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #4a94b4;
+            text-decoration: none;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .toc {
+            background-color: #eef5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .toc a {
+            color: #4a94b4;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .toc a:hover {
+            color: #1a1a2e;
+        }
+        
+        .hotel-card, .experience-card {
+            background-color: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #eef5f9;
+        }
+        
+        .price-tag {
+            color: #c9a96e;
+            font-weight: 700;
+        }
+        
+        .rating {
+            color: #4a94b4;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SECTION 1: COVER -->
+<div class="cover">
+    <h1>London, United Kingdom</h1>
+    <div class="trip-details">
+        8 Days • 2 Travelers<br>
+        March 28 - April 4, 2026
+    </div>
+    <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/PLANPACKSTAY_Logo_Social.png" alt="PLANPACKSTAY Logo" style="width: 120px;">
+</div>
+
+<!-- SECTION 2: TRIP OVERVIEW -->
+<div class="section" id="overview">
+    <h2>Trip Overview</h2>
+    <p>Welcome to your romantic London adventure, Korbin! This carefully crafted 8-day journey through Britain's capital celebrates love, culture, and incredible vegetarian cuisine. From charming morning strolls through Borough Market to intimate dinners in LGBTQ+-friendly neighborhoods, every moment is designed to create lasting memories for you and your travel companion.</p>
+    
+    <h3>Itinerary Highlights</h3>
+    <ul>
+        <li>Borough Market food tour and vegetarian tastings</li>
+        <li>Romantic Thames river cruise at sunset</li>
+        <li>Traditional afternoon tea at historic venues</li>
+        <li>West End show in London's theatre district</li>
+        <li>Camden Market exploration and vintage shopping</li>
+        <li>Kew Gardens romantic walk among spring blooms</li>
+        <li>Indian cuisine tour through Brick Lane</li>
+        <li>Cozy coffee shop discoveries in Shoreditch</li>
+    </ul>
+    
+    <h3>Trip Vibe</h3>
+    <p>This romantic getaway embraces London's inclusive spirit with hand-picked LGBTQ+-friendly venues, intimate experiences, and incredible vegetarian dining. Spring in London offers mild weather perfect for romantic walks, market browsing, and discovering hidden gems together.</p>
+    
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <a href="#overview">Trip Overview</a>
+        <a href="#location">Location Overview</a>
+        <a href="#itinerary-overview">Itinerary Overview</a>
+        <a href="#daily-itinerary">Day by Day Itinerary</a>
+        <a href="#food-drink">Food & Drink</a>
+        <a href="#accommodation">Where to Stay</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#packing">Packing Guide</a>
+        <a href="#booking">Book This Trip</a>
+    </div>
+</div>
+
+<!-- SECTION 3: LOCATION OVERVIEW -->
+<div class="section" id="location">
+    <h2>Location Overview</h2>
+    
+    <h3>Best Time to Visit</h3>
+    <p>Late March to early April is perfect for London! Spring weather brings mild temperatures, blooming flowers, and fewer crowds than summer. Expect occasional showers but mostly pleasant days ideal for outdoor exploration.</p>
+    
+    <h3>Climate for Your Visit</h3>
+    <p><strong>Spring Weather (Late March/Early April):</strong> Highs 12-15°C (54-59°F), Lows 4-7°C (39-45°F). Pack layers and a waterproof jacket for occasional spring showers.</p>
+    
+    <h3>Key Facts</h3>
+    <ul>
+        <li><strong>Population:</strong> 9 million (Greater London)</li>
+        <li><strong>Language:</strong> English</li>
+        <li><strong>Currency:</strong> British Pound (GBP) - £1 ≈ $1.25 USD</li>
+        <li><strong>Time Zone:</strong> GMT/BST (5 hours ahead of Philadelphia)</li>
+        <li><strong>Electricity:</strong> Type G plugs, 230V</li>
+    </ul>
+    
+    <h3>Must-See Attractions</h3>
+    <ul>
+        <li>Borough Market - world-class food market</li>
+        <li>Tower Bridge and Tower of London</li>
+        <li>British Museum and National Gallery</li>
+        <li>Westminster Abbey and Big Ben</li>
+        <li>Camden Market and Portobello Road</li>
+        <li>Kew Gardens</li>
+    </ul>
+    
+    <div class="tip-section">
+        <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Tip" class="tip-image">
+        <div>
+            <h3>Travel Tips</h3>
+            <ul>
+                <li>Download the Citymapper app for excellent London navigation</li>
+                <li>Get an Oyster Card for public transport - much cheaper than individual tickets</li>
+                <li>Many museums offer free admission, perfect for budget-conscious travelers</li>
+                <li>Book restaurant reservations 1-2 weeks ahead, especially for popular vegetarian spots</li>
+                <li>Tipping is 10-15% at restaurants if service charge not included</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h3>Transportation & Costs</h3>
+    <ul>
+        <li><strong>Underground (Tube):</strong> £2.80 per journey with Oyster Card</li>
+        <li><strong>Bus:</strong> £1.75 per journey</li>
+        <li><strong>Taxi:</strong> £3.20 base fare + £2.60/mile</li>
+        <li><strong>Ride-sharing:</strong> Uber, Bolt, and Free Now operate in London</li>
+        <li><strong>Walking:</strong> Central London is very walkable</li>
+    </ul>
+    
+    <h3>Safety Rating: 8.5/10</h3>
+    <p>London is very safe for tourists and LGBTQ+ travelers. Stay aware in crowded areas, secure your belongings, and stick to well-lit areas at night.</p>
+    
+    <h3>Emergency Contacts</h3>
+    <ul>
+        <li><strong>Emergency Services:</strong> 999 (Police, Fire, Ambulance)</li>
+        <li><strong>Non-emergency Police:</strong> 101</li>
+        <li><strong>NHS Direct:</strong> 111</li>
+        <li><strong>Nearest Major Hospital:</strong> St. Thomas' Hospital, Westminster Bridge Rd</li>
+    </ul>
+    
+    <h3>Connectivity</h3>
+    <p><strong>Recommended:</strong> Airalo eSIM for seamless data connectivity throughout the UK. Download the app and purchase a UK data plan before departure for instant activation upon arrival.</p>
+</div>
+
+<!-- SECTION 4: ITINERARY OVERVIEW -->
+<div class="section" id="itinerary-overview">
+    <h2>Itinerary Overview</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Cost (USD)</th>
+                <th>Hours</th>
+                <th>Booking</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Borough Market Food Tour</td>
+                <td>$40</td>
+                <td>3</td>
+                <td>GetYourGuide</td>
+            </tr>
+            <tr>
+                <td>Thames River Cruise</td>
+                <td>$35</td>
+                <td>1.5</td>
+                <td>Online</td>
+            </tr>
+            <tr>
+                <td>Tower of London</td>
+                <td>$37</td>
+                <td>3</td>
+                <td>Advance online</td>
+            </tr>
+            <tr>
+                <td>West End Show</td>
+                <td>$85</td>
+                <td>2.5</td>
+                <td>Theatre websites</td>
+            </tr>
+            <tr>
+                <td>Kew Gardens</td>
+                <td>$25</td>
+                <td>4</td>
+                <td>Online</td>
+            </tr>
+            <tr>
+                <td>British Museum</td>
+                <td>Free</td>
+                <td>3</td>
+                <td>Timed entry online</td>
+            </tr>
+            <tr>
+                <td>Camden Market</td>
+                <td>Free</td>
+                <td>2</td>
+                <td>Walk-in</td>
+            </tr>
+            <tr>
+                <td>Westminster Abbey</td>
+                <td>$30</td>
+                <td>2</td>
+                <td>Online</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 5: DAY BY DAY ITINERARY -->
+<div class="section" id="daily-itinerary">
+    <h2>Day by Day Itinerary</h2>
+    
+    <div class="day-section">
+        <h3>Day 1 (March 28) - Arrival & Borough Market</h3>
+        
+        <div class="time-block">
+            <h4>Morning (9:00 AM - 12:00 PM)</h4>
+            <p><strong>Airport Transfer & Hotel Check-in:</strong> Arrive at Heathrow, take Heathrow Express to Paddington (15 mins, £25). Taxi to hotel or use Tube. Most hotels allow early check-in or luggage storage.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Monmouth+Coffee+Company+Borough+Market" class="map-link">Monmouth Coffee Company</a> - Specialty Coffee, ★★★★☆, £5-8
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (12:00 PM - 5:00 PM)</h4>
+            <p><strong>Borough Market Exploration:</strong> Perfect introduction to London's food scene. Free to enter, allow 3 hours to browse stalls, sample vegetarian options, and soak in the atmosphere. Minimal wait times on weekdays.</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/Gourmet+Goat+Borough+Market" class="map-link">Gourmet Goat</a> - Vegetarian/Vegan, ★★★★☆, £8-12
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:00 PM - 10:00 PM)</h4>
+            <p><strong>Thames Walk & Early Rest:</strong> Stroll along South Bank to combat jet lag. Light evening to adjust to timezone.</p>
+            
+            <div class="food-option">
+                <strong>Dinner:</strong> <a href="https://www.google.com/maps/search/Champor-Chai+Thai+Restaurant+London" class="map-link">Champor-Chai</a> - Thai Vegetarian, ★★★★☆, £15-25
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Padella+Borough+Market" class="map-link">Padella</a></strong> - Fresh Pasta, ★★★★★, £8-15
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Arabica+Bar+Kitchen+Borough" class="map-link">Arabica Bar & Kitchen</a></strong> - Lebanese, ★★★★☆, £12-20
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Applebee's+Fish+Borough+Market" class="map-link">Neal's Yard Dairy</a></strong> - Cheese & Vegetarian, ★★★★☆, £6-15
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 2 (March 29) - Central London Icons</h3>
+        
+        <div class="time-block">
+            <h4>Morning (9:00 AM - 12:30 PM)</h4>
+            <p><strong>Tower of London:</strong> Book 9 AM entry online to avoid crowds. Allow 3 hours to see Crown Jewels, Beefeater tours, and historic grounds. Entry requires advance booking.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/The+Breakfast+Club+London+Bridge" class="map-link">The Breakfast Club</a> - British/American, ★★★★☆, £8-15
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (12:30 PM - 5:00 PM)</h4>
+            <p><strong>Tower Bridge & City Walk:</strong> Walk across iconic Tower Bridge (free), explore Butler's Wharf area. Then walk to <a href="https://www.google.com/maps/search/HMS+Belfast+London" class="map-link">HMS Belfast</a> if interested (£20 entry).</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/Cantina+Del+Ponte+London" class="map-link">Cantina Del Ponte</a> - Italian Vegetarian, ★★★★☆, £12-18
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:00 PM - 10:00 PM)</h4>
+            <p><strong>Thames Sunset Cruise:</strong> Romantic 90-minute cruise from Tower Pier to Westminster. Book 6 PM departure for golden hour views. Online booking recommended.</p>
+            
+            <div class="food-option">
+                <strong>Dinner:</strong> <a href="https://www.google.com/maps/search/Dishoom+Covent+Garden" class="map-link">Dishoom</a> - Indian Vegetarian, ★★★★★, £18-30
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Sketch+London+Restaurant" class="map-link">Sketch</a></strong> - Modern European, ★★★★☆, £35-60
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Hoppers+Soho" class="map-link">Hoppers</a></strong> - Sri Lankan, ★★★★☆, £15-25
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Gelupo+Gelato+Soho" class="map-link">Gelupo</a></strong> - Italian Gelato, ★★★★★, £4-8
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 3 (March 30) - Museums & Culture</h3>
+        
+        <div class="time-block">
+            <h4>Morning (9:30 AM - 1:00 PM)</h4>
+            <p><strong>British Museum:</strong> Free admission but book timed entry online. Focus on Egyptian, Greek, and Roman collections. Allow 3.5 hours for highlights tour.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Notes+Coffee+Bloomsbury" class="map-link">Notes Music & Coffee</a> - Specialty Coffee, ★★★★☆, £5-10
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (1:00 PM - 5:00 PM)</h4>
+            <p><strong>Covent Garden & West End:</strong> Browse market stalls, street performers, and luxury shops. Perfect for romantic strolling and people watching.</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/Farmacy+Notting+Hill" class="map-link">Farmacy</a> - Plant-based, ★★★★☆, £15-25
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:00 PM - 10:30 PM)</h4>
+            <p><strong>West End Show:</strong> Book tickets for Lion King, Phantom, or Hamilton. Shows start 7:30 PM. Book online 2-4 weeks ahead for best seats.</p>
+            
+            <div class="food-option">
+                <strong>Dinner:</strong> <a href="https://www.google.com/maps/search/Mildreds+Soho" class="map-link">Mildreds</a> - Vegetarian, ★★★★★, £12-20
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Dabbous+London" class="map-link">Dabbous</a></strong> - Modern European, ★★★★☆, £45-80
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Ravi+Shankar+Restaurant+London" class="map-link">Ravi Shankar</a></strong> - Indian Vegetarian, ★★★★☆, £10-18
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Chin+Chin+Labs+Camden" class="map-link">Chin Chin Labs</a></strong> - Liquid Nitrogen Ice Cream, ★★★★☆, £5-9
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 4 (March 31) - Royal London</h3>
+        
+        <div class="time-block">
+            <h4>Morning (9:00 AM - 12:30 PM)</h4>
+            <p><strong>Westminster Abbey:</strong> Book 9 AM entry to avoid crowds. Audio tour included. Allow 2.5 hours to explore royal tombs, Poets' Corner, and coronation chair.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Regency+Cafe+Westminster" class="map-link">Regency Cafe</a> - Traditional British, ★★★★☆, £6-12
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (12:30 PM - 5:00 PM)</h4>
+            <p><strong>St. James's Park & Buckingham Palace:</strong> Walk through beautiful park, see palace exterior (changing of guard at 11 AM on select days). Visit <a href="https://www.google.com/maps/search/Churchill+War+Rooms+London" class="map-link">Churchill War Rooms</a> if interested (£28).</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/The+Ivy+London" class="map-link">The Ivy</a> - Modern British, ★★★★☆, £20-35
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:00 PM - 10:00 PM)</h4>
+            <p><strong>Soho Exploration:</strong> LGBTQ+-friendly area with great bars, restaurants, and nightlife. Perfect for romantic evening stroll and dinner.</p>
+            
+            <div class="food-option">
+                <strong>Dinner:</strong> <a href="https://www.google.com/maps/search/Gauthier+Soho" class="map-link">Gauthier Soho</a> - French Vegetarian Fine Dining, ★★★★★, £55-85
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Tibits+London" class="map-link">Tibits</a></strong> - Swiss Vegetarian Buffet, ★★★★☆, £15-22
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Punjab+Restaurant+Covent+Garden" class="map-link">Punjab Restaurant</a></strong> - Indian, ★★★★☆, £12-20
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Fortnum+Mason+Ice+Cream+Parlour" class="map-link">Fortnum & Mason Ice Cream</a></strong> - Premium Ice Cream, ★★★★☆, £6-12
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 5 (April 1) - Markets & Alternative London</h3>
+        
+        <div class="time-block">
+            <h4>Morning (10:00 AM - 1:00 PM)</h4>
+            <p><strong>Camden Market:</strong> Free entry, browse vintage stores, alternative fashion, and international food stalls. Great for unique souvenirs and people watching.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Ginger+Johns+Camden" class="map-link">Ginger & John's</a> - Coffee & Pastries, ★★★★☆, £5-10
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (1:00 PM - 5:00 PM)</h4>
+            <p><strong>Regent's Park & Primrose Hill:</strong> Beautiful spring flowers and romantic picnic spot. Climb Primrose Hill for panoramic London views. Perfect for couple photos.</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/Vanilla+Black+Restaurant+London" class="map-link">Vanilla Black</a> - Modern Vegetarian, ★★★★☆, £25-40
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:00 PM - 10:00 PM)</h4>
+            <p><strong>Shoreditch Food Tour:</strong> Explore trendy area known for street art, independent coffee shops, and innovative dining. Very LGBTQ+-friendly neighborhood.</p>
+            
+            <div class="food-option">
+                <strong>Dinner:</strong> <a href="https://www.google.com/maps/search/Typing+Room+Bethnal+Green" class="map-link">Typing Room</a> - Modern European, ★★★★☆, £35-55
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Dishoom+Shoreditch" class="map-link">Dishoom Shoreditch</a></strong> - Indian, ★★★★★, £18-30
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/The+Gate+Hammersmith" class="map-link">The Gate</a></strong> - Vegetarian Fine Dining, ★★★★☆, £30-50
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Scoop+Gelato+Covent+Garden" class="map-link">Scoop</a></strong> - Artisan Gelato, ★★★★☆, £4-8
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 6 (April 2) - Gardens & Relaxation</h3>
+        
+        <div class="time-block">
+            <h4>Morning (9:30 AM - 2:00 PM)</h4>
+            <p><strong>Kew Gardens:</strong> Spring blooms at their peak! Book online (£25). Allow 4+ hours to explore botanical gardens, glasshouses, and tree canopy walkway. Very romantic setting.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Kew+Gardens+Station+Cafe" class="map-link">Station Cafe</a> - British, ★★★☆☆, £5-10
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (2:00 PM - 5:30 PM)</h4>
+            <p><strong>Richmond & Thames Walk:</strong> Charming riverside town with parks, boutique shops, and cafes. Take boat back to central London or train (30 mins).</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/The+Glasshouse+Kew" class="map-link">The Glasshouse</a> - Modern European, ★★★★☆, £28-45
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:30 PM - 10:00 PM)</h4>
+            <p><strong>Traditional Afternoon Tea:</strong> Late afternoon tea at luxury hotel. Book ahead for romantic experience with finger sandwiches, scones, and pastries.</p>
+            
+            <div class="food-option">
+                <strong>Dinner/Tea:</strong> <a href="https://www.google.com/maps/search/The+Ritz+London+Afternoon+Tea" class="map-link">The Ritz London</a> - Traditional Afternoon Tea, ★★★★★, £58-78
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Ottolenghi+Kensington" class="map-link">Ottolenghi</a></strong> - Mediterranean/Vegetarian, ★★★★☆, £8-15
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Amaya+Restaurant+London" class="map-link">Amaya</a></strong> - Modern Indian, ★★★★☆, £45-70
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Oddono's+Gelato+Kensington" class="map-link">Oddono's</a></strong> - Italian Gelato, ★★★★☆, £4-7
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 7 (April 3) - Brick Lane & East London</h3>
+        
+        <div class="time-block">
+            <h4>Morning (10:00 AM - 1:00 PM)</h4>
+            <p><strong>Brick Lane Food Tour:</strong> Famous for curry houses and Indian restaurants. Many excellent vegetarian options. Browse vintage markets and street art.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Beigel+Bake+Brick+Lane" class="map-link">Beigel Bake</a> - Traditional Bagels, ★★★★☆, £2-5
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (1:00 PM - 5:00 PM)</h4>
+            <p><strong>Spitalfields Market & Shoreditch:</strong> Covered market with independent vendors, vintage clothes, and artisan goods. Great area for coffee shop hopping.</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/Needoo+Grill+Brick+Lane" class="map-link">Needoo Grill</a> - Pakistani/Indian Vegetarian, ★★★★☆, £8-15
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening (5:00 PM - 10:00 PM)</h4>
+            <p><strong>East London Pubs & Dining:</strong> Discover trendy pubs and restaurants in LGBTQ+-friendly East London. Great nightlife scene for couples.</p>
+            
+            <div class="food-option">
+                <strong>Dinner:</strong> <a href="https://www.google.com/maps/search/Lyle's+Restaurant+Shoreditch" class="map-link">Lyle's</a> - Modern British, ★★★★☆, £55-85
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Optional Food Spots</h4>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Cafe+Spice+Namaste+London" class="map-link">Cafe Spice Namaste</a></strong> - Indian, ★★★★☆, £20-35
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Trullo+Restaurant+London" class="map-link">Trullo</a></strong> - Italian, ★★★★☆, £25-40
+            </div>
+            <div class="food-option">
+                <strong><a href="https://www.google.com/maps/search/Yorica+Frozen+Yogurt+London" class="map-link">Yorica!</a></strong> - Frozen Yogurt, ★★★★☆, £4-8
+            </div>
+        </div>
+    </div>
+    
+    <div class="day-section">
+        <h3>Day 8 (April 4) - Final Day & Departure</h3>
+        
+        <div class="time-block">
+            <h4>Morning (9:00 AM - 12:00 PM)</h4>
+            <p><strong>Last-minute Shopping:</strong> Oxford Street, Regent Street, or return to favorite market. Pick up souvenirs and final coffee shop visit.</p>
+            
+            <div class="food-option">
+                <strong>Breakfast:</strong> <a href="https://www.google.com/maps/search/Princi+London+Wardour+Street" class="map-link">Princi</a> - Italian Bakery, ★★★★☆, £5-12
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Afternoon (12:00 PM - 3:00 PM)</h4>
+            <p><strong>Final Lunch & Departure Prep:</strong> Check out of hotel, store luggage, enjoy final meal together before heading to airport.</p>
+            
+            <div class="food-option">
+                <strong>Lunch:</strong> <a href="https://www.google.com/maps/search/Sketch+The+Lecture+Room+London" class="map-link">Spring Restaurant</a> - Modern British, ★★★★☆, £35-55
+            </div>
+        </div>
+        
+        <div class="time-block">
+            <h4>Evening - Departure</h4>
+            <p><strong>Airport Transfer:</strong> Allow 90 minutes to reach Heathrow. Heathrow Express from Paddington (15 mins) or taxi (45-60 mins depending on traffic).</p>
+            
+            <div class="food-option">
+                <strong>Airport Dining:</strong> <a href="https://www.google.com/maps/search/Heathrow+Terminal+Restaurants" class="map-link">Heathrow Restaurants</a> - Various, ★★★☆☆, £10-25
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 6: FOOD AND DRINK -->
+<div class="section" id="food-drink">
+    <h2>Food & Drink Guide</h2>
+    
+    <h3>Top 10 Cafés</h3>
+    <div class="food-option">
+        <strong>1. <a href="https://www.google.com/maps/search/Monmouth+Coffee+Company+London" class="map-link">Monmouth Coffee Company</a></strong> - Specialty Coffee, ★★★★★, £3-6 | No reservations needed
+    </div>
+    <div class="food-option">
+        <strong>2. <a href="https://www.google.com/maps/search/Workshop+Coffee+London" class="map-link">Workshop Coffee</a></strong> - Artisan Coffee, ★★★★☆, £3-7 | Multiple locations
+    </div>
+    <div class="food-option">
+        <strong>3. <a href="https://www.google.com/maps/search/Kaffeine+London" class="map-link">Kaffeine</a></strong> - Australian Coffee, ★★★★☆, £3-8 | Peak hours busy
+    </div>
+    <div class="food-option">
+        <strong>4. <a href="https://www.google.com/maps/search/Notes+Music+Coffee+London" class="map-link">Notes Music & Coffee</a></strong> - Specialty Coffee, ★★★★☆, £3-8 | Cozy atmosphere
+    </div>
+    <div class="food-option">
+        <strong>5. <a href="https://www.google.com/maps/search/Prufrock+Coffee+London" class="map-link">Prufrock Coffee</a></strong> - Third Wave Coffee, ★★★★☆, £3-7 | Coffee courses available
+    </div>
+    <div class="food-option">
+        <strong>6. <a href="https://www.google.com/maps/search/Origin+Coffee+Roasters+London" class="map-link">Origin Coffee Roasters</a></strong> - Roastery Cafe, ★★★★☆, £3-8 | Fresh roasted beans
+    </div>
+    <div class="food-option">
+        <strong>7. <a href="https://www.google.com/maps/search/The+Attendant+London" class="map-link">The Attendant</a></strong> - Unique Venue Coffee, ★★★★☆, £3-7 | Victorian toilets converted
+    </div>
+    <div class="food-option">
+        <strong>8. <a href="https://www.google.com/maps/search/Look+Mum+No+Hands+London" class="map-link">Look Mum No Hands!</a></strong> - Cycling Cafe, ★★★★☆, £4-9 | Bike-themed
+    </div>
+    <div class="food-option">
+        <strong>9. <a href="https://www.google.com/maps/search/Department+of+Coffee+London" class="map-link">Department of Coffee</a></strong> - Specialty Coffee, ★★★★☆, £3-7 | Multiple locations
+    </div>
+    <div class="food-option">
+        <strong>10. <a href="https://www.google.com/maps/search/Caravan+Coffee+Roasters+London" class="map-link">Caravan Coffee Roasters</a></strong> - All-day Dining, ★★★★☆, £4-12 | Brunch spot too
+    </div>
+    
+    <h3>Top 10 Restaurants</h3>
+    <div class="food-option">
+        <strong>1. <a href="https://www.google.com/maps/search/Dishoom+London" class="map-link">Dishoom</a></strong> - Indian Vegetarian, ★★★★★, £15-30 | Book 1-2 weeks ahead
+    </div>
+    <div class="food-option">
+        <strong>2. <a href="https://www.google.com/maps/search/Mildreds+London" class="map-link">Mildreds</a></strong> - Vegetarian, ★★★★★, £12-20 | No reservations, expect queues
+    </div>
+    <div class="food-option">
+        <strong>3. <a href="https://www.google.com/maps/search/Gauthier+Soho+London" class="map-link">Gauthier Soho</a></strong> - French Vegetarian Fine Dining, ★★★★★, £55-85 | Book 2-3 weeks ahead
+    </div>
+    <div class="food-option">
+        <strong>4. <a href="https://www.google.com/maps/search/The+Gate+Restaurant+London" class="map-link">The Gate</a></strong> - Vegetarian Fine Dining, ★★★★☆, £30-50 | Book 1 week ahead
+    </div>
+    <div class="food-option">
+        <strong>5. <a href="https://www.google.com/maps/search/Farmacy+London" class="map-link">Farmacy</a></strong> - Plant-Based, ★★★★☆, £15-25 | Reservations recommended
+    </div>
+    <div class="food-option">
+        <strong>6. <a href="https://www.google.com/maps/search/Rasa+Restaurant+London" class="map-link">Rasa</a></strong> - South Indian Vegetarian, ★★★★☆, £18-28 | Book ahead weekends
+    </div>
+    <div class="food-option">
+        <strong>7. <a href="https://www.google.com/maps/search/Vanilla+Black+London" class="map-link">Vanilla Black</a></strong> - Modern Vegetarian, ★★★★☆, £25-40 | Book 1 week ahead
+    </div>
+    <div class="food-option">
+        <strong>8. <a href="https://www.google.com/maps/search/Tibits+London" class="map-link">Tibits</a></strong> - Swiss Vegetarian Buffet, ★★★★☆, £15-22 | No reservations needed
+    </div>
+    <div class="food-option">
+        <strong>9. <a href="https://www.google.com/maps/search/Amrutha+Lounge+London" class="map-link">Amrutha Lounge</a></strong> - Indian Vegetarian, ★★★★☆, £12-20 | Casual dining
+    </div>
+    <div class="food-option">
+        <strong>10. <a href="https://www.google.com/maps/search/Wulf+Lamb+London" class="map-link">Wulf & Lamb</a></strong> - Plant-Based, ★★★★☆, £20-35 | Book ahead weekends
+    </div>
+    
+    <h3>Top 10 Bars & Nightlife</h3>
+    <div class="food-option">
+        <strong>1. <a href="https://www.google.com/maps/search/The+Glory+London" class="map-link">The Glory</a></strong> - LGBTQ+ Bar, ★★★★★, £6-12 | Drag shows and events
+    </div>
+    <div class="food-option">
+        <strong>2. <a href="https://www.google.com/maps/search/Heaven+Nightclub+London" class="map-link">Heaven</a></strong> - LGBTQ+ Club, ★★★★☆, £8-15 | Iconic venue under Charing Cross
+    </div>
+    <div class="food-option">
+        <strong>3. <a href="https://www.google.com/maps/search/Connaught+Bar+London" class="map-link">Connaught Bar</a></strong> - Cocktail Bar, ★★★★★, £15-25 | World's best bar, book ahead
+    </div>
+    <div class="food-option">
+        <strong>4. <a href="https://www.google.com/maps/search/Sketch+Bar+London" class="map-link">Sketch Bar</a></strong> - Unique Cocktail Experience, ★★★★☆, £12-20 | Pink Room famous
+    </div>
+    <div class="food-option">
+        <strong>5. <a href="https://www.google.com/maps/search/Dalston+Superstore+London" class="map-link">Dalston Superstore</a></strong> - LGBTQ+ Bar/Club, ★★★★☆, £5-12 | Late night dancing
+    </div>
+    <div class="food-option">
+        <strong>6. <a href="https://www.google.com/maps/search/American+Bar+Savoy+London" class="map-link">American Bar at Savoy</a></strong> - Classic Cocktails, ★★★★★, £18-28 | Historic hotel bar
+    </div>
+    <div class="food-option">
+        <strong>7. <a href="https://www.google.com/maps/search/G-A-Y+Bar+London" class="map-link">G-A-Y Bar</a></strong> - LGBTQ+ Bar, ★★★★☆, £5-10 | Multiple locations, fun atmosphere
+    </div>
+    <div class="food-option">
+        <strong>8. <a href="https://www.google.com/maps/search/Rooftop+Bar+Radio+London" class="map-link">Radio Rooftop Bar</a></strong> - Views & Cocktails, ★★★★☆, £10-18 | Great city views
+    </div>
+    <div class="food-option">
+        <strong>9. <a href="https://www.google.com/maps/search/She+Soho+London" class="map-link">She Soho</a></strong> - LGBTQ+ Women's Bar, ★★★★☆, £6-14 | Inclusive space, all welcome
+    </div>
+    <div class="food-option">
+        <strong>10. <a href="https://www.google.com/maps/search/Aqua+Spirit+London" class="map-link">Aqua Spirit</a></strong> - Rooftop Cocktails, ★★★★☆, £12-20 | 360° London views
+    </div>
+</div>
+
+<!-- SECTION 7: WHERE TO STAY -->
+<div class="section" id="accommodation">
+    <h2>Where to Stay</h2>
+    
+    <h3>Best Neighborhoods</h3>
+    
+    <div class="hotel-card">
+        <h4>Covent Garden/West End</h4>
+        <p>Perfect for theater lovers and first-time visitors. Walking distance to major attractions, excellent restaurants, and vibrant nightlife. Very LGBTQ+-friendly area with easy transport links.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4>Shoreditch/East London</h4>
+        <p>Trendy area popular with young couples and creatives. Excellent food scene, street art, and indie venues. Strong LGBTQ+ community and alternative culture.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4>South Bank/Borough</h4>
+        <p>Riverside location near Borough Market, Tate Modern, and Shakespeare's Globe. Great for food lovers with romantic Thames walks and cultural attractions.</p>
+    </div>
+    
+    <h3>Budget Hotels ($80-150/night)</h3>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/YHA+London+Central" class="map-link">YHA London Central</a></h4>
+        <span class="price-tag">$95/night</span>
+        <p>Modern hostel with private rooms in Covent Garden. Clean, safe, and perfectly located for sightseeing. Book through Booking.com for best rates.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/Premier+Inn+London+County+Hall" class="map-link">Premier Inn County Hall</a></h4>
+        <span class="price-tag">$120/night</span>
+        <p>Reliable chain hotel on South Bank with river views. Walking distance to Westminster and Borough Market. Good value for location.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/Generator+London" class="map-link">Generator London</a></h4>
+        <span class="price-tag">$110/night</span>
+        <p>Design-focused hostel in King's Cross with private rooms. Young, international crowd and rooftop bar. Great transport connections.</p>
+    </div>
+    
+    <h3>Mid-Range Hotels ($150-300/night)</h3>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/The+Z+Hotel+Piccadilly" class="map-link">The Z Hotel Piccadilly</a></h4>
+        <span class="price-tag">$185/night</span>
+        <p>Boutique hotel in heart of West End. Compact but stylish rooms, perfect location for theater and shopping. Modern amenities and great service.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/Ace+Hotel+London+Shoreditch" class="map-link">Ace Hotel Shoreditch</a></h4>
+        <span class="price-tag">$220/night</span>
+        <p>Hip hotel in trendy Shoreditch with unique design and excellent restaurant. Popular with creative couples and LGBTQ+ travelers.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/The+Hoxton+Southwark" class="map-link">The Hoxton Southwark</a></h4>
+        <span class="price-tag">$195/night</span>
+        <p>Stylish hotel near Borough Market and river. Comfortable rooms with local character and excellent breakfast. Perfect for food-focused trips.</p>
+    </div>
+    
+    <h3>Luxury Hotels ($300+/night)</h3>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/The+Savoy+London" class="map-link">The Savoy</a></h4>
+        <span class="price-tag">$650/night</span>
+        <p>Iconic luxury hotel on the Strand. Historic glamour meets modern luxury with world-class dining and afternoon tea. Ultimate romantic splurge.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/Shangri-La+Hotel+At+The+Shard+London" class="map-link">Shangri-La at The Shard</a></h4>
+        <span class="price-tag">$550/night</span>
+        <p>Sky-high luxury with incredible city views. Located in iconic Shard building with fine dining and spa. Unforgettable romantic experience.</p>
+    </div>
+    
+    <div class="hotel-card">
+        <h4><a href="https://www.google.com/maps/search/The+Ned+London" class="map-link">The Ned</a></h4>
+        <span class="price-tag">$420/night</span>
+        <p>Stylish hotel in converted banking hall in City of London. Multiple restaurants, rooftop pool, and 1920s glamour. Great for couples.</p>
+    </div>
+    
+    <p><strong>Booking Tip:</strong> Use Booking.com for the widest selection and best cancellation policies. Book 4-6 weeks ahead for better rates in spring.</p>
+</div>
+
+<!-- SECTION 8: EXPERIENCES -->
+<div class="section" id="experiences">
+    <h2>Must-Do Experiences</h2>
+    
+    <h3>Essential London Experiences</h3>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/Borough+Market+London" class="map-link">Borough Market Food Adventure</a></h4>
+        <p>Dive deep into London's most famous food market. Sample artisanal cheeses, fresh bread, vegetarian delights, and specialty coffee. Perfect for food-loving couples to share tastes and discover new flavors together.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/Thames+River+Cruise+London" class="map-link">Romantic Thames Sunset Cruise</a></h4>
+        <p>See London's landmarks from the water during golden hour. Pass Tower Bridge, Houses of Parliament, and London Eye while enjoying drinks and each other's company. Most romantic way to see the city.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/West+End+Theatre+District+London" class="map-link">West End Theatre Show</a></h4>
+        <p>Experience world-class theatre in London's famous West End. From long-running classics like The Lion King to newer hits, nothing beats the magic of live performance in an intimate London theatre.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/Traditional+Afternoon+Tea+London" class="map-link">Traditional Afternoon Tea</a></h4>
+        <p>Indulge in this quintessentially British experience. Elegant venues like The Ritz, Sketch, or Fortnum & Mason serve delicate finger sandwiches, fresh scones, and exquisite pastries with premium teas.</p>
+    </div>
+    
+    <h3>Top GetYourGuide Experiences</h3>
+    
+    <div class="experience-card">
+        <h4>London Food Walking Tour</h4>
+        <p><span class="price-tag">From $65</span> | 3.5 hours | <span class="rating">★★★★★ 4.8/5</span></p>
+        <p>Guided tour through Borough Market, Southwark, and beyond with tastings at 6+ stops. Perfect introduction to London's food scene with vegetarian options highlighted.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4>Thames Hop-On Hop-Off River Cruise</h4>
+        <p><span class="price-tag">From $25</span> | Full day access | <span class="rating">★★★★☆ 4.2/5</span></p>
+        <p>Flexible river transport between major attractions. Commentary included with stops at Tower Bridge, London Eye, Greenwich, and Westminster. Great value for sightseeing couples.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4>Secret London Walking Tour</h4>
+        <p><span class="price-tag">From $35</span> | 3 hours | <span class="rating">★★★★☆ 4.6/5</span></p>
+        <p>Discover hidden gems, secret gardens, and local stories away from tourist crowds. Perfect for couples who want to see authentic London beyond the main attractions.</p>
+    </div>
+    
+    <h3>Hidden Gem Experiences</h3>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/God's+Own+Junkyard+London" class="map-link">God's Own Junkyard</a></h4>
+        <p>Magical neon sign graveyard in Walthamstow. Instagram-famous spot with colorful vintage neon signs creating romantic, electric atmosphere. Perfect for unique couple photos.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/Dennis+Severs+House+London" class="map-link">Dennis Severs' House</a></h4>
+        <p>Step back in time in this atmospheric 18th-century house in Spitalfields. Each room tells a story with candlelight tours creating intimate, romantic ambiance.</p>
+    </div>
+    
+    <div class="experience-card">
+        <h4><a href="https://www.google.com/maps/search/Kyoto+Garden+Holland+Park+London" class="map-link">Kyoto Garden, Holland Park</a></h4>
+        <p>Peaceful Japanese garden hidden in West London. Free admission to this zen oasis with waterfall, koi pond, and cherry blossoms.
