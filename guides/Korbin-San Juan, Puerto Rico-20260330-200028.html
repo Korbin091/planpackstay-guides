@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Juan, Puerto Rico Travel Guide - PLANPACKSTAY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #FFFFFE;
+        }
+        
+        .planpackstay-brand {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section:nth-child(even) {
+            background-color: #f8fafb;
+        }
+        
+        .section:nth-child(odd) {
+            background-color: white;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #4a94b4;
+            margin-bottom: 16px;
+            font-size: 28px;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #c9a96e;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        
+        .cover {
+            text-align: center;
+            background: linear-gradient(135deg, #4a94b4, #1a1a2e);
+            color: white;
+            padding: 60px 24px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .cover h1 {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .trip-details {
+            font-size: 18px;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+        
+        .maps-link {
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 2px dashed #4a94b4;
+        }
+        
+        .maps-link:hover {
+            color: #c9a96e;
+            border-bottom-color: #c9a96e;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background-color: #4a94b4;
+            color: white;
+            padding: 12px;
+            font-weight: 700;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #eef5f9;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .day-block {
+            margin-bottom: 32px;
+            padding: 20px;
+            background-color: #f8fafb;
+            border-radius: 8px;
+            border-left: 4px solid #4a94b4;
+        }
+        
+        .time-block {
+            margin-bottom: 24px;
+            padding: 16px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        
+        .sasquatch-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 16px 0;
+            padding: 16px;
+            background-color: #eef5f9;
+            border-radius: 8px;
+        }
+        
+        .sasquatch-tip img {
+            width: 60px;
+            flex-shrink: 0;
+        }
+        
+        .membership-cards {
+            display: flex;
+            gap: 20px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .membership-card {
+            flex: 1;
+            min-width: 280px;
+            padding: 24px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+        
+        .passport-pro {
+            background: linear-gradient(135deg, #4a94b4, #1a1a2e);
+        }
+        
+        .world-explorer {
+            background: linear-gradient(135deg, #1a1a2e, #4a94b4);
+        }
+        
+        .join-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #c9a96e;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-top: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .join-btn:hover {
+            background-color: #b8956a;
+        }
+        
+        .toc {
+            background-color: #eef5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .toc a {
+            color: #4a94b4;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .toc a:hover {
+            color: #c9a96e;
+        }
+        
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .food-item {
+            padding: 16px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            background-color: #1a1a2e;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        footer a {
+            color: #4a94b4;
+            text-decoration: none;
+        }
+        
+        .safety-rating {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #c9a96e;
+            color: white;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- SECTION 1: COVER -->
+    <div class="cover">
+        <h1>San Juan, Puerto Rico</h1>
+        <div class="trip-details">
+            9 Days • 2 Travelers<br>
+            March 30 - April 8, 2026
+        </div>
+        <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/PLANPACKSTAY_Logo_Social.png" alt="PLANPACKSTAY Logo" style="width: 120px;">
+    </div>
+
+    <!-- SECTION 2: TRIP OVERVIEW -->
+    <div class="section" id="trip-overview">
+        <h2>Trip Overview</h2>
+        <p>Welcome to your romantic Puerto Rican adventure, Korbin! San Juan offers the perfect blend of historic charm, vibrant culture, and stunning beaches for an unforgettable couples' getaway. This LGBTQ+-friendly destination combines Spanish colonial architecture with modern Caribbean flair, creating an ideal setting for romance and exploration.</p>
+        
+        <h3>Itinerary Highlights</h3>
+        <ul>
+            <li>Explore colorful Old San Juan's cobblestone streets and historic forts</li>
+            <li>Relax on pristine beaches in Condado and Isla Verde</li>
+            <li>Experience bioluminescent kayaking in nearby Laguna Grande</li>
+            <li>Savor authentic Puerto Rican cuisine and world-class coffee</li>
+            <li>Discover vibrant nightlife in Santurce and La Placita</li>
+            <li>Visit El Yunque Rainforest for waterfalls and hiking</li>
+            <li>Enjoy romantic sunset dinners with ocean views</li>
+        </ul>
+        
+        <h3>Trip Vibe</h3>
+        <p>This on-the-go romantic adventure balances cultural immersion with beach relaxation. Expect early morning coffee walks, afternoon beach lounging, and evening explorations of San Juan's welcoming LGBTQ+ scene.</p>
+        
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <a href="#trip-overview">Trip Overview</a>
+            <a href="#location-overview">Location Overview</a>
+            <a href="#itinerary-overview">Itinerary Overview</a>
+            <a href="#day-by-day">Day by Day Itinerary</a>
+            <a href="#food-drink">Food & Drink</a>
+            <a href="#where-to-stay">Where to Stay</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#packing">Packing Guide</a>
+            <a href="#book-trip">Book This Trip</a>
+        </div>
+    </div>
+
+    <!-- SECTION 3: LOCATION OVERVIEW -->
+    <div class="section" id="location-overview">
+        <h2>Location Overview</h2>
+        
+        <h3>Best Time to Visit</h3>
+        <p>March-April is ideal for San Juan with warm temperatures (75-85°F), lower humidity, and minimal rainfall. Perfect for your beach days and outdoor exploration!</p>
+        
+        <h3>Climate During Your Visit</h3>
+        <p>Expect tropical spring weather with pleasant trade winds, occasional light showers, and beautiful sunny days perfect for beach activities.</p>
+        
+        <h3>Key Facts</h3>
+        <ul>
+            <li>Currency: US Dollar (USD)</li>
+            <li>Language: Spanish and English</li>
+            <li>Time Zone: Atlantic Standard Time (AST)</li>
+            <li>Population: ~320,000 (metro area ~2.4M)</li>
+            <li>LGBTQ+ Friendliness: Very welcoming, especially in San Juan</li>
+        </ul>
+        
+        <h3>Must-See Attractions</h3>
+        <ul>
+            <li>Old San Juan and El Morro Fort</li>
+            <li>Condado Beach and Lagoon</li>
+            <li>El Yunque National Forest</li>
+            <li>Camuy Caves</li>
+            <li>Bioluminescent Bay tours</li>
+            <li>Museum of Art of Puerto Rico</li>
+        </ul>
+        
+        <div class="sasquatch-tip">
+            <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip">
+            <div>
+                <h3>Travel Tips</h3>
+                <ul>
+                    <li>Download offline maps - cell service can be spotty in El Yunque</li>
+                    <li>Bring reef-safe sunscreen to protect marine life</li>
+                    <li>Learn basic Spanish phrases - locals appreciate the effort</li>
+                    <li>Pack comfortable walking shoes for Old San Juan's cobblestones</li>
+                    <li>Consider getting an Airalo eSIM for reliable data coverage throughout the island</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="safety-rating">Safety Rating: 8/10 - Very Safe</div>
+        <p>San Juan is generally very safe for tourists. Stay aware in crowded areas, don't flash expensive items, and stick to well-lit areas at night.</p>
+        
+        <h3>Transportation</h3>
+        <ul>
+            <li>Uber: Available ($8-15 typical rides)</li>
+            <li>Taxi: $20-30 airport to hotels</li>
+            <li>Public Bus (AMA): $0.75 per ride</li>
+            <li>Walking: Old San Juan is very walkable</li>
+            <li>Car Rental: $35-60/day (recommended for El Yunque)</li>
+        </ul>
+        
+        <h3>Emergency Contacts</h3>
+        <ul>
+            <li>Police: 911</li>
+            <li>EMS/Fire: 911</li>
+            <li>Nearest Hospital: Hospital San Pablo (787-727-8888)</li>
+            <li>Tourist Police: 787-726-7020</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 4: ITINERARY OVERVIEW -->
+    <div class="section" id="itinerary-overview">
+        <h2>Itinerary Overview</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Cost</th>
+                    <th>Hours</th>
+                    <th>Booking</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Old San Juan Walking Tour</td>
+                    <td>Free</td>
+                    <td>3-4</td>
+                    <td>None required</td>
+                </tr>
+                <tr>
+                    <td>El Morro Fort</td>
+                    <td>$10/person</td>
+                    <td>2-3</td>
+                    <td>Online recommended</td>
+                </tr>
+                <tr>
+                    <td>Condado Beach Day</td>
+                    <td>Free</td>
+                    <td>4-6</td>
+                    <td>None required</td>
+                </tr>
+                <tr>
+                    <td>El Yunque Rainforest</td>
+                    <td>Free + $30 parking</td>
+                    <td>6-8</td>
+                    <td>Reserve parking online</td>
+                </tr>
+                <tr>
+                    <td>Bioluminescent Kayaking</td>
+                    <td>$65/person</td>
+                    <td>3-4</td>
+                    <td>Advance booking required</td>
+                </tr>
+                <tr>
+                    <td>Camuy Caves</td>
+                    <td>$19/person</td>
+                    <td>3-4</td>
+                    <td>Online booking</td>
+                </tr>
+                <tr>
+                    <td>Beach Day Isla Verde</td>
+                    <td>Free</td>
+                    <td>4-6</td>
+                    <td>None required</td>
+                </tr>
+                <tr>
+                    <td>Art Museum Visit</td>
+                    <td>$12/person</td>
+                    <td>2-3</td>
+                    <td>None required</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 5: DAY BY DAY ITINERARY -->
+    <div class="section" id="day-by-day">
+        <h2>Day by Day Itinerary</h2>
+        
+        <!-- Day 1 -->
+        <div class="day-block">
+            <h3>Day 1 - March 30: Arrival & Old San Juan</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>Arrival & Hotel Check-in:</strong> Land at Luis Muñoz Marín International Airport, take Uber to hotel ($25-30), check in and freshen up. Begin with coffee at <a href="https://www.google.com/maps/search/Café+con+Blanca+San+Juan" class="maps-link">Café con Blanca</a> for authentic Puerto Rican coffee and pasteles.</p>
+                <p><strong>Food:</strong> Café con Blanca - Puerto Rican Coffee & Pastries, Rating: 4.6/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Old San Juan Exploration:</strong> Walk the colorful cobblestone streets, visit <a href="https://www.google.com/maps/search/Plaza+de+Armas+San+Juan" class="maps-link">Plaza de Armas</a>, see the iconic blue buildings, and explore local shops. No entry fees, minimal wait times. Perfect for romantic photos!</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/El+Jibarito+Old+San+Juan" class="maps-link">El Jibarito</a> - Traditional Puerto Rican, Rating: 4.5/5, Price: $$</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>Sunset at Paseo de la Princesa:</strong> Romantic waterfront walk with harbor views. Then dinner at a vegetarian-friendly restaurant with Spanish influences.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Verde+Mesa+San+Juan" class="maps-link">Verde Mesa</a> - Vegetarian/Spanish Fusion, Rating: 4.7/5, Price: $$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/Barrachina+San+Juan" class="maps-link">Barrachina</a> - Caribbean/Cocktails, Rating: 4.3/5, Price: $$</li>
+                <li><a href="https://www.google.com/maps/search/La+Bombonera+San+Juan" class="maps-link">La Bombonera</a> - Traditional Bakery, Rating: 4.4/5, Price: $</li>
+                <li><a href="https://www.google.com/maps/search/Café+Manolín+San+Juan" class="maps-link">Café Manolín</a> - Local Coffee Shop, Rating: 4.5/5, Price: $</li>
+            </ul>
+        </div>
+        
+        <!-- Day 2 -->
+        <div class="day-block">
+            <h3>Day 2 - March 31: Forts & Culture</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>El Morro Fort:</strong> Explore this 16th-century fortress. Entry $10/person, arrive early (8 AM) to avoid crowds. Allow 2-3 hours. Book online at nps.gov/saju.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Cueva+Ventana+Café+San+Juan" class="maps-link">Cueva Ventana Café</a> - Coffee & Light Bites, Rating: 4.6/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Castillo San Cristóbal:</strong> Second historic fort, included in El Morro ticket. Then explore <a href="https://www.google.com/maps/search/Calle+del+Cristo+San+Juan" class="maps-link">Calle del Cristo</a> for shopping and galleries.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Raíces+Restaurant+San+Juan" class="maps-link">Raíces Restaurant</a> - Traditional Vegetarian Options, Rating: 4.4/5, Price: $$</li>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>La Placita Nightlife:</strong> Experience San Juan's LGBTQ+-friendly nightlife scene in Santurce. Start with dinner, then explore the bars and live music venues.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Santaella+San+Juan" class="maps-link">Santaella</a> - Modern Puerto Rican, Rating: 4.6/5, Price: $$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/Marmalade+Restaurant+San+Juan" class="maps-link">Marmalade Restaurant</a> - Fine Dining, Rating: 4.8/5, Price: $$$$</li>
+                <li><a href="https://www.google.com/maps/search/Orujo+Taller+de+Gastronomía+San+Juan" class="maps-link">Orujo Taller de Gastronomía</a> - Spanish Tapas, Rating: 4.7/5, Price: $$$</li>
+                <li><a href="https://www.google.com/maps/search/La+Alcapurria+Quemá+San+Juan" class="maps-link">La Alcapurria Quemá</a> - Street Food, Rating: 4.5/5, Price: $</li>
+            </ul>
+        </div>
+        
+        <!-- Day 3 -->
+        <div class="day-block">
+            <h3>Day 3 - April 1: Beach Day Condado</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>Condado Beach:</strong> Perfect beach day! Set up early for best spots. Free access, bring reef-safe sunscreen. Enjoy swimming, sunbathing, and romantic beach walks.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Panadería+España+Condado" class="maps-link">Panadería España</a> - Spanish Bakery & Coffee, Rating: 4.5/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Condado Lagoon:</strong> Rent paddle boards or kayaks ($30/hour) for a romantic lagoon adventure. Less crowded alternative to the beach with mangrove exploration.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Casa+Lola+Condado" class="maps-link">Casa Lola</a> - Healthy Mediterranean, Rating: 4.4/5, Price: $$</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>Ashford Avenue:</strong> Upscale dining and shopping along Condado's main strip. Perfect for a romantic dinner with ocean views.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/1919+Restaurant+Condado" class="maps-link">1919 Restaurant</a> - Fine Dining Vegetarian Options, Rating: 4.7/5, Price: $$$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/Serafina+Beach+Hotel+Restaurant" class="maps-link">Serafina Beach Hotel Restaurant</a> - Beachfront Dining, Rating: 4.3/5, Price: $$$</li>
+                <li><a href="https://www.google.com/maps/search/Acacia+Seaside+Inn+Restaurant" class="maps-link">Acacia Seaside Inn Restaurant</a> - Caribbean Fusion, Rating: 4.5/5, Price: $$</li>
+                <li><a href="https://www.google.com/maps/search/Dulce+de+Leche+Ice+Cream+Condado" class="maps-link">Dulce de Leche Ice Cream</a> - Gelato & Desserts, Rating: 4.8/5, Price: $</p>
+            </ul>
+        </div>
+        
+        <!-- Day 4 -->
+        <div class="day-block">
+            <h3>Day 4 - April 2: El Yunque Rainforest</h3>
+            
+            <div class="time-block">
+                <h4>Morning (7:00 AM - 12:00 PM)</h4>
+                <p><strong>El Yunque National Forest:</strong> Early departure (rent car or join tour $80/person). Visit La Mina Falls and Yokahú Tower. Parking reservation required ($30). Moderate hiking involved.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Luquillo+Kiosks+Coffee" class="maps-link">Luquillo Kiosks</a> - Local Coffee & Fresh Fruit, Rating: 4.3/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Luquillo Beach:</strong> Beautiful beach stop after rainforest hiking. Famous food kiosks with vegetarian options. Perfect for relaxing after morning adventure.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Kiosko+El+Jefe+Luquillo" class="maps-link">Kiosko El Jefe</a> - Traditional Puerto Rican, Rating: 4.4/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>Return to San Juan:</strong> Drive back to city, return rental car if needed. Quiet romantic dinner to recover from active day.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Cocina+Abierta+San+Juan" class="maps-link">Cocina Abierta</a> - Farm-to-Table Vegetarian, Rating: 4.6/5, Price: $$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/La+Parrilla+Luquillo" class="maps-link">La Parrilla</a> - Grilled Specialties, Rating: 4.2/5, Price: $$</li>
+                <li><a href="https://www.google.com/maps/search/Antojitos+Puertorriqueños+Luquillo" class="maps-link">Antojitos Puertorriqueños</a> - Local Snacks, Rating: 4.5/5, Price: $</li>
+                <li><a href="https://www.google.com/maps/search/Lechonera+Los+Pinos+Luquillo" class="maps-link">Lechonera Los Pinos</a> - Traditional (Vegetarian Options), Rating: 4.3/5, Price: $</li>
+            </ul>
+        </div>
+        
+        <!-- Day 5 -->
+        <div class="day-block">
+            <h3>Day 5 - April 3: Bioluminescent Adventure</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>Museum of Art of Puerto Rico:</strong> Cultural morning at <a href="https://www.google.com/maps/search/Museum+of+Art+Puerto+Rico+Santurce" class="maps-link">MAPR Santurce</a>. Entry $12/person, 2-3 hours recommended. Features contemporary and classical Puerto Rican art.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Spiga+Santurce" class="maps-link">Spiga</a> - Italian Coffee & Pastries, Rating: 4.6/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Santurce Exploration:</strong> Vibrant arts district with murals, galleries, and LGBTQ+-friendly venues. Visit <a href="https://www.google.com/maps/search/La+Placita+de+Santurce" class="maps-link">La Placita de Santurce</a> market.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Jungle+Bird+Santurce" class="maps-link">Jungle Bird</a> - Asian-Puerto Rican Fusion, Rating: 4.7/5, Price: $$</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 11:00 PM)</h4>
+                <p><strong>Bioluminescent Kayaking:</strong> Magical evening tour to Laguna Grande ($65/person). Advanced booking essential. Most romantic experience of the trip! Tour includes transportation.</p>
+                <p><strong>Food:</strong> Light dinner included in tour, or grab snacks beforehand</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/La+Cueva+Sea+Food" class="maps-link">La Cueva Sea Food</a> - Fresh Seafood, Rating: 4.4/5, Price: $$</li>
+                <li><a href="https://www.google.com/maps/search/Miel+Santurce" class="maps-link">Miel</a> - Brunch & Coffee, Rating: 4.5/5, Price: $$</li>
+                <li><a href="https://www.google.com/maps/search/Ben+&+Jerry's+Santurce" class="maps-link">Ben & Jerry's Santurce</a> - Ice Cream, Rating: 4.6/5, Price: $</li>
+            </ul>
+        </div>
+        
+        <!-- Day 6 -->
+        <div class="day-block">
+            <h3>Day 6 - April 4: Caves & Interior</h3>
+            
+            <div class="time-block">
+                <h4>Morning (7:00 AM - 1:00 PM)</h4>
+                <p><strong>Camuy Caves:</strong> Underground adventure at <a href="https://www.google.com/maps/search/Camuy+Caves+Puerto+Rico" class="maps-link">Camuy Cave Park</a>. 1.5-hour drive, entry $19/person. Book online, tours fill up quickly. Incredible limestone formations.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Café+de+la+Casa+Camuy" class="maps-link">Café de la Casa</a> - Local Coffee & Breakfast, Rating: 4.3/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (1:00 PM - 6:00 PM)</h4>
+                <p><strong>Arecibo Observatory Area:</strong> Visit the famous radio telescope area, explore local towns and coffee farms. Perfect for on-the-go travelers who love unique sights.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Don+Ruiz+Coffee+Arecibo" class="maps-link">Don Ruiz Coffee</a> - Mountain Coffee Farm, Rating: 4.7/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>Return to San Juan:</strong> Drive back, enjoy quiet romantic dinner. Long day of adventure deserves relaxation.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Vianda+San+Juan" class="maps-link">Vianda</a> - Contemporary Vegetarian, Rating: 4.8/5, Price: $$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/Salitre+Meson+Costero+Arecibo" class="maps-link">Salitre Meson Costero</a> - Coastal Cuisine, Rating: 4.2/5, Price: $$</li>
+                <li><a href="https://www.google.com/maps/search/Panadería+Mallorca+Arecibo" class="maps-link">Panadería Mallorca</a> - Spanish Bakery, Rating: 4.4/5, Price: $</li>
+                <li><a href="https://www.google.com/maps/search/Heladería+La+Jibarita+Arecibo" class="maps-link">Heladería La Jibarita</a> - Local Ice Cream, Rating: 4.6/5, Price: $</li>
+            </ul>
+        </div>
+        
+        <!-- Day 7 -->
+        <div class="day-block">
+            <h3>Day 7 - April 5: Beach Day Isla Verde</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>Isla Verde Beach:</strong> Pristine beach perfect for your final beach day. Great for swimming, people watching, and relaxation. Free access, bring umbrellas and snacks.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Kasalta+Bakery+Isla+Verde" class="maps-link">Kasalta Bakery</a> - Spanish Bakery & Coffee, Rating: 4.7/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Beach Activities:</strong> Water sports, beach volleyball, or simply relaxing. Many beachfront bars and restaurants for shade and refreshments.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Metropol+Restaurant+Isla+Verde" class="maps-link">Metropol Restaurant</a> - Caribbean Vegetarian Options, Rating: 4.3/5, Price: $$</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>Carolina Boardwalk:</strong> Romantic sunset walk along the water, followed by dinner at an upscale beachfront restaurant.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/BLT+Steak+Isla+Verde" class="maps-link">BLT Steak</a> - Upscale Dining (Vegetarian Menu), Rating: 4.5/5, Price: $$$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/Solasa+Isla+Verde" class="maps-link">Solasa</a> - Beachfront Bar & Grill, Rating: 4.4/5, Price: $$$</li>
+                <li><a href="https://www.google.com/maps/search/Ruth's+Chris+Isla+Verde" class="maps-link">Ruth's Chris Steak House</a> - Fine Dining, Rating: 4.6/5, Price: $$$$</li>
+                <li><a href="https://www.google.com/maps/search/Señor+Frog's+Isla+Verde" class="maps-link">Señor Frog's</a> - Fun Mexican, Rating: 4.1/5, Price: $$</li>
+            </ul>
+        </div>
+        
+        <!-- Day 8 -->
+        <div class="day-block">
+            <h3>Day 8 - April 6: Culture & Shopping</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>Plaza Las Américas:</strong> Caribbean's largest shopping mall for souvenirs and last-minute purchases. Great for coffee and people-watching too.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Starbucks+Plaza+Las+Americas" class="maps-link">Starbucks Plaza Las Américas</a> - International Coffee, Rating: 4.2/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 6:00 PM)</h4>
+                <p><strong>Río Piedras Market:</strong> Authentic local market experience. Perfect for buying coffee, spices, and handmade crafts. Practice your Spanish!</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/La+Fonda+del+Jibarito+Rio+Piedras" class="maps-link">La Fonda del Jibarito</a> - Traditional Puerto Rican, Rating: 4.5/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Evening (6:00 PM - 10:00 PM)</h4>
+                <p><strong>Farewell Dinner:</strong> Special romantic dinner at one of San Juan's top vegetarian-friendly restaurants to celebrate your amazing trip.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Jose+Enrique+San+Juan" class="maps-link">Jose Enrique</a> - Award-winning Puerto Rican (Vegetarian Options), Rating: 4.9/5, Price: $$$$</p>
+            </div>
+            
+            <h4>Optional Food Spots</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/Pikayo+San+Juan" class="maps-link">Pikayo</a> - Celebrity Chef Restaurant, Rating: 4.7/5, Price: $$$$</li>
+                <li><a href="https://www.google.com/maps/search/Augusto's+Cuisine+San+Juan" class="maps-link">Augusto's Cuisine</a> - European-Caribbean, Rating: 4.6/5, Price: $$$</li>
+                <li><a href="https://www.google.com/maps/search/Pacifico+L'Osteria+San+Juan" class="maps-link">Pacifico L'Osteria</a> - Italian Gelato, Rating: 4.8/5, Price: $</li>
+            </ul>
+        </div>
+        
+        <!-- Day 9 -->
+        <div class="day-block">
+            <h3>Day 9 - April 8: Departure</h3>
+            
+            <div class="time-block">
+                <h4>Morning (8:00 AM - 12:00 PM)</h4>
+                <p><strong>Final Beach Walk & Packing:</strong> Last romantic stroll on Condado Beach, final shopping in Old San Juan, pack and prepare for departure.</p>
+                <p><strong>Food:</strong> <a href="https://www.google.com/maps/search/Mallorca+Restaurant+Old+San+Juan" class="maps-link">Mallorca Restaurant</a> - Traditional Breakfast, Rating: 4.4/5, Price: $</p>
+            </div>
+            
+            <div class="time-block">
+                <h4>Afternoon (12:00 PM - 4:00 PM)</h4>
+                <p><strong>Departure:</strong> Check out of hotel, Uber to airport ($25-30), departure preparations. Flight departure time dependent.</p>
+                <p><strong>Food:</strong> Airport dining options available</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: FOOD AND DRINK -->
+    <div class="section" id="food-drink">
+        <h2>Food & Drink</h2>
+        
+        <h3>Top 10 Cafes</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Café+Cuatro+Sombras+San+Juan" class="maps-link">Café Cuatro Sombras</a></h4>
+                <p>Specialty Coffee • Rating: 4.8/5 • Price: $ • No reservations needed</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Kasalta+Bakery+Ocean+Park" class="maps-link">Kasalta Bakery</a></h4>
+                <p>Spanish Bakery • Rating: 4.7/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Spiga+Santurce+San+Juan" class="maps-link">Spiga</a></h4>
+                <p>Italian Coffee • Rating: 4.6/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Café+Regina+San+Juan" class="maps-link">Café Regina</a></h4>
+                <p>Local Coffee • Rating: 4.5/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Don+Ruiz+Coffee+San+Juan" class="maps-link">Don Ruiz Coffee</a></h4>
+                <p>Puerto Rican Coffee • Rating: 4.7/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Café+con+Blanca+San+Juan" class="maps-link">Café con Blanca</a></h4>
+                <p>Traditional Coffee • Rating: 4.6/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/La+Bombonera+Old+San+Juan" class="maps-link">La Bombonera</a></h4>
+                <p>Historic Bakery • Rating: 4.4/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Café+Manolín+Old+San+Juan" class="maps-link">Café Manolín</a></h4>
+                <p>Traditional Café • Rating: 4.5/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Panadería+España+Condado" class="maps-link">Panadería España</a></h4>
+                <p>Spanish Pastries • Rating: 4.5/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Miel+Santurce+Coffee" class="maps-link">Miel</a></h4>
+                <p>Brunch & Coffee • Rating: 4.5/5 • Price: $$ • No reservations</p>
+            </div>
+        </div>
+        
+        <h3>Top 10 Restaurants</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Jose+Enrique+Restaurant+San+Juan" class="maps-link">Jose Enrique</a></h4>
+                <p>Puerto Rican Fine Dining • Rating: 4.9/5 • Price: $$$$ • Reservations 2-3 weeks ahead</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Vianda+Restaurant+San+Juan" class="maps-link">Vianda</a></h4>
+                <p>Contemporary Vegetarian • Rating: 4.8/5 • Price: $$$ • Reservations 1 week ahead</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Verde+Mesa+San+Juan" class="maps-link">Verde Mesa</a></h4>
+                <p>Vegetarian Spanish Fusion • Rating: 4.7/5 • Price: $$$ • Reservations recommended</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Santaella+Restaurant+San+Juan" class="maps-link">Santaella</a></h4>
+                <p>Modern Puerto Rican • Rating: 4.6/5 • Price: $$$ • Reservations 3-5 days</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Marmalade+Restaurant+Bar+San+Juan" class="maps-link">Marmalade</a></h4>
+                <p>International Fine Dining • Rating: 4.8/5 • Price: $$$$ • Reservations 1-2 weeks</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Cocina+Abierta+San+Juan" class="maps-link">Cocina Abierta</a></h4>
+                <p>Farm-to-Table • Rating: 4.6/5 • Price: $$$ • Reservations recommended</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/1919+Restaurant+San+Juan" class="maps-link">1919 Restaurant</a></h4>
+                <p>Contemporary Fine Dining • Rating: 4.7/5 • Price: $$$$ • Reservations 1 week</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Jungle+Bird+San+Juan" class="maps-link">Jungle Bird</a></h4>
+                <p>Asian-Puerto Rican Fusion • Rating: 4.7/5 • Price: $$ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Orujo+Taller+de+Gastronomía+San+Juan" class="maps-link">Orujo Taller de Gastronomía</a></h4>
+                <p>Spanish Tapas • Rating: 4.7/5 • Price: $$$ • Reservations recommended</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Casa+Lola+Condado" class="maps-link">Casa Lola</a></h4>
+                <p>Healthy Mediterranean • Rating: 4.4/5 • Price: $$ • No reservations</p>
+            </div>
+        </div>
+        
+        <h3>Top 10 Bars & Nightlife</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/La+Placita+de+Santurce" class="maps-link">La Placita de Santurce</a></h4>
+                <p>Nightlife District • Rating: 4.5/5 • Price: $$ • LGBTQ+ friendly</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Borinquen+Bar+San+Juan" class="maps-link">Borinquen Bar</a></h4>
+                <p>Craft Cocktails • Rating: 4.6/5 • Price: $$$ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/La+Factoria+San+Juan" class="maps-link">La Factoria</a></h4>
+                <p>World-Famous Bar • Rating: 4.7/5 • Price: $$$ • Expect wait times</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/El+Batey+Old+San+Juan" class="maps-link">El Batey</a></h4>
+                <p>Dive Bar Institution • Rating: 4.4/5 • Price: $ • No reservations</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Taberna+Boricua+San+Juan" class="maps-link">Taberna Boricua</a></h4>
+                <p>Local Beer & Rum • Rating: 4.3/5 • Price: $$ • LGBTQ+ friendly</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Club+Kronos+San+Juan" class="maps-link">Club Kronos</a></h4>
+                <p>LGBTQ+ Nightclub • Rating: 4.2/5 • Price: $$ • Weekend cover charge</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Oceano+Bar+Condado" class="maps-link">Oceano Bar</a></h4>
+                <p>Beachfront Cocktails • Rating: 4.4/5 • Price: $$$ • Romantic setting</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Solasa+Bar+Isla+Verde" class="maps-link">Solasa Bar</a></h4>
+                <p>Beach Bar • Rating: 4.4/5 • Price: $$ • Great for couples</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Barrachina+Restaurant+Bar" class="maps-link">Barrachina</a></h4>
+                <p>Historic Piña Colada Bar • Rating: 4.3/5 • Price: $$ • Tourist favorite</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Nono's+Bar+San+Juan" class="maps-link">Nono's</a></h4>
+                <p>Craft Beer & Wine • Rating: 4.5/5 • Price: $$ • Intimate atmosphere</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 7: WHERE TO STAY -->
+    <div class="section" id="where-to-stay">
+        <h2>Where to Stay</h2>
+        
+        <h3>Best Neighborhoods</h3>
+        <div style="margin-bottom: 30px;">
+            <h4>Old San Juan</h4>
+            <p>Most romantic and historic area with cobblestone streets, colorful buildings, and walking distance to major attractions. Perfect for couples who want to be in the heart of the action.</p>
+            
+            <h4>Condado</h4>
+            <p>Beach district with upscale hotels, great restaurants, and beautiful beaches. Ideal for romantic getaways and LGBTQ+ travelers with a vibrant nightlife scene.</p>
+            
+            <h4>Isla Verde</h4>
+            <p>Beach area near airport with resort hotels and water activities. Best for beach-focused trips and easy airport access.</p>
+        </div>
+        
+        <h3>Budget Hotels ($60-120/night)</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Dream+Hostel+PR+San+Juan" class="maps-link">Dream Hostel PR</a></h4>
+                <p>$75/night • Modern hostel with private rooms, rooftop terrace, and social atmosphere</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Acacia+Seaside+Inn+San+Juan" class="maps-link">Acacia Seaside Inn</a></h4>
+                <p>$95/night • Boutique beach hotel with intimate setting and restaurant</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Coral+Princess+Hotel+San+Juan" class="maps-link">Coral Princess Hotel</a></h4>
+                <p>$110/night • Condado location with pool, beach access, and LGBTQ+ friendly atmosphere</p>
+            </div>
+        </div>
+        
+        <h3>Mid-Range Hotels ($120-250/night)</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Serafina+Beach+Hotel+San+Juan" class="maps-link">Serafina Beach Hotel</a></h4>
+                <p>$180/night • Adults-only boutique hotel in Condado with beachfront location and romantic ambiance</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Dream+Hotel+San+Juan" class="maps-link">Dream Hotel San Juan</a></h4>
+                <p>$200/night • Modern hotel in Condado with rooftop pool and stylish design</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Olive+Boutique+Hotel+San+Juan" class="maps-link">Olive Boutique Hotel</a></h4>
+                <p>$165/night • Intimate Condado hotel with personalized service and great location</p>
+            </div>
+        </div>
+        
+        <h3>Luxury Hotels ($250+/night)</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/La+Concha+Renaissance+San+Juan" class="maps-link">La Concha Renaissance</a></h4>
+                <p>$320/night • Iconic beachfront resort in Condado with multiple restaurants and spa</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/El+Convento+Hotel+San+Juan" class="maps-link">El Convento Hotel</a></h4>
+                <p>$280/night • Historic luxury hotel in Old San Juan, former convent with rooftop dining</p>
+            </div>
+            <div class="food-item">
+                <h4><a href="https://www.google.com/maps/search/Condado+Vanderbilt+Hotel+San+Juan" class="maps-link">Condado Vanderbilt</a></h4>
+                <p>$450/night • Ultra-luxury beachfront resort with world-class spa and dining</p>
+            </div>
+        </div>
+        
+        <div class="sasquatch-tip">
+            <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip">
+            <div>
+                <p>Book through Booking.com for best rates and cancellation policies. Consider staying in Condado for the perfect balance of beach access, dining, and LGBTQ+ nightlife. Old San Juan hotels offer the most romantic historic atmosphere but can be noisier.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 8: EXPERIENCES -->
+    <div class="section" id="experiences">
+        <h2>Experiences</h2>
+        
+        <h3>Must-Do Activities</h3>
+        <div style="margin-bottom: 30px;">
+            <h4><a href="https://www.google.com/maps/search/Old+San+Juan+Historic+District" class="maps-link">Historic Old San Juan Walking Tour</a></h4>
+            <p>Explore 500+ years of history through colorful colonial streets, visit El Morro and San Cristóbal forts, and discover hidden plazas and romantic viewpoints.</p>
+            
+            <h4><a href="https://www.google.com/maps/search/El+Yunque+National+Forest+Puerto+Rico" class="maps-link">El Yunque Rainforest Adventure</a></h4>
+            <p>Hike to spectacular waterfalls, spot exotic birds and plants, and enjoy the only tropical rainforest in the US National Forest System.</p>
+            
+            <h4><a href="https://www.google.com/maps/search/Condado+Beach+San+Juan" class="maps-link">Beach Days in Condado & Isla Verde</a></h4>
+            <p>Relax on pristine Caribbean beaches with calm waters perfect for swimming, water sports, and romantic sunset walks.</p>
+        </div>
+        
+        <h3>Top 3 GetYourGuide Experiences</h3>
+        <div class="food-grid">
+            <div class="food-item">
+                <h4>Bioluminescent Bay Kayaking Tour</h4>
+                <p>$65/person • 4 hours • Magical evening adventure to see glowing water phenomenon. Most romantic experience in Puerto Rico!</p>
+            </div>
+            <div class="food-item">
+                <h4>El Yunque Waterfall & Rainforest Hiking</h4>
+                <p>$89/person • 6 hours • Guided hike to multiple waterfalls with transportation from San Juan included.</p>
+            </div>
+            <div class="food-item">
+                <h4>Old San Juan Food & Culture Walking Tour</h4>
+                <p>$79/person • 3 hours • Taste local specialties while learning about Puerto Rican history and culture.</p>
+            
