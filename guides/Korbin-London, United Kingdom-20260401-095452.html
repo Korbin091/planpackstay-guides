@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Travel Guide - PLANPACKSTAY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Source+Sans+3:wght@300;400;600;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Source Sans 3', sans-serif; 
+            background: #FFFFFE; 
+            color: #1a1a2e; 
+            line-height: 1.6; 
+        }
+        
+        .cover-container {
+            height: 100vh;
+            background: linear-gradient(to bottom right, #1a1a2e, #2a3a52, #4a94b4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .guide-tag {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            padding: 8px 24px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .destination-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: clamp(56px, 10vw, 96px);
+            line-height: 0.9;
+            margin-bottom: 12px;
+        }
+        
+        .country-subtitle {
+            font-size: 24px;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .gold-divider {
+            width: 60px;
+            height: 3px;
+            background: #c9a96e;
+            margin: 0 auto 40px;
+        }
+        
+        .trip-details {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            font-size: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .branding {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+        }
+        
+        .brand-name {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 18px;
+        }
+        
+        .curated-text {
+            position: absolute;
+            bottom: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 48px 0 32px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #4a94b4;
+        }
+        
+        .section-number {
+            background: #4a94b4;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: bold;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #1a1a2e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .tip-box {
+            display: flex;
+            gap: 16px;
+            background: #edf6fa;
+            border: 1px solid rgba(73,148,180,0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 24px 0;
+        }
+        
+        .sasquatch-img {
+            width: 60px;
+            flex-shrink: 0;
+        }
+        
+        .tip-content {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .tip-label {
+            color: #4a94b4;
+            font-weight: bold;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 14px 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e8e0d4;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .info-emoji {
+            font-size: 22px;
+        }
+        
+        .info-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 2px;
+        }
+        
+        .info-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .intro-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 24px 0;
+            color: #555;
+        }
+        
+        .day-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e8e0d4;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .day-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #4a94b4;
+            margin-bottom: 8px;
+        }
+        
+        .day-theme {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .day-icon {
+            font-size: 32px;
+            margin-top: 12px;
+        }
+        
+        .style-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .style-tag {
+            background: #4a94b4;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .toc {
+            background: #f5f3ef;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .toc h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 16px;
+        }
+        
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 8px;
+        }
+        
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            text-decoration: none;
+            color: #4a94b4;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .toc-item:hover {
+            color: #1a1a2e;
+        }
+        
+        .toc-number {
+            background: #4a94b4;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .climate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .climate-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e8e0d4;
+            text-align: center;
+        }
+        
+        .season-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #4a94b4;
+            margin-bottom: 8px;
+        }
+        
+        .temp-range {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+        
+        .attraction-link {
+            display: block;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e8e0d4;
+            text-decoration: none;
+            color: #4a94b4;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+            transition: all 0.2s;
+        }
+        
+        .attraction-link:hover {
+            background: #f5f3ef;
+            transform: translateY(-1px);
+        }
+        
+        .emergency-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        
+        .emergency-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 12px;
+        }
+        
+        .emergency-list {
+            list-style: none;
+            space-y: 8px;
+        }
+        
+        .emergency-item {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .emergency-label {
+            font-weight: 600;
+            color: #dc2626;
+        }
+        
+        .itinerary-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            margin: 24px 0;
+        }
+        
+        .itinerary-table th {
+            background: #4a94b4;
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .itinerary-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        .itinerary-table tr:hover {
+            background: #edf6fa;
+        }
+        
+        .activity-link {
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+        }
+        
+        .day-section {
+            margin: 40px 0;
+            padding: 24px;
+            background: #fafafa;
+            border-radius: 12px;
+        }
+        
+        .day-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #4a94b4;
+        }
+        
+        .day-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a2e;
+        }
+        
+        .time-block {
+            color: #4a94b4;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 16px;
+            margin: 32px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .timeline-entry {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .timeline-time {
+            width: 72px;
+            text-align: right;
+            font-size: 14px;
+            font-weight: bold;
+            color: #4a94b4;
+            flex-shrink: 0;
+        }
+        
+        .timeline-line {
+            width: 3px;
+            background: linear-gradient(to bottom, #4a94b4, transparent);
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .timeline-dot {
+            width: 11px;
+            height: 11px;
+            background: #4a94b4;
+            border-radius: 50%;
+            position: absolute;
+            left: -4px;
+            top: 2px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .place-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: bold;
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+            margin-right: 12px;
+        }
+        
+        .activity-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+        
+        .tag-free {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .tag-price {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .tag-booking {
+            background: #fed7aa;
+            color: #ea580c;
+        }
+        
+        .activity-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 4px;
+        }
+        
+        .meal-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .meal-card {
+            display: flex;
+            gap: 12px;
+            padding: 10px 16px;
+            background: #faf8f5;
+            border-radius: 10px;
+            border: 1px solid #e8e0d4;
+        }
+        
+        .meal-emoji {
+            font-size: 22px;
+        }
+        
+        .meal-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+        }
+        
+        .meal-cuisine {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+        }
+        
+        .meal-type {
+            font-size: 11px;
+            color: #4a94b4;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        
+        .optional-spots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .spot-card {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e8e0d4;
+        }
+        
+        .spot-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+        }
+        
+        .spot-details {
+            font-size: 12px;
+            color: #888;
+            margin-top: 4px;
+        }
+        
+        .map-link {
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+        }
+    </style>
+</head>
+<body>
+
+<!-- SECTION 1: COVER PAGE -->
+<div class="cover-container">
+    <div class="branding">
+        <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/PLANPACKSTAY_Logo_Social.png" alt="PLANPACKSTAY" class="logo">
+        <span class="brand-name">PLANPACKSTAY</span>
+    </div>
+    
+    <div class="guide-tag">Complete Travel Guide</div>
+    
+    <h1 class="destination-title">London</h1>
+    <div class="country-subtitle">United Kingdom</div>
+    
+    <div class="gold-divider"></div>
+    
+    <div class="trip-details">
+        <span>Romantic Getaway</span>
+        <span>•</span>
+        <span>2 Travelers</span>
+        <span>•</span>
+        <span>April 1-8, 2026</span>
+    </div>
+    
+    <div class="curated-text">Curated for Korbin</div>
+</div>
+
+<div class="container">
+
+<!-- SECTION 2: TRIP OVERVIEW -->
+<div class="section-divider">
+    <span class="section-number">2</span>
+    <h2 class="section-title">Trip Overview</h2>
+</div>
+
+<p class="intro-text">London beckons with its perfect blend of historic grandeur and modern sophistication, offering couples an enchanting backdrop for romance amid world-class museums, charming neighborhoods, and intimate dining experiences that celebrate both tradition and innovation.</p>
+
+<div class="info-grid">
+    <div class="info-card">
+        <span class="info-emoji">📍</span>
+        <div>
+            <div class="info-label">Destination</div>
+            <div class="info-value">London, United Kingdom</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">✈️</span>
+        <div>
+            <div class="info-label">Departing From</div>
+            <div class="info-value">Philadelphia, PA</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">📅</span>
+        <div>
+            <div class="info-label">Travel Dates</div>
+            <div class="info-value">April 1-8, 2026</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">👫</span>
+        <div>
+            <div class="info-label">Travelers</div>
+            <div class="info-value">2 People</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">💰</span>
+        <div>
+            <div class="info-label">Budget</div>
+            <div class="info-value">$2,100</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">🎭</span>
+        <div>
+            <div class="info-label">Travel Style</div>
+            <div class="info-value">Romantic, On-the-Go</div>
+        </div>
+    </div>
+</div>
+
+<h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin: 32px 0 16px;">Your Trip at a Glance</h3>
+
+<div class="day-preview-grid">
+    <div class="day-card">
+        <div class="day-number">Days 1-2</div>
+        <div class="day-theme">Historic London</div>
+        <div class="day-icon">🏰</div>
+    </div>
+    <div class="day-card">
+        <div class="day-number">Days 3-5</div>
+        <div class="day-theme">Culture & Markets</div>
+        <div class="day-icon">🎨</div>
+    </div>
+    <div class="day-card">
+        <div class="day-number">Days 6-7</div>
+        <div class="day-theme">Romance & Relaxation</div>
+        <div class="day-icon">💕</div>
+    </div>
+</div>
+
+<p class="intro-text">Your London adventure balances must-see landmarks with intimate discoveries, from sunrise walks along the Thames to cozy vegetarian restaurants in hidden corners, designed for couples who want to experience the city's soul while maintaining a romantic connection.</p>
+
+<div class="style-tags">
+    <span class="style-tag">Romantic</span>
+    <span class="style-tag">On-the-Go</span>
+    <span class="style-tag">LGBTQ+ Friendly</span>
+    <span class="style-tag">Vegetarian Focus</span>
+</div>
+
+<div class="toc">
+    <h3>Table of Contents</h3>
+    <div class="toc-list">
+        <a href="#overview" class="toc-item">
+            <span class="toc-number">1</span>
+            Cover Page
+        </a>
+        <a href="#trip-overview" class="toc-item">
+            <span class="toc-number">2</span>
+            Trip Overview
+        </a>
+        <a href="#destination" class="toc-item">
+            <span class="toc-number">3</span>
+            Destination Overview
+        </a>
+        <a href="#itinerary-overview" class="toc-item">
+            <span class="toc-number">4</span>
+            Itinerary Overview
+        </a>
+        <a href="#daily-itinerary" class="toc-item">
+            <span class="toc-number">5</span>
+            Day by Day Itinerary
+        </a>
+        <a href="#accommodations" class="toc-item">
+            <span class="toc-number">6</span>
+            Accommodations
+        </a>
+        <a href="#dining" class="toc-item">
+            <span class="toc-number">7</span>
+            Dining Guide
+        </a>
+        <a href="#transportation" class="toc-item">
+            <span class="toc-number">8</span>
+            Transportation
+        </a>
+        <a href="#budget" class="toc-item">
+            <span class="toc-number">9</span>
+            Budget Breakdown
+        </a>
+        <a href="#tips" class="toc-item">
+            <span class="toc-number">10</span>
+            Travel Tips
+        </a>
+    </div>
+</div>
+
+<!-- SECTION 3: DESTINATION OVERVIEW -->
+<div class="section-divider">
+    <span class="section-number">3</span>
+    <h2 class="section-title">Destination Overview</h2>
+</div>
+
+<div class="info-grid">
+    <div class="info-card">
+        <span class="info-emoji">🌡️</span>
+        <div>
+            <div class="info-label">April Temperature</div>
+            <div class="info-value">8-15°C (46-59°F)</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">💷</span>
+        <div>
+            <div class="info-label">Currency</div>
+            <div class="info-value">British Pound (GBP)</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">🗣️</span>
+        <div>
+            <div class="info-label">Language</div>
+            <div class="info-value">English</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">🕐</span>
+        <div>
+            <div class="info-label">Time Zone</div>
+            <div class="info-value">GMT+1 (BST)</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">🔌</span>
+        <div>
+            <div class="info-label">Power Plugs</div>
+            <div class="info-value">Type G (3-pin)</div>
+        </div>
+    </div>
+    <div class="info-card">
+        <span class="info-emoji">🛡️</span>
+        <div>
+            <div class="info-label">Safety Rating</div>
+            <div class="info-value">Very Safe (9/10)</div>
+        </div>
+    </div>
+</div>
+
+<h3 style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin: 32px 0 16px;">Best Time to Visit</h3>
+<p>April offers London at its most charming with mild weather, blooming flowers, and fewer crowds than summer months, making it perfect for romantic strolls through parks and outdoor market exploration.</p>
+
+<h4 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin: 24px 0 16px;">Seasonal Climate</h4>
+<div class="climate-grid">
+    <div class="climate-card">
+        <div class="season-name">Spring (Mar-May)</div>
+        <div class="temp-range">8-15°C (46-59°F)</div>
+        <div style="font-size: 12px; color: #888; margin-top: 4px;">Mild, blooming</div>
+    </div>
+    <div class="climate-card">
+        <div class="season-name">Summer (Jun-Aug)</div>
+        <div class="temp-range">15-22°C (59-72°F)</div>
+        <div style="font-size: 12px; color: #888; margin-top: 4px;">Warm, busy</div>
+    </div>
+    <div class="climate-card">
+        <div class="season-name">Fall (Sep-Nov)</div>
+        <div class="temp-range">10-16°C (50-61°F)</div>
+        <div style="font-size: 12px; color: #888; margin-top: 4px;">Cool, colorful</div>
+    </div>
+    <div class="climate-card">
+        <div class="season-name">Winter (Dec-Feb)</div>
+        <div class="temp-range">2-8°C (36-46°F)</div>
+        <div style="font-size: 12px; color: #888; margin-top: 4px;">Cold, cozy</div>
+    </div>
+</div>
+
+<h4 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin: 24px 0 16px;">Must-See Attractions</h4>
+<div class="attractions-grid">
+    <a href="https://www.google.com/maps/search/Tower+Bridge+London" target="_blank" rel="noopener" class="attraction-link">📍 Tower Bridge</a>
+    <a href="https://www.google.com/maps/search/British+Museum+London" target="_blank" rel="noopener" class="attraction-link">📍 British Museum</a>
+    <a href="https://www.google.com/maps/search/Westminster+Abbey+London" target="_blank" rel="noopener" class="attraction-link">📍 Westminster Abbey</a>
+    <a href="https://www.google.com/maps/search/Tate+Modern+London" target="_blank" rel="noopener" class="attraction-link">📍 Tate Modern</a>
+    <a href="https://www.google.com/maps/search/Covent+Garden+London" target="_blank" rel="noopener" class="attraction-link">📍 Covent Garden</a>
+    <a href="https://www.google.com/maps/search/Hyde+Park+London" target="_blank" rel="noopener" class="attraction-link">📍 Hyde Park</a>
+    <a href="https://www.google.com/maps/search/Borough+Market+London" target="_blank" rel="noopener" class="attraction-link">📍 Borough Market</a>
+    <a href="https://www.google.com/maps/search/Camden+Market+London" target="_blank" rel="noopener" class="attraction-link">📍 Camden Market</a>
+</div>
+
+<h4 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin: 24px 0 16px;">Getting Around</h4>
+<p>London's extensive Underground (Tube) system connects all major attractions efficiently, while buses offer scenic street-level views. Use contactless payment or an Oyster Card for seamless travel, and consider walking for short distances to discover hidden gems between destinations.</p>
+
+<div class="tip-box">
+    <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch" class="sasquatch-img">
+    <div class="tip-content">
+        <strong class="tip-label">Sasquatch Tip:</strong> Download the Citymapper app before arrival – it's the local favorite for navigating London's transport system and will save you time planning routes between romantic dinner spots!
+    </div>
+</div>
+
+<h4 style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin: 24px 0 16px;">Safety & Security</h4>
+<p>London is exceptionally safe for LGBTQ+ travelers with welcoming neighborhoods like Soho and Vauxhall. Stay aware of pickpockets in tourist areas and keep valuables secure, but violent crime is rare and locals are generally helpful to visitors.</p>
+
+<div class="emergency-box">
+    <div class="emergency-title">Emergency Contacts</div>
+    <ul class="emergency-list">
+        <li class="emergency-item"><span class="emergency-label">Emergency Services:</span> 999</li>
+        <li class="emergency-item"><span class="emergency-label">Tourist Police:</span> +44 20 7230 1212</li>
+        <li class="emergency-item"><span class="emergency-label">St. Thomas' Hospital:</span> +44 20 7188 7188</li>
+        <li class="emergency-item"><span class="emergency-label">US Embassy:</span> +44 20 7499 9000</li>
+    </ul>
+</div>
+
+<!-- SECTION 4: ITINERARY OVERVIEW -->
+<div class="section-divider">
+    <span class="section-number">4</span>
+    <h2 class="section-title">Itinerary Overview</h2>
+</div>
+
+<table class="itinerary-table">
+    <thead>
+        <tr>
+            <th>Activity Name</th>
+            <th>Estimated Cost</th>
+            <th>Duration</th>
+            <th>Booking Required</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Westminster+Abbey+London" target="_blank" rel="noopener" class="activity-link">📍 Westminster Abbey</a></td>
+            <td>£25 per person</td>
+            <td>2 hours</td>
+            <td>Recommended</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Tower+Bridge+London" target="_blank" rel="noopener" class="activity-link">📍 Tower Bridge Experience</a></td>
+            <td>£12 per person</td>
+            <td>1.5 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/British+Museum+London" target="_blank" rel="noopener" class="activity-link">📍 British Museum</a></td>
+            <td>Free (donations)</td>
+            <td>3 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Borough+Market+London" target="_blank" rel="noopener" class="activity-link">📍 Borough Market</a></td>
+            <td>£15-20 for tastings</td>
+            <td>2 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Tate+Modern+London" target="_blank" rel="noopener" class="activity-link">📍 Tate Modern</a></td>
+            <td>Free (special exhibitions £16)</td>
+            <td>2.5 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Hyde+Park+London" target="_blank" rel="noopener" class="activity-link">📍 Hyde Park & Speaker's Corner</a></td>
+            <td>Free</td>
+            <td>2 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Covent+Garden+London" target="_blank" rel="noopener" class="activity-link">📍 Covent Garden</a></td>
+            <td>Free (shopping extra)</td>
+            <td>1.5 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Camden+Market+London" target="_blank" rel="noopener" class="activity-link">📍 Camden Market</a></td>
+            <td>£10-15 for food</td>
+            <td>2 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Greenwich+London" target="_blank" rel="noopener" class="activity-link">📍 Greenwich Day Trip</a></td>
+            <td>£15 transport + £16 Observatory</td>
+            <td>5 hours</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.google.com/maps/search/Thames+River+London" target="_blank" rel="noopener" class="activity-link">📍 Thames River Cruise</a></td>
+            <td>£18 per person</td>
+            <td>1 hour</td>
+            <td>Optional</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- SECTION 5: DAY BY DAY ITINERARY -->
+<div class="section-divider">
+    <span class="section-number">5</span>
+    <h2 class="section-title">Day by Day Itinerary</h2>
+</div>
+
+<!-- DAY 1 -->
+<div style="display: flex; align-items: center; gap: 16px; margin: 48px 0 32px 0; padding-bottom: 12px; border-bottom: 3px solid #4a94b4;">
+    <span style="background: #4a94b4; color: white; font-family: 'Playfair Display', serif; font-size: 18px; padding: 8px 12px; border-radius: 50%; min-width: 38px; text-align: center; font-weight: bold;">6</span>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 800; color: #1a1a2e; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Food & Drink</h2>
+</div>
+
+<p style="font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 32px;">London's culinary scene perfectly caters to vegetarian palates with world-class Indian restaurants, innovative plant-based eateries, and charming cafes serving exceptional coffee and artisanal ice cream across romantic cobblestone neighborhoods.</p>
+
+<h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 32px 0 20px 0;">Top 10 Restaurants</h3>
+<div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 16px; margin-bottom: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Dishoom+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Dishoom</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Indian</span>
+            <span style="color: #c9a96e;">⭐ 4.6</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Gymkhana+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Gymkhana</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Indian</span>
+            <span style="color: #c9a96e;">⭐ 4.4</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Vanilla+Black+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Vanilla Black</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Vegetarian</span>
+            <span style="color: #c9a96e;">⭐ 4.5</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/The+Gate+Hammersmith+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">The Gate</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Vegetarian</span>
+            <span style="color: #c9a96e;">⭐ 4.3</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Rasa+Travancore+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Rasa Travancore</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Indian</span>
+            <span style="color: #c9a96e;">⭐ 4.2</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Mildreds+Soho+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Mildreds</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Vegetarian</span>
+            <span style="color: #c9a96e;">⭐ 4.4</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Rules+Restaurant+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Rules Restaurant</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Traditional</span>
+            <span style="color: #c9a96e;">⭐ 4.3</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Gauthier+Soho+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Gauthier Soho</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Vegetarian</span>
+            <span style="color: #c9a96e;">⭐ 4.6</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Tibits+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Tibits</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Vegetarian</span>
+            <span style="color: #c9a96e;">⭐ 4.2</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Simpson's+in+the+Strand+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Simpson's in the Strand</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Traditional</span>
+            <span style="color: #c9a96e;">⭐ 4.1</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£££</span>
+        </div>
+    </div>
+</div>
+
+<h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 32px 0 20px 0;">Top 10 Aesthetic Cafes</h3>
+<div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 16px; margin-bottom: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Sketch+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Sketch</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Coffee</span>
+            <span style="color: #c9a96e;">⭐ 4.4</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Peggy+Porschen+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Peggy Porschen</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Dessert</span>
+            <span style="color: #c9a96e;">⭐ 4.3</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/The+Attendant+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">The Attendant</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Coffee</span>
+            <span style="color: #c9a96e;">⭐ 4.2</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Chin+Chin+Labs+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Chin Chin Labs</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Ice Cream</span>
+            <span style="color: #c9a96e;">⭐ 4.5</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Elan+Cafe+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Elan Cafe</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Coffee</span>
+            <span style="color: #c9a96e;">⭐ 4.1</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Gelupo+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Gelupo</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Gelato</span>
+            <span style="color: #c9a96e;">⭐ 4.6</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Monmouth+Coffee+Company+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Monmouth Coffee Company</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Coffee</span>
+            <span style="color: #c9a96e;">⭐ 4.3</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Granger+and+Co+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Granger & Co</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Brunch</span>
+            <span style="color: #c9a96e;">⭐ 4.2</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Farm+Girl+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Farm Girl</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Healthy</span>
+            <span style="color: #c9a96e;">⭐ 4.1</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Notes+Coffee+Roasters+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Notes Coffee Roasters</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Coffee</span>
+            <span style="color: #c9a96e;">⭐ 4.4</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+</div>
+
+<h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 32px 0 20px 0;">Top 10 Bars & Nightlife</h3>
+<div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 16px; margin-bottom: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Dandelyan+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Dandelyan</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Cocktails</span>
+            <span style="color: #c9a96e;">⭐ 4.5</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Sky+Garden+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Sky Garden</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Rooftop</span>
+            <span style="color: #c9a96e;">⭐ 4.3</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/The+Shard+Bars+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Aqua Shard</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Views</span>
+            <span style="color: #c9a96e;">⭐ 4.2</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/The+George+Inn+Southwark+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">The George Inn</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Historic Pub</span>
+            <span style="color: #c9a96e;">⭐ 4.1</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Connaught+Bar+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Connaught Bar</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Hotel Bar</span>
+            <span style="color: #c9a96e;">⭐ 4.6</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Nightjar+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Nightjar</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Speakeasy</span>
+            <span style="color: #c9a96e;">⭐ 4.4</span>
+            <span style="font-weight: 600; color: #1a1a2e;">£££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Heaven+Nightclub+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Heaven</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">LGBTQ+</span>
+            <span style="color: #c9a96e;">⭐ 4.2</span>
+            <span style="font-weight: 600; color: #1a1a2e;">££</span>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 12px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>📍</span>
+            <a href="https://www.google.com/maps/search/Radio+Rooftop+London" target="_blank" rel="noopener" style="color: #4a94b4; border-bottom: 1px dashed rgba(73,148,180,0.5); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: bold;">Radio Rooftop</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Rooftop</span>
+            <span style="color: #c9a96e;">⭐ 4.0</span>
+            <span style="font-weight: 600; color: #1a1a2
