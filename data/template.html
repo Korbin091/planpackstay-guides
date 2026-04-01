@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLANPACKSTAY Travel Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;600;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a94b4;--dark:#1a1a2e;--light:#f5f3ef;--warm:#e8e0d4;--gold:#c9a96e;--bg:#FFFFFE;--red:#e74c3c;--green:#27ae60;--orange:#f39c12}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:#333;line-height:1.6;font-size:15px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+.brand{font-family:'Barlow',sans-serif;font-weight:700;letter-spacing:3px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px dashed rgba(73,148,180,0.5)}
+a:hover{opacity:0.85}
+.guide-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* Section Divider */
+.sec-div{display:flex;align-items:center;gap:16px;margin:48px 0 32px;padding-bottom:12px;border-bottom:3px solid var(--accent)}
+.sec-num{background:var(--accent);color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--dark);text-transform:uppercase;letter-spacing:2px}
+
+/* Info Cards Grid */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.info-card{background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid var(--warm);display:flex;align-items:center;gap:12px}
+.info-card .ic-icon{font-size:22px;flex-shrink:0}
+.info-card .ic-label{font-size:11px;text-transform:uppercase;color:#888;letter-spacing:1px}
+.info-card .ic-value{font-size:15px;font-weight:600;color:var(--dark)}
+
+/* Tip Box */
+.tip-box{display:flex;gap:16px;background:#edf6fa;border:1px solid rgba(73,148,180,0.2);border-radius:12px;padding:16px 20px;margin:24px 0}
+.tip-box img{width:60px;height:60px;object-fit:contain;flex-shrink:0}
+.tip-box .tip-text{font-size:15px;color:#333;line-height:1.6}
+.tip-box strong{color:var(--accent)}
+
+/* Timeline */
+.timeline-entry{display:flex;gap:20px;margin-bottom:24px}
+.tl-time{width:72px;text-align:right;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;padding-top:2px}
+.tl-line{width:3px;background:linear-gradient(var(--accent),transparent);position:relative;flex-shrink:0}
+.tl-line::before{content:'';width:11px;height:11px;background:var(--accent);border-radius:50%;position:absolute;top:4px;left:-4px}
+.tl-content{flex:1}
+.tl-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
+.tl-name a{color:var(--accent);border-bottom:1px dashed rgba(73,148,180,0.5)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;margin-left:8px}
+.tag-free{background:#e8f5e9;color:var(--green)}
+.tag-price{background:#e3f2fd;color:#1976d2}
+.tag-booking{background:#fff3e0;color:var(--orange)}
+.tl-desc{font-size:14px;color:#555;margin-top:4px}
+
+/* Time Block Headers */
+.time-block{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin:28px 0 16px;padding-bottom:8px;border-bottom:1px solid #eee}
+
+/* Meal Card */
+.meal-card{display:flex;gap:12px;padding:10px 16px;background:#faf8f5;border-radius:10px;border:1px solid var(--warm);margin-bottom:8px}
+.meal-card .mc-icon{font-size:22px;flex-shrink:0}
+.meal-card .mc-name{font-size:15px;font-weight:700}
+.meal-card .mc-name a{color:var(--accent)}
+.meal-card .mc-meta{font-size:12px;color:#888}
+.meal-card .mc-type{font-size:11px;color:var(--accent);text-transform:uppercase;font-weight:600}
+
+/* Place Row */
+.place-row{display:flex;justify-content:space-between;align-items:center;padding:14px 12px;border-bottom:1px solid #eee}
+.place-row .pr-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
+.place-row .pr-name a{color:var(--accent);border-bottom:1px dashed rgba(73,148,180,0.5)}
+.place-row .pr-tags{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.pill{display:inline-block;padding:3px 12px;border-radius:14px;font-size:12px;font-weight:600}
+.pill-accent{background:rgba(73,148,180,0.12);color:var(--accent)}
+.pill-style{background:rgba(73,148,180,0.1);color:var(--accent);padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin:4px}
+
+/* Neighborhood Card */
+.hood-card{background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:16px}
+.hood-bar{height:8px;background:linear-gradient(90deg,var(--accent),var(--gold))}
+.hood-body{padding:20px 24px}
+.hood-body h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;margin-bottom:8px}
+.hood-body h3 a{color:var(--dark);border:none}
+.hood-best{font-size:13px;color:var(--accent);font-weight:600;margin-top:8px}
+.hood-why{font-size:13px;color:#777;font-style:italic;margin-top:4px}
+
+/* Affiliate Button */
+.aff-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;color:#fff;border:none;cursor:pointer;text-decoration:none}
+.aff-gyg{background:#ff5533}.aff-booking{background:#003580}.aff-amazon{background:#ff9900}.aff-airalo{background:#00c2a8}
+
+/* Table */
+.guide-table{width:100%;border-collapse:collapse;margin:16px 0}
+.guide-table th{background:var(--dark);color:#fff;padding:12px 16px;text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.guide-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid #eee}
+.guide-table tr:nth-child(even){background:#edf6fa}
+.guide-table td a{color:var(--accent)}
+.guide-table .total-row{border-top:3px solid var(--accent);font-weight:700}
+
+/* Cover */
+.cover{height:500px;background:linear-gradient(135deg,#1a1a2e 0%,#2a3a52 40%,#4a94b4 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;color:#fff;position:relative}
+.cover-pill{display:inline-block;padding:6px 20px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(56px,10vw,96px);font-weight:900;line-height:1.05;margin-bottom:4px}
+.cover .cover-country{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:rgba(255,255,255,0.7);margin-bottom:16px}
+.cover-divider{width:60px;height:3px;background:var(--gold);margin:16px auto}
+.cover-meta{display:flex;gap:24px;justify-content:center;font-size:14px;color:rgba(255,255,255,0.6);margin-top:12px;flex-wrap:wrap}
+.cover-brand{display:flex;align-items:center;gap:10px;margin-top:24px}
+.cover-brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.cover-curated{font-size:14px;color:rgba(255,255,255,0.5);margin-top:16px;font-style:italic}
+
+/* Day Sub-divider */
+.day-div{display:flex;align-items:center;gap:12px;margin:36px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+.day-div .day-num{background:var(--accent);color:#fff;font-family:'Playfair Display',serif;font-size:15px;font-weight:700;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.day-div .day-theme{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--dark)}
+
+/* Season Cards */
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.season-card{background:#fff;border-radius:10px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid var(--warm)}
+.season-card h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.season-card .temp{font-size:14px;color:#555}
+
+/* Emergency Box */
+.emergency-box{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px 20px;margin:16px 0}
+.emergency-box h4{color:var(--red);margin-bottom:8px}
+.emergency-box .em-item{font-size:14px;margin-bottom:4px}
+
+/* Hotel Tier */
+.hotel-tier{margin:20px 0}
+.hotel-tier h4{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.hotel-row{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eee}
+.hotel-row .hr-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
+.hotel-row .hr-name a{color:var(--accent)}
+.hotel-row .hr-meta{font-size:13px;color:#777}
+.hotel-row .hr-price{font-size:15px;font-weight:700;color:var(--dark)}
+.rec-tag{background:var(--gold);color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;margin-left:8px;text-transform:uppercase;letter-spacing:1px}
+
+/* Experience Grid */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.exp-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid var(--warm)}
+.exp-card h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;color:var(--dark);margin-bottom:6px}
+.exp-card p{font-size:13px;color:#555}
+
+/* Packing Grid */
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.pack-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid var(--warm)}
+.pack-card h4{font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.pack-card ul{list-style:none;padding:0}
+.pack-card li{font-size:13px;color:#555;padding:2px 0}
+
+/* Airline Tabs */
+.airline-tabs{display:flex;gap:0;margin:16px 0}
+.airline-tab{padding:10px 20px;border:1px solid #ddd;background:#f9f9f9;cursor:pointer;font-size:13px;font-weight:600;color:#666;transition:all 0.2s}
+.airline-tab:first-child{border-radius:8px 0 0 8px}
+.airline-tab:last-child{border-radius:0 8px 8px 0}
+.airline-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.airline-content{background:#fff;border:1px solid #ddd;border-radius:0 0 8px 8px;padding:16px;margin-top:-1px}
+
+/* Promo Cards */
+.promo-card{border-radius:16px;padding:28px 32px;margin:16px 0;color:#fff}
+.promo-pp{background:linear-gradient(135deg,#4a94b4,#6bb5d4)}
+.promo-we{background:linear-gradient(135deg,#1a1a2e,#2a3a52)}
+.promo-card .promo-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.promo-pp .promo-label{color:#fff}
+.promo-we .promo-label{color:var(--gold)}
+.promo-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;margin-bottom:8px}
+.promo-card p{font-size:14px;opacity:0.85;margin-bottom:16px}
+.promo-btn{display:inline-block;padding:10px 28px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:var(--accent);text-decoration:none;border:none}
+
+/* ToC */
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;margin:20px 0}
+.toc a{font-size:14px;color:var(--accent);padding:6px 0;border-bottom:1px solid #eee;display:block}
+
+/* Footer */
+.guide-footer{background:var(--dark);text-align:center;padding:48px 24px;margin-top:48px}
+.guide-footer img{width:56px;height:56px;border-radius:50%;margin-bottom:12px}
+.guide-footer .brand{color:#fff;font-size:18px;margin-bottom:8px}
+.guide-footer a{color:var(--accent);font-size:14px;border:none}
+.guide-footer .disclaimer{font-size:12px;color:rgba(255,255,255,0.4);margin-top:16px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.5}
+
+/* Glance Cards */
+.glance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.glance-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border:1px solid var(--warm);text-align:center;cursor:pointer;transition:transform 0.2s}
+.glance-card:hover{transform:translateY(-2px)}
+.glance-card .gc-day{font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.glance-card .gc-icon{font-size:28px;margin:8px 0}
+.glance-card .gc-theme{font-size:14px;font-weight:600;color:var(--dark)}
+
+/* Attractions Grid */
+.attr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
+.attr-item{padding:8px 0;font-size:14px}
+.attr-item a{color:var(--accent)}
+
+/* Airalo Card */
+.airalo-card{background:linear-gradient(135deg,#00c2a8,#009688);border-radius:14px;padding:24px;color:#fff;margin:20px 0;display:flex;align-items:center;justify-content:space-between}
+.airalo-card h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:4px}
+.airalo-card p{font-size:13px;opacity:0.85}
+
+/* Hidden Gems */
+.gems-list{margin:16px 0}
+.gem-item{padding:10px 0;border-bottom:1px solid #eee;font-size:14px}
+.gem-item a{color:var(--accent);font-weight:600}
+
+/* Loading */
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:20px}
+.loading .spinner{width:48px;height:48px;border:4px solid #eee;border-top:4px solid var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading p{font-family:'Playfair Display',serif;font-size:20px;color:var(--dark)}
+
+/* Print */
+@media print{.guide-footer{break-inside:avoid}}
+@media(max-width:700px){.info-grid,.exp-grid,.pack-grid{grid-template-columns:1fr 1fr}.season-grid{grid-template-columns:1fr 1fr}.glance-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="app" class="loading">
+  <div class="spinner"></div>
+  <p>Loading your guide...</p>
+</div>
+
+<script>
+function mapsLink(name, city) {
+  return 'https://www.google.com/maps/search/' + encodeURIComponent(name + ' ' + city).replace(/%20/g, '+');
+}
+function placeLink(name, city) {
+  return '<a href="' + mapsLink(name, city) + '" target="_blank" rel="noopener">📍 ' + esc(name) + '</a>';
+}
+function esc(s) { if (!s) return ''; var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+function stars(n) { return '⭐'.repeat(Math.min(Math.round(n), 5)); }
+
+async function loadGuide() {
+  var params = new URLSearchParams(window.location.search);
+  var file = params.get('guide');
+  if (!file) { document.getElementById('app').innerHTML = '<p>No guide specified.</p>'; return; }
+
+  try {
+    var base = window.location.href.split('/').slice(0, -1).join('/');
+    var resp = await fetch(base + '/data/' + file + '.json');
+if (!resp.ok) {
+  resp = await fetch(base + '/data/' + encodeURIComponent(file) + '.json');
+}
+    if (!resp.ok) throw new Error('Guide not found');
+    var d = await resp.json();
+    render(d);
+  } catch (e) {
+    document.getElementById('app').innerHTML = '<p style="text-align:center;padding:60px;font-size:18px;color:#999">Guide not found. It may still be generating.</p>';
+  }
+}
+
+function render(d) {
+  var city = d.destination || '';
+  var html = '';
+
+  // SECTION 1: COVER
+  html += '<div class="cover">';
+  html += '<div class="cover-pill">Complete Travel Guide</div>';
+  html += '<h1>' + esc(city) + '</h1>';
+  html += '<div class="cover-country">' + esc(d.country || '') + '</div>';
+  html += '<div class="cover-divider"></div>';
+  html += '<div class="cover-meta">';
+  html += '<span>' + esc(d.tripType || 'Leisure') + '</span>';
+  html += '<span>' + esc(d.travelers || '2') + ' Travelers</span>';
+  html += '<span>' + esc(d.dates || '') + '</span>';
+  html += '</div>';
+  html += '<div class="cover-brand">';
+  html += '<img src="https://raw.githubusercontent.com/korbin091/planpackstay-guides/main/planpackstay_logo_social.png" alt="logo">';
+  html += '<span class="brand" style="color:#fff;font-size:16px">PLANPACKSTAY</span>';
+  html += '</div>';
+  html += '<div class="cover-curated">Curated for ' + esc(d.firstName) + '</div>';
+  html += '</div>';
+
+  html += '<div class="guide-wrap">';
+
+  // SECTION 2: TRIP OVERVIEW
+  html += secDiv(2, 'Trip Overview');
+  html += '<p style="font-family:Playfair Display,serif;font-style:italic;font-size:18px;color:#555;margin-bottom:24px">' + esc(d.tripOverview?.intro || '') + '</p>';
+  html += '<div class="info-grid">';
+  var cards = d.tripOverview?.infoCards || [];
+  cards.forEach(function(c) { html += infoCard(c.icon, c.label, c.value); });
+  html += '</div>';
+
+  // Glance
+  if (d.tripOverview?.glance) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:20px;font-weight:800;margin:28px 0 12px;color:' + 'var(--dark)' + '">Your Trip at a Glance</h3>';
+    html += '<div class="glance-grid">';
+    d.tripOverview.glance.forEach(function(g) {
+      html += '<div class="glance-card"><div class="gc-day">Day ' + g.day + '</div><div class="gc-icon">' + (g.icon || '🗓️') + '</div><div class="gc-theme">' + esc(g.theme) + '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  if (d.tripOverview?.vibe) html += '<p style="margin:16px 0;font-size:15px;color:#555">' + esc(d.tripOverview.vibe) + '</p>';
+
+  // Style pills
+  if (d.tripOverview?.styles) {
+    html += '<div style="margin:12px 0">';
+    d.tripOverview.styles.forEach(function(s) { html += '<span class="pill-style">' + esc(s) + '</span>'; });
+    html += '</div>';
+  }
+
+  // ToC
+  html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:28px 0 12px">Table of Contents</h3>';
+  html += '<div class="toc">';
+  ['Cover Page','Trip Overview','Destination Overview','Itinerary Overview','Day-by-Day Itinerary','Food & Drink','Where to Stay','Experiences','Packing','Book This Trip'].forEach(function(t,i) {
+    html += '<a href="#sec' + (i+1) + '">' + (i+1) + '. ' + t + '</a>';
+  });
+  html += '</div>';
+
+  // SECTION 3: DESTINATION OVERVIEW
+  html += secDiv(3, 'Destination Overview');
+  html += '<div class="info-grid">';
+  (d.destinationOverview?.infoCards || []).forEach(function(c) { html += infoCard(c.icon, c.label, c.value); });
+  html += '</div>';
+
+  if (d.destinationOverview?.bestTime) html += '<p style="margin:16px 0"><strong>Best Time to Visit:</strong> ' + esc(d.destinationOverview.bestTime) + '</p>';
+
+  // Seasons
+  if (d.destinationOverview?.seasons) {
+    html += '<div class="season-grid">';
+    d.destinationOverview.seasons.forEach(function(s) {
+      html += '<div class="season-card"><h4>' + esc(s.name) + '</h4><div class="temp">' + esc(s.tempC) + ' / ' + esc(s.tempF) + '</div></div>';
+    });
+    html += '</div>';
+  }
+
+  // Attractions
+  if (d.destinationOverview?.attractions) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Must-See Attractions</h3>';
+    html += '<div class="attr-grid">';
+    d.destinationOverview.attractions.forEach(function(a) {
+      html += '<div class="attr-item">' + placeLink(a.name, city) + ' — ' + esc(a.desc) + '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (d.destinationOverview?.transportation) html += '<p style="margin:16px 0">' + esc(d.destinationOverview.transportation) + '</p>';
+
+  // Tip
+  if (d.destinationOverview?.tip) html += tipBox(d.destinationOverview.tip);
+
+  // Safety
+  if (d.destinationOverview?.safety) html += '<p style="margin:12px 0"><strong>Safety:</strong> ' + esc(d.destinationOverview.safety) + '</p>';
+
+  // Emergency
+  if (d.destinationOverview?.emergency) {
+    html += '<div class="emergency-box"><h4>🚨 Emergency Contacts</h4>';
+    (d.destinationOverview.emergency || []).forEach(function(e) {
+      html += '<div class="em-item"><strong>' + esc(e.type) + ':</strong> ' + esc(e.value) + '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Airalo
+  html += '<div class="airalo-card"><div><h4>📱 Stay Connected</h4><p>' + esc(d.destinationOverview?.airaloText || 'Get an eSIM for seamless data abroad — no SIM swaps needed.') + '</p></div>';
+  html += '<a href="https://airalo.tpo.lv/nbi6aRNh" target="_blank" class="aff-btn aff-airalo" style="border:none">Get Airalo eSIM →</a></div>';
+
+  // SECTION 4: ITINERARY OVERVIEW
+  html += secDiv(4, 'Itinerary Overview');
+  html += '<table class="guide-table"><thead><tr><th>Activity</th><th>Cost</th><th>Hours</th><th>Booking</th></tr></thead><tbody>';
+  (d.itineraryOverview || []).forEach(function(item) {
+    html += '<tr><td>' + placeLink(item.name, city) + '</td><td>' + esc(item.cost) + '</td><td>' + esc(item.hours) + '</td><td>' + esc(item.booking) + '</td></tr>';
+  });
+  html += '</tbody></table>';
+
+  // SECTION 5: DAY BY DAY
+  html += secDiv(5, 'Day-by-Day Itinerary');
+  (d.days || []).forEach(function(day) {
+    html += '<div class="day-div"><span class="day-num">' + day.day + '</span><span class="day-theme">' + esc(day.theme) + '</span></div>';
+    if (day.intro) html += '<p style="font-family:Playfair Display,serif;font-style:italic;color:#555;margin-bottom:20px">' + esc(day.intro) + '</p>';
+
+    ['morning','afternoon','evening'].forEach(function(period) {
+      var emoji = period === 'morning' ? '🌅' : period === 'afternoon' ? '☀️' : '🌙';
+      var items = day[period] || [];
+      if (items.length === 0) return;
+      html += '<div class="time-block">' + emoji + ' ' + period.toUpperCase() + '</div>';
+      items.forEach(function(act) {
+        html += '<div class="timeline-entry"><div class="tl-time">' + esc(act.time) + '</div><div class="tl-line"></div><div class="tl-content">';
+        html += '<div class="tl-name">' + placeLink(act.name, city);
+        if (act.tag) {
+          var tc = act.tag === 'Free' ? 'tag-free' : act.tag.includes('Book') ? 'tag-booking' : 'tag-price';
+          html += '<span class="tag ' + tc + '">' + esc(act.tag) + '</span>';
+        }
+        html += '</div>';
+        if (act.desc) html += '<div class="tl-desc">' + esc(act.desc) + '</div>';
+        html += '</div></div>';
+      });
+    });
+
+    // Optional food
+    if (day.foodPicks) {
+      html += '<h4 style="margin:20px 0 10px;font-size:14px;color:var(--accent);text-transform:uppercase;letter-spacing:1px">Optional Food Picks</h4>';
+      day.foodPicks.forEach(function(f) {
+        html += '<div class="meal-card"><span class="mc-icon">' + (f.icon || '🍽️') + '</span><div><div class="mc-name">' + placeLink(f.name, city) + '</div><div class="mc-meta">' + esc(f.cuisine) + ' · ' + esc(f.price) + '</div><div class="mc-type">' + esc(f.category) + '</div></div></div>';
+      });
+    }
+
+    if (day.tip) html += tipBox(day.tip);
+  });
+
+  // SECTION 6: FOOD & DRINK
+  html += secDiv(6, 'Food & Drink');
+  if (d.food?.intro) html += '<p style="margin-bottom:20px">' + esc(d.food.intro) + '</p>';
+  ['restaurants','cafes','bars'].forEach(function(cat) {
+    var items = d.food?.[cat] || [];
+    if (items.length === 0) return;
+    var titles = {restaurants:'Top 5 Restaurants',cafes:'Top 5 Cafes',bars:'Top 5 Bars & Nightlife'};
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">' + titles[cat] + '</h3>';
+    items.forEach(function(p) {
+      html += '<div class="place-row"><div class="pr-name">' + placeLink(p.name, city) + '</div><div class="pr-tags"><span class="pill pill-accent">' + esc(p.cuisine) + '</span><span>' + stars(p.rating) + '</span><span style="font-size:14px;color:#555">' + esc(p.price) + '</span></div></div>';
+    });
+  });
+  if (d.food?.tip) html += tipBox(d.food.tip);
+
+  // SECTION 7: WHERE TO STAY
+  html += secDiv(7, 'Where to Stay');
+  (d.hotels?.neighborhoods || []).forEach(function(n) {
+    html += '<div class="hood-card"><div class="hood-bar"></div><div class="hood-body"><h3>' + placeLink(n.name, city) + '</h3><p style="font-size:14px;color:#555">' + esc(n.desc) + '</p><div class="hood-best">Best For: ' + esc(n.bestFor) + '</div><div class="hood-why">' + esc(n.whyStay) + '</div></div></div>';
+  });
+
+  ['budget','midRange','luxury'].forEach(function(tier) {
+    var items = d.hotels?.[tier] || [];
+    if (items.length === 0) return;
+    var titles = {budget:'Budget',midRange:'Mid-Range',luxury:'Luxury'};
+    html += '<div class="hotel-tier"><h4>' + titles[tier] + '</h4>';
+    items.forEach(function(h) {
+      html += '<div class="hotel-row"><div><span class="hr-name">' + placeLink(h.name, city) + (h.recommended ? '<span class="rec-tag">Recommended</span>' : '') + '</span><div class="hr-meta">' + esc(h.vibe) + ' · ' + stars(h.rating) + '</div></div><div class="hr-price">' + esc(h.price) + '/night</div></div>';
+    });
+    html += '</div>';
+  });
+  html += '<div style="text-align:center;margin:24px 0"><a href="https://www.booking.com/search.html?ss=' + encodeURIComponent(city) + '" target="_blank" class="aff-btn aff-booking" style="border:none">🔍 Search Hotels on Booking.com</a></div>';
+  if (d.hotels?.tip) html += tipBox(d.hotels.tip);
+
+  // SECTION 8: EXPERIENCES
+  html += secDiv(8, 'Experiences');
+  if (d.experiences?.mustDo) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin-bottom:16px">Must-Do Activities</h3>';
+    html += '<div class="exp-grid">';
+    d.experiences.mustDo.forEach(function(e) {
+      html += '<div class="exp-card"><h4>' + esc(e.name) + '</h4><p>' + esc(e.desc) + '</p></div>';
+    });
+    html += '</div>';
+  }
+  if (d.experiences?.getYourGuide) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Top GetYourGuide Experiences</h3>';
+    d.experiences.getYourGuide.forEach(function(e) {
+      html += '<div class="place-row"><div><span class="pr-name" style="font-size:15px">' + esc(e.name) + '</span><div style="font-size:13px;color:#555;margin-top:4px">' + esc(e.desc) + '</div></div></div>';
+    });
+    html += '<div style="text-align:center;margin:16px 0"><a href="https://www.getyourguide.com/s/?q=' + encodeURIComponent(city) + '" target="_blank" class="aff-btn aff-gyg" style="border:none">Book on GetYourGuide →</a></div>';
+  }
+  if (d.experiences?.hiddenGems) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Hidden Gems</h3>';
+    html += '<div class="gems-list">';
+    d.experiences.hiddenGems.forEach(function(g) {
+      html += '<div class="gem-item">' + placeLink(g.name, city) + ' — ' + esc(g.desc) + '</div>';
+    });
+    html += '</div>';
+  }
+
+  // SECTION 9: PACKING
+  html += secDiv(9, 'Packing');
+  if (d.packing?.title) html += '<h3 style="font-family:Playfair Display,serif;font-size:20px;font-weight:800;margin-bottom:8px">' + esc(d.packing.title) + '</h3>';
+  if (d.packing?.intro) html += '<p style="margin-bottom:20px;color:#555">' + esc(d.packing.intro) + '</p>';
+  if (d.packing?.categories) {
+    html += '<div class="pack-grid">';
+    d.packing.categories.forEach(function(c) {
+      html += '<div class="pack-card"><h4>' + esc(c.name) + '</h4><ul>';
+      (c.items || []).forEach(function(item) { html += '<li>• ' + esc(item) + '</li>'; });
+      html += '</ul></div>';
+    });
+    html += '</div>';
+  }
+  if (d.packing?.luggage) html += '<p style="margin:12px 0"><strong>Luggage:</strong> ' + esc(d.packing.luggage) + '</p>';
+
+  // Airlines
+  if (d.packing?.airlines) {
+    html += '<h4 style="margin:20px 0 8px;font-size:15px;font-weight:700">Carry-On Requirements</h4>';
+    html += '<div class="airline-tabs">';
+    d.packing.airlines.forEach(function(a, i) {
+      html += '<div class="airline-tab' + (i === 0 ? ' active' : '') + '" onclick="showAirline(this,' + i + ')">' + esc(a.name) + '</div>';
+    });
+    html += '</div>';
+    d.packing.airlines.forEach(function(a, i) {
+      html += '<div class="airline-content" id="airline-' + i + '" style="' + (i > 0 ? 'display:none' : '') + '"><strong>' + esc(a.name) + '</strong><br>Carry-on: ' + esc(a.carryOn) + '<br>Personal item: ' + esc(a.personal) + '<br>Weight: ' + esc(a.weight) + '</div>';
+    });
+  }
+
+  html += '<div style="margin:20px 0"><a href="https://airalo.tpo.lv/nbi6aRNh" target="_blank" class="aff-btn aff-airalo" style="border:none">📱 Get Airalo eSIM →</a></div>';
+  if (d.packing?.tip) html += tipBox(d.packing.tip);
+
+  // SECTION 10: BOOK THIS TRIP
+  html += secDiv(10, 'Book This Trip');
+  if (d.bookTrip?.intro) html += '<p style="margin-bottom:20px">' + esc(d.bookTrip.intro) + '</p>';
+
+  // Recommended hotels
+  if (d.bookTrip?.hotels) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:20px 0 12px">Recommended Hotels</h3>';
+    d.bookTrip.hotels.forEach(function(h) {
+      html += '<div class="place-row"><div class="pr-name"><a href="https://www.booking.com/search.html?ss=' + encodeURIComponent(h.name + ' ' + city) + '" target="_blank" style="border-bottom:1px dashed rgba(73,148,180,0.5)">🏨 ' + esc(h.name) + '</a> <span class="pill pill-accent">' + esc(h.tier) + '</span></div><div style="font-size:14px;color:#555">' + esc(h.price) + '</div></div>';
+    });
+  }
+
+  // Booking items
+  if (d.bookTrip?.bookingItems) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Reservations Needed</h3>';
+    d.bookTrip.bookingItems.forEach(function(b) {
+      html += '<div class="place-row"><div class="pr-name">' + placeLink(b.name, city) + '</div><div style="font-size:13px;color:#777">' + esc(b.type) + '</div></div>';
+    });
+  }
+
+  // Budget table
+  if (d.bookTrip?.budget) {
+    html += '<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Budget Breakdown</h3>';
+    html += '<table class="guide-table"><thead><tr><th>Category</th><th>Total (' + esc(d.travelers || '2') + ' travelers)</th><th>Per Person (' + esc(d.bookTrip.departureCurrency || 'USD') + ')</th><th>Per Person (' + esc(d.bookTrip.destCurrency || 'EUR') + ')</th></tr></thead><tbody>';
+    d.bookTrip.budget.forEach(function(b) {
+      var cls = b.category === 'Total' ? ' class="total-row"' : '';
+      html += '<tr' + cls + '><td>' + esc(b.category) + '</td><td>' + esc(b.total) + '</td><td>' + esc(b.perPersonHome) + '</td><td>' + esc(b.perPersonDest) + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+
+  // Promo cards
+  html += '<div class="promo-card promo-pp"><div class="promo-label">Passport Pro</div><h3>Unlimited Guides & Downloads</h3><p>Unlimited guides, downloadable PDFs, printable layouts, and Notion-powered travel guides — all included.</p><a href="https://planpackstay.com/membership" class="promo-btn" style="border:none">Upgrade Now →</a></div>';
+  html += '<div class="promo-card promo-we"><div class="promo-label">World Explorer</div><h3>The Ultimate Travel Experience</h3><p>Everything in Passport Pro plus custom trip planning consultation and 10% off Gear. We will work with you 1-on-1 to build a personalized travel plan.</p><a href="https://planpackstay.com/membership" class="promo-btn" style="border:none">Upgrade Now →</a></div>';
+
+  html += '</div>'; // close guide-wrap
+
+  // FOOTER
+  html += '<div class="guide-footer">';
+  html += '<img src="https://raw.githubusercontent.com/korbin091/planpackstay-guides/main/planpackstay_logo_social.png" alt="PLANPACKSTAY">';
+  html += '<div class="brand">PLANPACKSTAY</div>';
+  html += '<a href="https://planpackstay.com" target="_blank">planpackstay.com</a>';
+  html += '<div class="disclaimer">Generated by PLANPACKSTAY. Verify details and pricing prior to booking. Affiliate links may be included that help support guide creation at no cost to you.</div>';
+  html += '</div>';
+
+  document.getElementById('app').className = '';
+  document.getElementById('app').innerHTML = html;
+}
+
+function secDiv(n, title) {
+  return '<div class="sec-div" id="sec' + n + '"><span class="sec-num">' + n + '</span><h2 class="sec-title">' + title + '</h2></div>';
+}
+function tipBox(text) {
+  return '<div class="tip-box"><img src="https://raw.githubusercontent.com/korbin091/planpackstay-guides/main/sasquatch_holding_arm_out.png" alt="Sasquatch"><div class="tip-text"><strong>Sasquatch Tip:</strong> ' + esc(text) + '</div></div>';
+}
+function infoCard(icon, label, value) {
+  return '<div class="info-card"><span class="ic-icon">' + (icon || '📌') + '</span><div><div class="ic-label">' + esc(label) + '</div><div class="ic-value">' + esc(value) + '</div></div></div>';
+}
+
+function showAirline(el, idx) {
+  document.querySelectorAll('.airline-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.airline-content').forEach(function(c) { c.style.display = 'none'; });
+  el.classList.add('active');
+  document.getElementById('airline-' + idx).style.display = 'block';
+}
+
+// Print block listener
+window.addEventListener('message', function(event) {
+  if (event.data && event.data.action === 'blockPrint') {
+    var s = document.createElement('style');
+    s.textContent = '@media print { body { display: none !important; } @page { size: 0; } }';
+    document.head.appendChild(s);
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') e.preventDefault();
+    });
+  }
+});
+
+loadGuide();
+</script>
+</body>
+</html>
