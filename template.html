@@ -226,7 +226,7 @@ async function loadGuide() {
 
   try {
     var base = window.location.href.split('/').slice(0, -1).join('/');
-    var resp = await fetch(base + '/data/' + file + '.json');
+    var resp = await fetch(base + '/data/' + encodeURIComponent(file) + '.json');
     if (!resp.ok) throw new Error('Guide not found');
     var d = await resp.json();
     render(d);
