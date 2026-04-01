@@ -1,0 +1,940 @@
+{
+  "firstName": "Korbin",
+  "destination": "London",
+  "country": "United Kingdom",
+  "tripType": "Romantic & LGBTQ+ City Break",
+  "travelers": "2",
+  "dates": "2026-04-01 to 2026-04-08",
+  "tripOverview": {
+    "intro": "London beckons with its perfect blend of historic grandeur and modern vibrancy, offering countless romantic moments from Thames sunset walks to cozy pub evenings. This iconic city embraces all travelers with open arms, featuring world-class museums, diverse neighborhoods, and an incredible food scene that will delight your vegetarian palates.",
+    "infoCards": [
+      {
+        "icon": "📍",
+        "label": "Destination",
+        "value": "London, UK"
+      },
+      {
+        "icon": "✈️",
+        "label": "Departing",
+        "value": "Philadelphia, PA"
+      },
+      {
+        "icon": "📅",
+        "label": "Dates",
+        "value": "Apr 1-8, 2026"
+      },
+      {
+        "icon": "👥",
+        "label": "Travelers",
+        "value": "2 people"
+      },
+      {
+        "icon": "💰",
+        "label": "Budget",
+        "value": "$2,100"
+      },
+      {
+        "icon": "🎯",
+        "label": "Styles",
+        "value": "Romantic, On-the-Go, LGBTQ+"
+      }
+    ],
+    "glance": [
+      {
+        "day": 1,
+        "theme": "Historic Heart",
+        "icon": "🏰"
+      },
+      {
+        "day": 2,
+        "theme": "Royal London",
+        "icon": "👑"
+      },
+      {
+        "day": 3,
+        "theme": "Markets & Culture",
+        "icon": "🛍️"
+      },
+      {
+        "day": 4,
+        "theme": "Thames & Views",
+        "icon": "🌉"
+      },
+      {
+        "day": 5,
+        "theme": "Museums & Parks",
+        "icon": "🎨"
+      },
+      {
+        "day": 6,
+        "theme": "Neighborhoods",
+        "icon": "🏘️"
+      },
+      {
+        "day": 7,
+        "theme": "West End Magic",
+        "icon": "🎭"
+      },
+      {
+        "day": 8,
+        "theme": "Farewell London",
+        "icon": "👋"
+      }
+    ],
+    "vibe": "London will sweep you off your feet with its romantic riverside walks, diverse culinary scene, and welcoming LGBTQ+ community across charming neighborhoods.",
+    "styles": [
+      "Romantic",
+      "On-the-Go",
+      "LGBTQ+",
+      "Cultural",
+      "Urban Explorer"
+    ]
+  },
+  "destinationOverview": {
+    "infoCards": [
+      {
+        "icon": "🌡️",
+        "label": "Temperature",
+        "value": "8-15°C (46-59°F)"
+      },
+      {
+        "icon": "💷",
+        "label": "Currency",
+        "value": "British Pound (GBP)"
+      },
+      {
+        "icon": "🗣️",
+        "label": "Language",
+        "value": "English"
+      },
+      {
+        "icon": "⏰",
+        "label": "Time Zone",
+        "value": "GMT+1 (BST)"
+      },
+      {
+        "icon": "🔌",
+        "label": "Plug Type",
+        "value": "Type G"
+      },
+      {
+        "icon": "🛡️",
+        "label": "Safety Rating",
+        "value": "Very Safe"
+      }
+    ],
+    "bestTime": "April is perfect for London with mild spring weather, blooming flowers, and fewer crowds than summer months.",
+    "seasons": [
+      {
+        "name": "Spring",
+        "tempC": "8-15°C",
+        "tempF": "46-59°F"
+      },
+      {
+        "name": "Summer",
+        "tempC": "15-25°C",
+        "tempF": "59-77°F"
+      },
+      {
+        "name": "Autumn",
+        "tempC": "7-15°C",
+        "tempF": "45-59°F"
+      },
+      {
+        "name": "Winter",
+        "tempC": "2-8°C",
+        "tempF": "36-46°F"
+      }
+    ],
+    "attractions": [
+      {
+        "name": "Tower Bridge",
+        "desc": "London's iconic Victorian bridge with stunning Thames views and glass floor walkways."
+      },
+      {
+        "name": "British Museum",
+        "desc": "World-renowned museum housing incredible artifacts from ancient civilizations."
+      },
+      {
+        "name": "Big Ben & Westminster",
+        "desc": "London's famous clock tower and the heart of British political life."
+      },
+      {
+        "name": "Buckingham Palace",
+        "desc": "The Queen's official residence with the famous Changing of the Guard ceremony."
+      },
+      {
+        "name": "London Eye",
+        "desc": "Giant observation wheel offering panoramic views across the entire city."
+      },
+      {
+        "name": "Covent Garden",
+        "desc": "Historic market area filled with street performers, shops, and restaurants."
+      }
+    ],
+    "transportation": "London's extensive public transport system includes the Underground (Tube), buses, and river services, with an Oyster Card or contactless payment being your best bet for seamless travel. Black cabs are iconic but pricey, while rideshare apps like Uber operate throughout the city. Walking is often the quickest way for short distances, especially in Central London where attractions are closely clustered.",
+    "tip": "Download the Citymapper app for real-time transport updates and always stand right on escalators - Londoners take this seriously!",
+    "safety": "London is very safe for LGBTQ+ travelers with a welcoming atmosphere, especially in areas like Soho, Shoreditch, and South London.",
+    "emergency": [
+      {
+        "type": "Emergency Number",
+        "value": "999 or 112"
+      },
+      {
+        "type": "Tourist Police",
+        "value": "101"
+      },
+      {
+        "type": "Hospital",
+        "value": "St. Thomas' Hospital: +44 20 7188 7188"
+      },
+      {
+        "type": "Embassy",
+        "value": "US Embassy London: +44 20 7499 9000"
+      }
+    ],
+    "airaloText": "Stay connected with an eSIM for instant access to maps, translation apps, and sharing your London adventures in real-time."
+  },
+  "itineraryOverview": [
+    {
+      "name": "Tower of London",
+      "cost": "$58",
+      "hours": "3 hours",
+      "booking": "Advance recommended"
+    },
+    {
+      "name": "Westminster Abbey",
+      "cost": "$54",
+      "hours": "2 hours",
+      "booking": "Advance recommended"
+    },
+    {
+      "name": "British Museum",
+      "cost": "Free",
+      "hours": "4 hours",
+      "booking": "Not required"
+    },
+    {
+      "name": "London Eye",
+      "cost": "$68",
+      "hours": "1 hour",
+      "booking": "Advance required"
+    },
+    {
+      "name": "Thames River Cruise",
+      "cost": "$32",
+      "hours": "1.5 hours",
+      "booking": "Advance recommended"
+    },
+    {
+      "name": "West End Show",
+      "cost": "$120",
+      "hours": "3 hours",
+      "booking": "Advance required"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "theme": "Historic Heart",
+      "intro": "Begin your London adventure exploring the historic core where royalty and politics shaped the nation.",
+      "morning": [
+        {
+          "time": "9:00 AM",
+          "name": "Arrive & Check-in",
+          "tag": "Free",
+          "desc": "Get settled at your hotel and grab a welcome coffee."
+        },
+        {
+          "time": "10:30 AM",
+          "name": "Westminster Walk",
+          "tag": "Free",
+          "desc": "Stroll past Big Ben, Parliament, and Westminster Bridge."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Westminster Abbey",
+          "tag": "$54",
+          "desc": "Explore the stunning gothic abbey where royals are crowned and wed."
+        },
+        {
+          "time": "3:30 PM",
+          "name": "St. James's Park",
+          "tag": "Free",
+          "desc": "Romantic walk through London's oldest royal park."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "Traditional Pub",
+          "tag": "$40",
+          "desc": "Experience authentic British pub culture with vegetarian options."
+        },
+        {
+          "time": "8:00 PM",
+          "name": "Thames Evening Walk",
+          "tag": "Free",
+          "desc": "Romantic riverside stroll with illuminated landmarks."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Monmouth Coffee Company",
+          "cuisine": "Coffee",
+          "price": "$8",
+          "category": "Cafe",
+          "icon": "☕"
+        },
+        {
+          "name": "Dishoom",
+          "cuisine": "Indian",
+          "price": "$45",
+          "category": "Lunch",
+          "icon": "🍛"
+        },
+        {
+          "name": "The George Inn",
+          "cuisine": "Traditional",
+          "price": "$40",
+          "category": "Dinner",
+          "icon": "🍺"
+        }
+      ],
+      "tip": "Book Westminster Abbey tickets online to skip queues and consider the audio guide for fascinating royal history."
+    },
+    {
+      "day": 2,
+      "theme": "Royal London",
+      "intro": "Dive deep into royal history with palaces, towers, and the Crown Jewels.",
+      "morning": [
+        {
+          "time": "9:00 AM",
+          "name": "Tower of London",
+          "tag": "$58",
+          "desc": "Discover the Crown Jewels and 1000 years of royal history."
+        },
+        {
+          "time": "11:30 AM",
+          "name": "Tower Bridge",
+          "tag": "$26",
+          "desc": "Walk across the glass floor and enjoy panoramic city views."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:30 PM",
+          "name": "Borough Market",
+          "tag": "$30",
+          "desc": "Your must-see foodie paradise with incredible vegetarian options."
+        },
+        {
+          "time": "3:30 PM",
+          "name": "Southbank Walk",
+          "tag": "Free",
+          "desc": "Scenic Thames-side walk to Shakespeare's Globe area."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "Indian Dinner",
+          "tag": "$55",
+          "desc": "Authentic Indian cuisine in Brick Lane's curry houses."
+        },
+        {
+          "time": "8:30 PM",
+          "name": "Shoreditch Bars",
+          "tag": "$35",
+          "desc": "Explore trendy LGBTQ+-friendly bars in East London."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Flat White",
+          "cuisine": "Coffee",
+          "price": "$6",
+          "category": "Cafe",
+          "icon": "☕"
+        },
+        {
+          "name": "Padella",
+          "cuisine": "Italian",
+          "price": "$18",
+          "category": "Lunch",
+          "icon": "🍝"
+        },
+        {
+          "name": "Tayyabs",
+          "cuisine": "Indian",
+          "price": "$55",
+          "category": "Dinner",
+          "icon": "🍛"
+        }
+      ],
+      "tip": "Borough Market is busiest on Saturdays - arrive early for the best selection and shorter queues."
+    },
+    {
+      "day": 3,
+      "theme": "Markets & Culture",
+      "intro": "Immerse yourself in London's vibrant market culture and diverse neighborhoods.",
+      "morning": [
+        {
+          "time": "9:30 AM",
+          "name": "Camden Market",
+          "tag": "$25",
+          "desc": "Browse unique crafts, vintage finds, and street food stalls."
+        },
+        {
+          "time": "11:30 AM",
+          "name": "Regent's Canal Walk",
+          "tag": "Free",
+          "desc": "Peaceful towpath walk from Camden to Little Venice."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Little Venice",
+          "tag": "Free",
+          "desc": "Romantic canal-side area with charming narrowboats."
+        },
+        {
+          "time": "2:30 PM",
+          "name": "Portobello Road",
+          "tag": "$20",
+          "desc": "Famous antique market in colorful Notting Hill."
+        }
+      ],
+      "evening": [
+        {
+          "time": "5:30 PM",
+          "name": "Notting Hill Exploration",
+          "tag": "Free",
+          "desc": "Stroll through the movie-famous neighborhood's pretty streets."
+        },
+        {
+          "time": "7:00 PM",
+          "name": "Vegetarian Fine Dining",
+          "tag": "$85",
+          "desc": "Upscale plant-based cuisine for a romantic evening."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Gail's Bakery",
+          "cuisine": "Bakery",
+          "price": "$12",
+          "category": "Cafe",
+          "icon": "🥐"
+        },
+        {
+          "name": "The Ivy Chelsea Garden",
+          "cuisine": "Modern British",
+          "price": "$65",
+          "category": "Lunch",
+          "icon": "🌿"
+        },
+        {
+          "name": "Farmacy",
+          "cuisine": "Vegetarian",
+          "price": "$85",
+          "category": "Dinner",
+          "icon": "🥗"
+        }
+      ],
+      "tip": "Portobello Market is liveliest on Saturdays, but weekdays offer a more relaxed browsing experience."
+    },
+    {
+      "day": 4,
+      "theme": "Thames & Views",
+      "intro": "Experience London from above and along its famous river Thames.",
+      "morning": [
+        {
+          "time": "10:00 AM",
+          "name": "London Eye",
+          "tag": "$68",
+          "desc": "30-minute rotation offering breathtaking 360-degree city views."
+        },
+        {
+          "time": "11:30 AM",
+          "name": "South Bank Walk",
+          "tag": "Free",
+          "desc": "Stroll along the Thames with street performers and book markets."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Tate Modern",
+          "tag": "Free",
+          "desc": "World-class contemporary art in a stunning former power station."
+        },
+        {
+          "time": "3:00 PM",
+          "name": "Thames River Cruise",
+          "tag": "$32",
+          "desc": "Scenic boat ride from Westminster to Greenwich."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "Greenwich Royal Observatory",
+          "tag": "$38",
+          "desc": "Stand on the Prime Meridian and enjoy sunset city views."
+        },
+        {
+          "time": "8:00 PM",
+          "name": "Greenwich Pub",
+          "tag": "$35",
+          "desc": "Historic riverside pub with vegetarian British fare."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Scooter Caffe",
+          "cuisine": "Coffee",
+          "price": "$7",
+          "category": "Cafe",
+          "icon": "☕"
+        },
+        {
+          "name": "OXO Tower Restaurant",
+          "cuisine": "Modern European",
+          "price": "$70",
+          "category": "Lunch",
+          "icon": "🍽️"
+        },
+        {
+          "name": "The Trafalgar Tavern",
+          "cuisine": "Traditional",
+          "price": "$35",
+          "category": "Dinner",
+          "icon": "🍺"
+        }
+      ],
+      "tip": "Book London Eye tickets online and choose sunset slots for the most romantic experience with your partner."
+    },
+    {
+      "day": 5,
+      "theme": "Museums & Parks",
+      "intro": "Discover world-class museums and enjoy London's beautiful green spaces.",
+      "morning": [
+        {
+          "time": "9:30 AM",
+          "name": "British Museum",
+          "tag": "Free",
+          "desc": "Explore ancient treasures including the Rosetta Stone and Egyptian mummies."
+        },
+        {
+          "time": "12:00 PM",
+          "name": "Russell Square",
+          "tag": "Free",
+          "desc": "Peaceful garden square perfect for a romantic break."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:30 PM",
+          "name": "Covent Garden",
+          "tag": "$20",
+          "desc": "Historic market with street performers, shops, and cafes."
+        },
+        {
+          "time": "3:30 PM",
+          "name": "National Gallery",
+          "tag": "Free",
+          "desc": "Masterpieces by Van Gogh, Monet, and Da Vinci in Trafalgar Square."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "Soho Exploration",
+          "tag": "Free",
+          "desc": "Wander through London's vibrant LGBTQ+ heart with rainbow crossings."
+        },
+        {
+          "time": "7:30 PM",
+          "name": "Chinatown Vegetarian",
+          "tag": "$45",
+          "desc": "Excellent Buddhist vegetarian cuisine just steps from Soho."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "The Attendant",
+          "cuisine": "Coffee",
+          "price": "$8",
+          "category": "Cafe",
+          "icon": "☕"
+        },
+        {
+          "name": "Dishoom Covent Garden",
+          "cuisine": "Indian",
+          "price": "$40",
+          "category": "Lunch",
+          "icon": "🍛"
+        },
+        {
+          "name": "Dumplings' Legend",
+          "cuisine": "Chinese Vegetarian",
+          "price": "$45",
+          "category": "Dinner",
+          "icon": "🥟"
+        }
+      ],
+      "tip": "Most major museums offer free admission but consider donating and booking timed slots during busy periods."
+    },
+    {
+      "day": 6,
+      "theme": "Neighborhoods",
+      "intro": "Explore London's diverse neighborhoods each with their own unique character and charm.",
+      "morning": [
+        {
+          "time": "10:00 AM",
+          "name": "Hyde Park",
+          "tag": "Free",
+          "desc": "Stroll through London's largest park and visit Speaker's Corner."
+        },
+        {
+          "time": "11:30 AM",
+          "name": "Kensington Palace",
+          "tag": "$42",
+          "desc": "Princess Diana's former home with royal exhibitions and gardens."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:30 PM",
+          "name": "South Kensington Museums",
+          "tag": "Free",
+          "desc": "Choose between V&A, Natural History, or Science Museum."
+        },
+        {
+          "time": "3:30 PM",
+          "name": "Chelsea Walking",
+          "tag": "Free",
+          "desc": "Upscale neighborhood with elegant streets and boutique shopping."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "King's Road Shopping",
+          "tag": "$40",
+          "desc": "Browse unique shops and cafes along this famous street."
+        },
+        {
+          "time": "8:00 PM",
+          "name": "Chelsea Dinner",
+          "tag": "$75",
+          "desc": "Sophisticated vegetarian dining in elegant surroundings."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "The Natural History Museum Cafe",
+          "cuisine": "British",
+          "price": "$15",
+          "category": "Cafe",
+          "icon": "🦕"
+        },
+        {
+          "name": "Saatchi Gallery Cafe",
+          "cuisine": "Modern European",
+          "price": "$28",
+          "category": "Lunch",
+          "icon": "🎨"
+        },
+        {
+          "name": "Bluebird Chelsea",
+          "cuisine": "Modern British",
+          "price": "$75",
+          "category": "Dinner",
+          "icon": "🌿"
+        }
+      ],
+      "tip": "The V&A Museum has excellent vegetarian dining options and stays open late on Fridays for a more romantic visit."
+    },
+    {
+      "day": 7,
+      "theme": "West End Magic",
+      "intro": "Experience London's legendary theater district and vibrant nightlife scene.",
+      "morning": [
+        {
+          "time": "10:00 AM",
+          "name": "Leicester Square",
+          "tag": "Free",
+          "desc": "Heart of London's entertainment district with street performers."
+        },
+        {
+          "time": "11:00 AM",
+          "name": "Seven Dials Shopping",
+          "tag": "$30",
+          "desc": "Unique seven-street junction with independent boutiques."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Fortnum & Mason",
+          "tag": "$50",
+          "desc": "Luxury department store famous for afternoon tea and gourmet foods."
+        },
+        {
+          "time": "3:00 PM",
+          "name": "Piccadilly Circus",
+          "tag": "Free",
+          "desc": "London's Times Square with bright lights and buzzing energy."
+        }
+      ],
+      "evening": [
+        {
+          "time": "5:30 PM",
+          "name": "Pre-Theater Dinner",
+          "tag": "$60",
+          "desc": "Early vegetarian dinner before your West End show."
+        },
+        {
+          "time": "7:30 PM",
+          "name": "West End Musical",
+          "tag": "$120",
+          "desc": "World-class theater production in London's famous theater district."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Fortnum & Mason Tea Salon",
+          "cuisine": "Traditional",
+          "price": "$50",
+          "category": "Cafe",
+          "icon": "🫖"
+        },
+        {
+          "name": "Mildreds Soho",
+          "cuisine": "Vegetarian",
+          "price": "$35",
+          "category": "Lunch",
+          "icon": "🌱"
+        },
+        {
+          "name": "Inamo Soho",
+          "cuisine": "Asian Fusion",
+          "price": "$60",
+          "category": "Dinner",
+          "icon": "🍜"
+        }
+      ],
+      "tip": "Book theater tickets in advance online or try the TKTS booth in Leicester Square for same-day discounts."
+    },
+    {
+      "day": 8,
+      "theme": "Farewell London",
+      "intro": "Your final morning to soak in London's atmosphere before departure.",
+      "morning": [
+        {
+          "time": "9:00 AM",
+          "name": "Breakfast & Coffee",
+          "tag": "$25",
+          "desc": "Leisurely breakfast at a favorite London cafe you've discovered."
+        },
+        {
+          "time": "10:30 AM",
+          "name": "Last-minute Shopping",
+          "tag": "$50",
+          "desc": "Pick up souvenirs and British treats to take home."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "12:00 PM",
+          "name": "Hotel Checkout",
+          "tag": "Free",
+          "desc": "Collect luggage and prepare for airport transfer."
+        },
+        {
+          "time": "1:00 PM",
+          "name": "Heathrow Express",
+          "tag": "$50",
+          "desc": "Fast train connection to airport for your flight home."
+        }
+      ],
+      "evening": [
+        {
+          "time": "4:00 PM",
+          "name": "Departure",
+          "tag": "Free",
+          "desc": "Flight back to Philadelphia with wonderful London memories."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Dishoom",
+          "cuisine": "Indian",
+          "price": "$25",
+          "category": "Cafe",
+          "icon": "🍛"
+        },
+        {
+          "name": "Pret A Manger",
+          "cuisine": "British",
+          "price": "$12",
+          "category": "Lunch",
+          "icon": "🥪"
+        },
+        {
+          "name": "Heathrow Restaurants",
+          "cuisine": "Various",
+          "price": "$30",
+          "category": "Dinner",
+          "icon": "✈️"
+        }
+      ],
+      "tip": "Allow 3 hours for international flights and consider Heathrow Express for reliable airport timing."
+    }
+  ],
+  "food": {
+    "intro": "London's food scene is incredibly diverse with excellent vegetarian options, from traditional British fare to world-class Indian cuisine.",
+    "restaurants": [
+      {
+        "name": "Dishoom",
+        "cuisine": "Indian",
+        "rating": 4.8,
+        "price": "$40-60"
+      },
+      {
+        "name": "Mildreds",
+        "cuisine": "Vegetarian",
+        "rating": 4.6,
+        "price": "$25-40"
+      },
+      {
+        "name": "Farmacy",
+        "cuisine": "Plant-based",
+        "rating": 4.5,
+        "price": "$60-85"
+      },
+      {
+        "name": "The Ivy",
+        "cuisine": "Modern British",
+        "rating": 4.4,
+        "price": "$50-80"
+      },
+      {
+        "name": "Rasa",
+        "cuisine": "South Indian Vegetarian",
+        "rating": 4.7,
+        "price": "$35-55"
+      }
+    ],
+    "cafes": [
+      {
+        "name": "Monmouth Coffee Company",
+        "cuisine": "Coffee",
+        "rating": 4.7,
+        "price": "$5-12"
+      },
+      {
+        "name": "The Attendant",
+        "cuisine": "Coffee & Light Bites",
+        "rating": 4.5,
+        "price": "$6-15"
+      },
+      {
+        "name": "Gail's Bakery",
+        "cuisine": "Bakery & Coffee",
+        "rating": 4.4,
+        "price": "$8-18"
+      },
+      {
+        "name": "Flat White",
+        "cuisine": "Australian Coffee",
+        "rating": 4.6,
+        "price": "$4-10"
+      },
+      {
+        "name": "Fortnum & Mason Tea Salon",
+        "cuisine": "Traditional Tea",
+        "rating": 4.3,
+        "price": "$25-50"
+      }
+    ],
+    "bars": [
+      {
+        "name": "The George Inn",
+        "cuisine": "Traditional Pub",
+        "rating": 4.5,
+        "price": "$25-45"
+      },
+      {
+        "name": "Sketch",
+        "cuisine": "Cocktail Bar",
+        "rating": 4.3,
+        "price": "$35-60"
+      },
+      {
+        "name": "The Glory",
+        "cuisine": "LGBTQ+ Bar",
+        "rating": 4.6,
+        "price": "$20-40"
+      },
+      {
+        "name": "Dalston Superstore",
+        "cuisine": "Alternative Bar",
+        "rating": 4.4,
+        "price": "$15-35"
+      },
+      {
+        "name": "Heaven",
+        "cuisine": "LGBTQ+ Nightclub",
+        "rating": 4.2,
+        "price": "$20-45"
+      }
+    ],
+    "tip": "Most pubs serve food until 9 PM, and tipping 10-15% is standard in restaurants but not required in pubs when ordering at the bar."
+  },
+  "hotels": {
+    "neighborhoods": [
+      {
+        "name": "Covent Garden",
+        "desc": "Central location near theaters, restaurants, and major attractions",
+        "bestFor": "First-time visitors",
+        "whyStay": "Walking distance to everything with romantic cobblestone streets"
+      },
+      {
+        "name": "South Kensington",
+        "desc": "Museum district with elegant Victorian architecture and upscale dining",
+        "bestFor": "Culture lovers",
+        "whyStay": "World-class museums and beautiful garden squares nearby"
+      },
+      {
+        "name": "Shoreditch",
+        "desc": "Trendy East London area with vibrant LGBTQ+ scene and street art",
+        "bestFor": "LGBTQ+ travelers",
+        "whyStay": "Hip neighborhood with excellent nightlife and diverse food scene"
+      }
+    ],
+    "budget": [
+      {
+        "name": "Premier Inn London",
+        "vibe": "Modern chain hotel with comfortable rooms",
+        "rating": 4.2,
+        "price": "$85-120",
+        "recommended": true
+      },
+      {
+        "name": "YHA London Central",
+        "vibe": "Clean hostel with private rooms available",
+        "rating": 4.0,
+        "price": "$60-95",
+        "recommended": false
+      }
+    ],
+    "midRange": [
+      {
+        "name": "Z Hotel Piccadilly",
+        "vibe": "Compact modern rooms in prime location",
