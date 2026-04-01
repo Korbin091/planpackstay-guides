@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Travel Guide - PLANPACKSTAY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Source+Sans+3:wght@300;400;600;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #FFFFFE;
+        }
+
+        .brand-name {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .location-link {
+            color: #4a94b4;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(73,148,180,0.5);
+        }
+
+        .location-link:hover {
+            color: #2a6b85;
+        }
+
+        /* SECTION 1 - COVER PAGE */
+        .cover-page {
+            height: 100vh;
+            background: linear-gradient(to bottom right, #1a1a2e, #2a3a52, #4a94b4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .pill-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .destination-title {
+            font-size: clamp(56px, 10vw, 96px);
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .country-subtitle {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .divider-line {
+            width: 60px;
+            height: 3px;
+            background: #c9a96e;
+            margin: 2rem 0;
+        }
+
+        .trip-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+            font-size: 18px;
+        }
+
+        .brand-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 2rem 0;
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+        }
+
+        .curated-text {
+            margin-top: 3rem;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* SECTION DIVIDERS */
+        .section-divider {
+            display: flex;
+            justify-content: center;
+            margin: 4rem 0 3rem 0;
+        }
+
+        .circle-number {
+            width: 60px;
+            height: 60px;
+            background: #4a94b4;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            border-bottom: 3px solid #4a94b4;
+        }
+
+        /* COMMON SECTION STYLES */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: #f5f3ef;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #4a94b4;
+        }
+
+        .info-card h4 {
+            font-size: 18px;
+            margin-bottom: 0.5rem;
+            color: #4a94b4;
+        }
+
+        .info-card p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .day-preview-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .day-card {
+            background: #e8e0d4;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .day-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #4a94b4;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #4a94b4;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin: 2px;
+        }
+
+        .toc {
+            background: #f5f3ef;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .toc li {
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #4a94b4;
+        }
+
+        .toc a {
+            color: #1a1a2e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .toc a:hover {
+            color: #4a94b4;
+        }
+
+        .sasquatch-tip {
+            background: #edf6fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #4a94b4;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .sasquatch-tip img {
+            width: 60px;
+            float: left;
+            margin-right: 12px;
+        }
+
+        .sasquatch-tip strong {
+            color: #4a94b4;
+            font-weight: 700;
+        }
+
+        .emergency-box {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .emergency-box h4 {
+            color: #c62828;
+            margin-bottom: 1rem;
+        }
+
+        .climate-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .climate-card {
+            background: #e8e0d4;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .attraction-item {
+            padding: 1rem;
+            background: #f5f3ef;
+            border-radius: 8px;
+        }
+
+        /* ITINERARY STYLES */
+        .itinerary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .itinerary-table th {
+            background: #4a94b4;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .itinerary-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .itinerary-table tr:hover {
+            background: #edf6fa;
+        }
+
+        .day-section {
+            margin: 3rem 0;
+            border: 2px solid #e8e0d4;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .day-header {
+            background: #4a94b4;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .day-content {
+            padding: 2rem;
+        }
+
+        .day-intro {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+        }
+
+        .time-block {
+            margin: 2rem 0;
+        }
+
+        .time-header {
+            color: #4a94b4;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 18px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .timeline-time {
+            width: 72px;
+            text-align: right;
+            color: #4a94b4;
+            font-weight: 600;
+            padding-right: 1rem;
+        }
+
+        .timeline-line {
+            width: 2px;
+            background: #e8e0d4;
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        .timeline-dot {
+            width: 10px;
+            height: 10px;
+            background: #4a94b4;
+            border-radius: 50%;
+            position: absolute;
+            left: -4px;
+            top: 5px;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .activity-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .tag-free { background: #4caf50; color: white; }
+        .tag-price { background: #2196f3; color: white; }
+        .tag-booking { background: #ff9800; color: white; }
+
+        .food-picks {
+            margin: 2rem 0;
+        }
+
+        .meal-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .meal-card {
+            background: #f5f3ef;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #c9a96e;
+        }
+
+        .optional-spots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .spot-card {
+            background: #e8e0d4;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .climate-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .meal-cards,
+            .optional-spots {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-time {
+                width: auto;
+                text-align: left;
+                padding-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SECTION 1: COVER PAGE -->
+<section class="cover-page">
+    <div class="pill-tag">Complete Travel Guide</div>
+    <h1 class="destination-title">London</h1>
+    <p class="country-subtitle">United Kingdom</p>
+    <div class="divider-line"></div>
+    <div class="trip-info">
+        <span>Romantic Getaway</span>
+        <span>•</span>
+        <span>2 Travelers</span>
+        <span>•</span>
+        <span>April 1-8, 2026</span>
+    </div>
+    <div class="brand-section">
+        <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/PLANPACKSTAY_Logo_Social.png" alt="PLANPACKSTAY Logo" class="logo">
+        <span class="brand-name">PLANPACKSTAY</span>
+    </div>
+    <p class="curated-text">Curated for Korbin</p>
+</section>
+
+<!-- SECTION 2: TRIP OVERVIEW -->
+<div class="section-divider">
+    <div class="circle-number">2</div>
+</div>
+<section class="section">
+    <h2 class="section-title">Trip Overview</h2>
+    
+    <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; text-align: center; margin-bottom: 2rem; color: #1a1a2e;">
+        Welcome to London, where centuries of history blend seamlessly with cutting-edge culture. From royal palaces to vibrant markets, cozy pubs to world-class museums, the British capital offers an enchanting backdrop for your romantic spring adventure.
+    </p>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>🏛️ Destination</h4>
+            <p>London, United Kingdom</p>
+        </div>
+        <div class="info-card">
+            <h4>✈️ Departing From</h4>
+            <p>Philadelphia, PA, USA</p>
+        </div>
+        <div class="info-card">
+            <h4>📅 Dates</h4>
+            <p>April 1-8, 2026</p>
+        </div>
+        <div class="info-card">
+            <h4>👥 Travelers</h4>
+            <p>2 People</p>
+        </div>
+        <div class="info-card">
+            <h4>💰 Budget</h4>
+            <p>$2,200 USD</p>
+        </div>
+        <div class="info-card">
+            <h4>🎯 Travel Style</h4>
+            <p>Romantic, On-the-Go, LGBTQ+</p>
+        </div>
+    </div>
+
+    <h3 style="font-size: 28px; font-weight: 700; margin: 3rem 0 1.5rem 0; text-align: center;">Your Trip at a Glance</h3>
+    
+    <div class="day-preview-cards">
+        <div class="day-card">
+            <div class="day-number">Days 1-2</div>
+            <h4 style="margin: 0.5rem 0;">🏰 Royal London</h4>
+            <p>Historic landmarks and royal experiences</p>
+        </div>
+        <div class="day-card">
+            <div class="day-number">Days 3-5</div>
+            <h4 style="margin: 0.5rem 0;">🎨 Cultural Immersion</h4>
+            <p>Museums, markets, and local neighborhoods</p>
+        </div>
+        <div class="day-card">
+            <div class="day-number">Days 6-7</div>
+            <h4 style="margin: 0.5rem 0;">💕 Romantic London</h4>
+            <p>Parks, gardens, and intimate experiences</p>
+        </div>
+    </div>
+
+    <div style="background: #f5f3ef; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+        <h4 style="font-size: 24px; margin-bottom: 1rem;">Overall Vibe</h4>
+        <p style="font-size: 16px; line-height: 1.7;">
+            This itinerary balances must-see attractions with intimate moments perfect for couples. You'll explore London's rich history, indulge in diverse vegetarian cuisine, and discover LGBTQ+-friendly spaces throughout the city. The pace allows for spontaneous discoveries while ensuring you experience London's highlights during the beautiful spring season.
+        </p>
+        <div style="margin-top: 1rem;">
+            <span class="tag">Romantic</span>
+            <span class="tag">Cultural</span>
+            <span class="tag">Foodie-Friendly</span>
+            <span class="tag">LGBTQ+ Welcoming</span>
+            <span class="tag">Historic</span>
+            <span class="tag">Vegetarian Options</span>
+        </div>
+    </div>
+
+    <div class="toc">
+        <h3 style="font-size: 24px; margin-bottom: 1.5rem; text-align: center;">Table of Contents</h3>
+        <ul>
+            <li><a href="#section1">1. Cover Page</a></li>
+            <li><a href="#section2">2. Trip Overview</a></li>
+            <li><a href="#section3">3. Destination Overview</a></li>
+            <li><a href="#section4">4. Itinerary Overview</a></li>
+            <li><a href="#section5">5. Day-by-Day Itinerary</a></li>
+            <li><a href="#section6">6. Food & Dining Guide</a></li>
+            <li><a href="#section7">7. Accommodation Guide</a></li>
+            <li><a href="#section8">8. Transportation Guide</a></li>
+            <li><a href="#section9">9. Budget Breakdown</a></li>
+            <li><a href="#section10">10. Resources & Tips</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- SECTION 3: DESTINATION OVERVIEW -->
+<div class="section-divider">
+    <div class="circle-number">3</div>
+</div>
+<section class="section" id="section3">
+    <h2 class="section-title">Destination Overview</h2>
+    
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>🌡️ Temperature Range</h4>
+            <p>8°C - 15°C<br>(46°F - 59°F)</p>
+        </div>
+        <div class="info-card">
+            <h4>💷 Currency</h4>
+            <p>British Pound Sterling (GBP)</p>
+        </div>
+        <div class="info-card">
+            <h4>🗣️ Language</h4>
+            <p>English</p>
+        </div>
+        <div class="info-card">
+            <h4>🕐 Time Zone</h4>
+            <p>GMT+1 (BST)<br>5 hours ahead of EST</p>
+        </div>
+        <div class="info-card">
+            <h4>🔌 Power Plug</h4>
+            <p>Type G<br>230V, 50Hz</p>
+        </div>
+        <div class="info-card">
+            <h4>🛡️ Safety Rating</h4>
+            <p>Very High<br>LGBTQ+ Friendly</p>
+        </div>
+    </div>
+
+    <h3 style="font-size: 28px; margin: 3rem 0 1.5rem 0;">Best Time to Visit</h3>
+    <p style="font-size: 16px; line-height: 1.7; margin-bottom: 2rem;">
+        April is an excellent time to visit London! Spring brings milder weather, blooming flowers in the parks, and longer daylight hours. You'll experience fewer crowds than peak summer while enjoying comfortable temperatures perfect for walking and outdoor exploration. Pack layers as London weather can be unpredictable.
+    </p>
+
+    <h3 style="font-size: 28px; margin: 3rem 0 1.5rem 0;">Seasonal Climate</h3>
+    <div class="climate-cards">
+        <div class="climate-card">
+            <h4 style="color: #4a94b4; margin-bottom: 0.5rem;">🌸 Spring</h4>
+            <p><strong>8°C - 15°C</strong></p>
+            <p>46°F - 59°F</p>
+            <p style="font-size: 14px; margin-top: 0.5rem;">Mild, blooming</p>
+        </div>
+        <div class="climate-card">
+            <h4 style="color: #4a94b4; margin-bottom: 0.5rem;">☀️ Summer</h4>
+            <p><strong>15°C - 22°C</strong></p>
+            <p>59°F - 72°F</p>
+            <p style="font-size: 14px; margin-top: 0.5rem;">Warm, pleasant</p>
+        </div>
+        <div class="climate-card">
+            <h4 style="color: #4a94b4; margin-bottom: 0.5rem;">🍂 Fall</h4>
+            <p><strong>10°C - 16°C</strong></p>
+            <p>50°F - 61°F</p>
+            <p style="font-size: 14px; margin-top: 0.5rem;">Cool, colorful</p>
+        </div>
+        <div class="climate-card">
+            <h4 style="color: #4a94b4; margin-bottom: 0.5rem;">❄️ Winter</h4>
+            <p><strong>2°C - 8°C</strong></p>
+            <p>36°F - 46°F</p>
+            <p style="font-size: 14px; margin-top: 0.5rem;">Cold, festive</p>
+        </div>
+    </div>
+
+    <h3 style="font-size: 28px; margin: 3rem 0 1.5rem 0;">Must-See Attractions</h3>
+    <div class="attractions-grid">
+        <div class="attraction-item">
+            <h4>📍 <a href="https://www.google.com/maps/search/Tower+of+London+London" target="_blank" rel="noopener" class="location-link">Tower of London</a></h4>
+            <p>Historic castle and Crown Jewels</p>
+        </div>
+        <div class="attraction-item">
+            <h4>📍 <a href="https://www.google.com/maps/search/British+Museum+London" target="_blank" rel="noopener" class="location-link">British Museum</a></h4>
+            <p>World-class artifacts and exhibitions</p>
+        </div>
+        <div class="attraction-item">
+            <h4>📍 <a href="https://www.google.com/maps/search/Buckingham+Palace+London" target="_blank" rel="noopener" class="location-link">Buckingham Palace</a></h4>
+            <p>Royal residence and Changing of the Guard</p>
+        </div>
+        <div class="attraction-item">
+            <h4>📍 <a href="https://www.google.com/maps/search/Westminster+Abbey+London" target="_blank" rel="noopener" class="location-link">Westminster Abbey</a></h4>
+            <p>Gothic architecture and royal history</p>
+        </div>
+        <div class="attraction-item">
+            <h4>📍 <a href="https://www.google.com/maps/search/London+Eye+London" target="_blank" rel="noopener" class="location-link">London Eye</a></h4>
+            <p>Iconic observation wheel with city views</p>
+        </div>
+        <div class="attraction-item">
+            <h4>📍 <a href="https://www.google.com/maps/search/Borough+Market+London" target="_blank" rel="noopener" class="location-link">Borough Market</a></h4>
+            <p>Historic food market with artisanal products</p>
+        </div>
+    </div>
+
+    <h3 style="font-size: 28px; margin: 3rem 0 1.5rem 0;">Getting Around</h3>
+    <p style="font-size: 16px; line-height: 1.7; margin-bottom: 1.5rem;">
+        London's public transport system is excellent and LGBTQ+-friendly. The Underground (Tube) is the fastest way to travel, with stations throughout the city. Consider getting an Oyster Card or using contactless payment for convenient travel on buses, trains, and the Tube. Black cabs are iconic but expensive, while ride-share apps like Uber and Bolt offer competitive prices. Walking is often the best way to explore neighborhoods and discover hidden gems.
+    </p>
+
+    <div class="sasquatch-tip">
+        <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip">
+        <strong>Sasquatch Tip:</strong> Download the Citymapper app for real-time transport information and the best route options. During your April visit, pack an umbrella and waterproof jacket - London spring weather can be unpredictable, but that's part of its charm!
+    </div>
+
+    <h3 style="font-size: 28px; margin: 3rem 0 1.5rem 0;">Safety & LGBTQ+ Information</h3>
+    <p style="font-size: 16px; line-height: 1.7; margin-bottom: 1.5rem;">
+        London is one of the world's most LGBTQ+-friendly cities with a vibrant community and excellent legal protections. The Soho district is the heart of LGBTQ+ nightlife, and you'll find inclusive establishments throughout the city. London is generally very safe for tourists, but use common sense in crowded areas and keep valuables secure. The city has excellent healthcare and emergency services.
+    </p>
+
+    <div class="emergency-box">
+        <h4>🚨 Emergency Contacts</h4>
+        <p><strong>Emergency Services:</strong> 999 or 112</p>
+        <p><strong>Tourist Police:</strong> +44 20 7230 1212</p>
+        <p><strong>Nearest Hospital:</strong> <a href="https://www.google.com/maps/search/St+Thomas+Hospital+London" target="_blank" rel="noopener" class="location-link">📍 St. Thomas' Hospital</a></p>
+        <p><strong>US Embassy:</strong> +44 20 7499 9000</p>
+    </div>
+</section>
+
+<!-- SECTION 4: ITINERARY OVERVIEW -->
+<div class="section-divider">
+    <div class="circle-number">4</div>
+</div>
+<section class="section" id="section4">
+    <h2 class="section-title">Itinerary Overview</h2>
+    
+    <table class="itinerary-table">
+        <thead>
+            <tr>
+                <th>Activity Name</th>
+                <th>Estimated Cost (per person)</th>
+                <th>Duration</th>
+                <th>Booking Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/Tower+of+London+London" target="_blank" rel="noopener" class="location-link">📍 Tower of London</a></td>
+                <td>£30</td>
+                <td>3 hours</td>
+                <td>Yes - Advance recommended</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/Borough+Market+London" target="_blank" rel="noopener" class="location-link">📍 Borough Market</a></td>
+                <td>£15-25</td>
+                <td>2 hours</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/British+Museum+London" target="_blank" rel="noopener" class="location-link">📍 British Museum</a></td>
+                <td>Free (donations welcome)</td>
+                <td>3 hours</td>
+                <td>No (timed entry recommended)</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/Westminster+Abbey+London" target="_blank" rel="noopener" class="location-link">📍 Westminster Abbey</a></td>
+                <td>£25</td>
+                <td>2 hours</td>
+                <td>Yes - Advance recommended</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/London+Eye+London" target="_blank" rel="noopener" class="location-link">📍 London Eye</a></td>
+                <td>£32</td>
+                <td>1 hour</td>
+                <td>Yes - Book in advance</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/Hyde+Park+London" target="_blank" rel="noopener" class="location-link">📍 Hyde Park</a></td>
+                <td>Free</td>
+                <td>2-3 hours</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/Tate+Modern+London" target="_blank" rel="noopener" class="location-link">📍 Tate Modern</a></td>
+                <td>Free (special exhibitions may charge)</td>
+                <td>2 hours</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com/maps/search/Covent+Garden+London" target="_blank" rel="noopener" class="location-link">📍 Covent Garden</a></td>
+                <td>Free (shopping extra)</td>
+                <td>2 hours</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- SECTION 5: DAY BY DAY ITINERARY -->
+<div class="section-divider">
+    <div class="circle-number">5</div>
+</div>
+<section class="section" id="section5">
+    <h2 class="section-title">Day-by-Day Itinerary</h2>
+
+    <!-- DAY 1 -->
+    <div class="day-section">
+        <div class="day-header">
+            <h3 style="font-size: 28px; margin: 0;">Day 1: Historic London Discovery</h3>
+        </div>
+        <div class="day-content">
+            <p class="day-intro">
+                Begin your London adventure with iconic landmarks and historic treasures. Today focuses on the classic sights that define this magnificent city, perfect for getting oriented and falling in love with London's rich heritage.
+            </p>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span>☀️ MORNING</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">9:00 AM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/Tower+of+London+London" target="_blank" rel="noopener" class="location-link">Tower of London</a> <span class="activity-tag tag-price">£30pp</span></h4>
+                        <p>Explore this historic fortress, see the Crown Jewels, and learn about London's royal history. Book advance tickets to skip queues. Allow 3 hours for the full experience including the Yeoman Warder tour.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span>☁️ AFTERNOON</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:00 PM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/Borough+Market+London" target="_blank" rel="noopener" class="location-link">Borough Market</a> <span class="activity-tag tag-free">Free Entry</span></h4>
+                        <p>London's most famous food market! Sample artisanal products, fresh produce, and street food. Perfect for vegetarians with numerous plant-based options and specialty coffee vendors.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">3:30 PM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/London+Bridge+London" target="_blank" rel="noopener" class="location-link">London Bridge Walk</a> <span class="activity-tag tag-free">Free</span></h4>
+                        <p>Stroll across the Thames with stunning city views. Perfect photo opportunities of Tower Bridge and the London skyline. A romantic walk for couples.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span>🌙 EVENING</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">6:00 PM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/Southwark+Cathedral+London" target="_blank" rel="noopener" class="location-link">Southwark Cathedral</a> <span class="activity-tag tag-free">Free</span></h4>
+                        <p>Visit this beautiful Gothic cathedral for evening prayer or simply to admire the architecture. Peaceful end to your first day in London.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-picks">
+                <h4 style="font-size: 22px; margin: 2rem 0 1rem 0; color: #4a94b4;">Day 1 Food Picks</h4>
+                <div class="meal-cards">
+                    <div class="meal-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 20px;">☕</span>
+                            <span style="background: #c9a96e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">COFFEE</span>
+                        </div>
+                        <h5>📍 <a href="https://www.google.com/maps/search/Monmouth+Coffee+Borough+London" target="_blank" rel="noopener" class="location-link">Monmouth Coffee</a></h5>
+                        <p style="font-size: 14px; margin: 0.5rem 0;">Specialty Coffee</p>
+                        <p style="font-size: 12px; color: #666;">Famous Borough Market coffee roastery</p>
+                    </div>
+                    <div class="meal-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 20px;">🥗</span>
+                            <span style="background: #4a94b4; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">LUNCH</span>
+                        </div>
+                        <h5>📍 <a href="https://www.google.com/maps/search/Champor+Thai+London" target="_blank" rel="noopener" class="location-link">Champor Thai</a></h5>
+                        <p style="font-size: 14px; margin: 0.5rem 0;">Thai Vegetarian</p>
+                        <p style="font-size: 12px; color: #666;">Excellent vegetarian Thai options nearby</p>
+                    </div>
+                    <div class="meal-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 20px;">🍽️</span>
+                            <span style="background: #1a1a2e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">DINNER</span>
+                        </div>
+                        <h5>📍 <a href="https://www.google.com/maps/search/Champor+Thai+London" target="_blank" rel="noopener" class="location-link">Champor Thai</a></h5>
+                        <p style="font-size: 14px; margin: 0.5rem 0;">Thai</p>
+                        <p style="font-size: 12px; color: #666;">Romantic dinner with river views</p>
+                    </div>
+                </div>
+
+                <h5 style="margin: 2rem 0 1rem 0;">Optional Food Spots</h5>
+                <div class="optional-spots">
+                    <div class="spot-card">
+                        <h6>📍 <a href="https://www.google.com/maps/search/Applebee+Fish+London" target="_blank" rel="noopener" class="location-link">Applebee Fish</a></h6>
+                        <p style="font-size: 14px;">Traditional | ⭐⭐⭐⭐ | ££</p>
+                    </div>
+                    <div class="spot-card">
+                        <h6>📍 <a href="https://www.google.com/maps/search/Tanner+Warehouse+London" target="_blank" rel="noopener" class="location-link">Tanner Warehouse</a></h6>
+                        <p style="font-size: 14px;">Pub Food | ⭐⭐⭐⭐ | ££</p>
+                    </div>
+                    <div class="spot-card">
+                        <h6>📍 <a href="https://www.google.com/maps/search/Fish+Restaurant+Borough+London" target="_blank" rel="noopener" class="location-link">Fish!</a></h6>
+                        <p style="font-size: 14px;">Seafood | ⭐⭐⭐⭐⭐ | £££</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sasquatch-tip">
+                <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip">
+                <strong>Sasquatch Tip:</strong> Book your Tower of London tickets online in advance to save money and skip the queues. The Yeoman Warder tours are included and absolutely worth it - they're both informative and entertaining! Arrive early to avoid crowds and enjoy better photos.
+            </div>
+        </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-section">
+        <div class="day-header">
+            <h3 style="font-size: 28px; margin: 0;">Day 2: Royal Westminster</h3>
+        </div>
+        <div class="day-content">
+            <p class="day-intro">
+                Immerse yourself in royal London with visits to Westminster's most iconic landmarks. From royal ceremonies to political power, today showcases the grandeur and pageantry that defines British culture.
+            </p>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span>☀️ MORNING</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">9:30 AM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/Westminster+Abbey+London" target="_blank" rel="noopener" class="location-link">Westminster Abbey</a> <span class="activity-tag tag-booking">£25pp</span></h4>
+                        <p>Explore this Gothic masterpiece where royals have been crowned for nearly 1,000 years. Book advance tickets and consider the audio guide for rich historical context.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">11:30 AM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/Houses+of+Parliament+London" target="_blank" rel="noopener" class="location-link">Houses of Parliament</a> <span class="activity-tag tag-free">Free Exterior</span></h4>
+                        <p>Admire Big Ben (under renovation) and the Palace of Westminster. Perfect photo opportunity and short walk from Westminster Abbey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span>☁️ AFTERNOON</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:00 PM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/St+James+Park+London" target="_blank" rel="noopener" class="location-link">St. James's Park</a> <span class="activity-tag tag-free">Free</span></h4>
+                        <p>Romantic stroll through London's most beautiful royal park. In April, enjoy spring flowers and feed the pelicans. Great views of Buckingham Palace.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:30 PM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/Buckingham+Palace+London" target="_blank" rel="noopener" class="location-link">Buckingham Palace</a> <span class="activity-tag tag-free">Free Exterior</span></h4>
+                        <p>See the official London residence of the royal family. Check if there's a Changing of the Guard ceremony (usually Wed/Sat at 11am).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span>🌙 EVENING</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">5:00 PM</div>
+                    <div class="timeline-line">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>📍 <a href="https://www.google.com/maps/search/London+Eye+London" target="_blank" rel="noopener" class="location-link">London Eye</a> <span class="activity-tag tag-booking">£32pp</span></h4>
+                        <p>End your day with breathtaking 360-degree views of London. Book sunset time slot for romantic city views. The 30-minute rotation is perfect for couples.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-picks">
+                <h4 style="font-size: 22px; margin: 2rem 0 1rem 0; color: #4a94b4;">Day 2 Food Picks</h4>
+                <div class="meal-cards">
+                    <div class="meal-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 20px;">☕</span>
+                            <span style="background: #c9a96e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">COFFEE</span>
+                        </div>
+                        <h5>📍 <a href="https://www.google.com/maps/search/Attendant+Coffee+Westminster+London" target="_blank" rel="noopener" class="location-link">Attendant Coffee</a></h5>
+                        <p style="font-size: 14px; margin: 0.5rem 0;">Specialty Coffee</p>
+                        <p style="font-size: 12px; color: #666;">Unique coffee shop in a Victorian loo</p>
+                    </div>
+                    <div class="meal-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 20px;">🥪</span>
+                            <span style="background: #4a94b4; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">LUNCH</span>
+                        </div>
+                        <h5>📍 <a href="https://www.google.com/maps/search/Inn+the+Park+London" target="_blank" rel="noopener" class="location-link">Inn the Park</a></h5>
+                        <p style="font-size: 14px; margin: 0.5rem 0;">Modern British</p>
+                        <p style="font-size: 12px; color: #666;">Park restaurant with vegetarian options</p>
+                    </div>
+                    <div class="meal-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 20px;">🍛</span>
+                            <span style="background: #1a1a2e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">DINNER</span>
+                        </div>
+                        <h5>📍 <a href="https://www.google.com/maps/search/Dishoom+Covent+Garden+London" target="_blank" rel="noopener" class="location-link">Dishoom</a></h5>
+                        <p style="font-size: 14px; margin: 0.5rem 0;">Indian</p>
+                        <p style="font-size: 12px; color: #666;">Bombay café with excellent vegetarian dishes</p>
+                    </div>
+                </div>
+
+                <h5 style="margin: 2rem 0 1rem 0;">Optional Food Spots</h5>
+                <div class="optional-spots">
+                    <div class="spot-card">
+                        <h6>📍 <a href="https://www.google.com/maps/search/Wagamama+Westminster+London" target="_blank" rel="noopener" class="location-link">Wagamama</a></h6>
+                        <p style="font-size: 14px;">Asian | ⭐⭐⭐⭐ | ££</p>
+                    </div>
+                    <div class="spot-card">
+                        <h6>📍 <a href="https://www.google.com/maps/search/Pret+A+Manger+Westminster+London" target="_blank" rel="noopener" class="location-link">Pret A Manger</a></h6>
+                        <p style="font-size: 14px;">Quick Bites | ⭐⭐⭐ | £</p>
+                    </div>
+                    <div class="spot-card">
+                        <h6>📍 <a href="https://www.google.com/maps/search/Gelato+Mio+South+Bank+London" target="_blank" rel="noopener" class="location-link">Gelato Mio</a></h6>
+                        <p style="font-size: 14px;">Ice Cream | ⭐⭐⭐⭐⭐ | ££</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sasquatch-tip">
+                <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip">
+                <strong>Sasquatch Tip:</strong> Westminster Abbey gets very crowded after 11am, so arriving early is key. The London Eye offers the best views at sunset - book your tickets for around 5pm in April for magical golden hour lighting over the city!
+            </div>
+        </div>
+    </div>
+</section><section id="food-drink" style="padding: 60px 0; background: #FFFFFE;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #4a94b4, #c9a96e); border-radius: 50%; margin-bottom: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFE;">6</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #1a1a2e; margin: 0 0 16px 0;">Food & Drink</h2>
+        </div>
+
+        <p style="font-family: 'Source Sans 3', sans-serif; font-size: 18px; line-height: 1.6; color: #1a1a2e; text-align: center; margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto;">London's culinary scene is a vegetarian paradise, Korbin! From innovative plant-based fine dining to authentic Indian vegetarian cuisine, the city offers incredible options for your dietary preferences. Borough Market, your must-see destination, is the perfect starting point for discovering artisanal coffee roasters and gelato makers alongside fresh vegetarian ingredients from around the world.</p>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Top 10 Restaurants</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Dishoom+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Dishoom</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Indian</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Bombay-style cafe with excellent vegetarian options and romantic atmosphere.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations recommended</p>
+                </div>
+                
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Mildreds+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Mildreds</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Vegetarian</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Pioneer of London's vegetarian scene with globally inspired dishes.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Walk-ins welcome</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Rasa+Travancore+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Rasa Travancore</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Indian</span>
+                        <span style="color: #c9a96e;">⭐ 4.3</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Authentic South Indian vegetarian cuisine in intimate setting.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations essential</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Sketch+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Sketch</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Contemporary</span>
+                        <span style="color: #c9a96e;">⭐ 4.2</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Instagram-worthy pink room with excellent vegetarian afternoon tea.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Advance booking required</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Gauthier+Soho+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Gauthier Soho</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">French</span>
+                        <span style="color: #c9a96e;">⭐ 4.6</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Michelin-starred vegetarian fine dining in romantic Georgian townhouse.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations essential</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Gate+Hammersmith+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Gate</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Vegetarian</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Upscale vegetarian restaurant with creative seasonal menu.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations recommended</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Farmacy+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Farmacy</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Plant-Based</span>
+                        <span style="color: #c9a96e;">⭐ 4.3</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Stylish plant-based restaurant in trendy Notting Hill.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations advised</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Tibits+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Tibits</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Vegetarian</span>
+                        <span style="color: #c9a96e;">⭐ 4.2</span>
+                        <span style="font-size: 14px;">£</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Swiss vegetarian buffet with fresh, healthy options.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">No reservations needed</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Vanilla+Black+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Vanilla Black</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Vegetarian</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Award-winning fine dining vegetarian restaurant near St Paul's.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations essential</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Prashad+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Prashad</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Indian</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Gujarati vegetarian cuisine with authentic home-style cooking.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations recommended</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Top 10 Aesthetic Cafes</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Monmouth+Coffee+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Monmouth Coffee</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Coffee</span>
+                        <span style="color: #c9a96e;">⭐ 4.6</span>
+                        <span style="font-size: 14px;">£</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Legendary Borough Market coffee roaster with exceptional single origins.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Cash only</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Workshop+Coffee+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Workshop Coffee</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Specialty Coffee</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Industrial-chic space with expertly crafted specialty coffee.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Multiple locations</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Gelupo+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Gelupo</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Gelato</span>
+                        <span style="color: #c9a96e;">⭐ 4.7</span>
+                        <span style="font-size: 14px;">£</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Authentic Italian gelateria in Soho with creative flavors.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Stand-up service</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Attendant+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Attendant</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Coffee</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Unique cafe in converted Victorian underground toilets.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Very small space</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Elan+Cafe+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Elan Cafe</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Brunch</span>
+                        <span style="color: #c9a96e;">⭐ 4.3</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Instagram-worthy cafe with beautiful floral decor and brunch.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Often busy</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Chin+Chin+Labs+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Chin Chin Labs</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Ice Cream</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Liquid nitrogen ice cream made fresh with theatrical presentation.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Watch it being made</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/God+Shot+Coffee+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">God Shot Coffee</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Coffee</span>
+                        <span style="color: #c9a96e;">⭐ 4.6</span>
+                        <span style="font-size: 14px;">£</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Tiny specialty coffee shop with serious attention to brewing.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Standing room only</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Peggy+Porschen+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Peggy Porschen</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Bakery</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Famous pink bakery with Instagram-worthy exterior and cupcakes.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Photo spot destination</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Flat+White+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Flat White</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Coffee</span>
+                        <span style="color: #c9a96e;">⭐ 4.3</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Pioneering Antipodean coffee culture in trendy Soho location.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Counter seating</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/La+Gelatiera+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">La Gelatiera</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Gelato</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">£</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Covent Garden gelato shop with authentic Italian recipes.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Sample before buying</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Top 10 Bars & Nightlife</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Sketch+London+Pink+Room" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Sketch Pink Room</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Cocktail Bar</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Iconic pink velvet bar perfect for romantic cocktails and Instagram shots.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Smart casual dress code</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Nightjar+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Nightjar</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Speakeasy</span>
+                        <span style="color: #c9a96e;">⭐ 4.6</span>
+                        <span style="font-size: 14px;">££££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Award-winning speakeasy with live jazz and innovative cocktails.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Reservations recommended</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/XOYO+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">XOYO</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Club</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">LGBTQ+-friendly club in Shoreditch with underground dance music.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Open late weekends</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Aqua+Shard+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Aqua Shard</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Sky Bar</span>
+                        <span style="color: #c9a96e;">⭐ 4.3</span>
+                        <span style="font-size: 14px;">££££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Spectacular views from 31st floor of The Shard skyscraper.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Smart dress code required</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/G-A-Y+Bar+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">G-A-Y Bar</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">LGBTQ+</span>
+                        <span style="color: #c9a96e;">⭐ 4.2</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Legendary gay bar in Soho with pop music and welcoming atmosphere.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Free entry most nights</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Connaught+Bar+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Connaught Bar</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Hotel Bar</span>
+                        <span style="color: #c9a96e;">⭐ 4.7</span>
+                        <span style="font-size: 14px;">££££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">World-famous cocktail bar with Art Deco glamour and expert mixology.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Jacket required</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Heaven+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Heaven</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">LGBTQ+ Club</span>
+                        <span style="color: #c9a96e;">⭐ 4.3</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Historic gay superclub under Charing Cross with multiple rooms.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Open Thursday-Saturday</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Dandelyan+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Lyaness</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">River Bar</span>
+                        <span style="color: #c9a96e;">⭐ 4.5</span>
+                        <span style="font-size: 14px;">££££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Thames-side cocktail bar with innovative drinks and river views.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Advance booking essential</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Dalston+Superstore+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Dalston Superstore</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Alternative</span>
+                        <span style="color: #c9a96e;">⭐ 4.4</span>
+                        <span style="font-size: 14px;">££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Quirky LGBTQ+-friendly bar with alternative crowd and drag shows.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Check event schedule</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Madison+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Madison</a></h4>
+                    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                        <span style="background: #4a94b4; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Rooftop</span>
+                        <span style="color: #c9a96e;">⭐ 4.2</span>
+                        <span style="font-size: 14px;">£££</span>
+                    </div>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Rooftop terrace overlooking St Paul's Cathedral with romantic ambiance.</p>
+                    <p style="font-size: 12px; margin: 8px 0 0 0; color: #666; font-style: italic;">Weather dependent</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #e8e0d4; padding: 24px; border-radius: 12px; margin-top: 32px;">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip" style="width: 60px; height: auto; float: left; margin-right: 12px;">
+                <div>
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 8px 0;">🦍 Sasquatch Dining Tip</h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin: 0; line-height: 1.5;">Service charge is often included in London restaurant bills (usually 12.5%), but always check! Tipping 10-15% is standard if service charge isn't included. Many restaurants offer excellent vegetarian tasting menus - don't hesitate to ask about off-menu options, as London chefs are very accommodating to dietary preferences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="where-to-stay" style="padding: 60px 0; background: #f5f3ef;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #4a94b4, #c9a96e); border-radius: 50%; margin-bottom: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFE;">7</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #1a1a2e; margin: 0 0 16px 0;">Where to Stay</h2>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Best Neighborhoods</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <div style="height: 8px; background: linear-gradient(135deg, #4a94b4, #c9a96e);"></div>
+                    <div style="padding: 24px;">
+                        <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 12px 0;">Covent Garden</h4>
+                        <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin-bottom: 16px;">Heart of London's theater district with cobblestone streets, street performers, and romantic atmosphere. Walking distance to major attractions and excellent restaurants.</p>
+                        <div style="background: #4a94b4; color: white; padding: 8px 12px; border-radius: 6px; display: inline-block; font-size: 14px; font-weight: 600; margin-bottom: 8px;">Best For: First-time visitors, theater lovers, romantic getaways</div>
+                        <p style="font-style: italic; color: #666; font-size: 14px; margin: 0;">Perfect for couples who want to be in the center of everything</p>
+                    </div>
+                </div>
+
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <div style="height: 8px; background: linear-gradient(135deg, #4a94b4, #c9a96e);"></div>
+                    <div style="padding: 24px;">
+                        <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 12px 0;">Soho</h4>
+                        <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin-bottom: 16px;">Vibrant LGBTQ+ friendly neighborhood with diverse dining, nightlife, and cultural attractions. Mix of historic charm and modern energy.</p>
+                        <div style="background: #4a94b4; color: white; padding: 8px 12px; border-radius: 6px; display: inline-block; font-size: 14px; font-weight: 600; margin-bottom: 8px;">Best For: LGBTQ+ travelers, nightlife enthusiasts, foodies</div>
+                        <p style="font-style: italic; color: #666; font-size: 14px; margin: 0;">The beating heart of London's LGBTQ+ scene with endless dining options</p>
+                    </div>
+                </div>
+
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <div style="height: 8px; background: linear-gradient(135deg, #4a94b4, #c9a96e);"></div>
+                    <div style="padding: 24px;">
+                        <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 12px 0;">Borough & Southwark</h4>
+                        <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin-bottom: 16px;">Home to Borough Market and close to Thames attractions. Foodie paradise with artisanal producers and fantastic river views.</p>
+                        <div style="background: #4a94b4; color: white; padding: 8px 12px; border-radius: 6px; display: inline-block; font-size: 14px; font-weight: 600; margin-bottom: 8px;">Best For: Food lovers, market enthusiasts, riverside walks</div>
+                        <p style="font-style: italic; color: #666; font-size: 14px; margin: 0;">Your must-see Borough Market is right on your doorstep</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Hotel Recommendations</h3>
+            
+            <div style="margin-bottom: 32px;">
+                <h4 style="font-family: 'Source Sans 3', sans-serif; font-size: 20px; color: #1a1a2e; margin-bottom: 16px;">Budget (Under £100/night)</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/YHA+London+Central" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">YHA London Central</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£85/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Modern hostel with private rooms near Oxford Street</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Premier+Inn+London+Borough" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Premier Inn London Borough</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£95/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Clean, comfortable rooms walking distance to Borough Market</p>
+                    </div>
+
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Hub+by+Premier+Inn+London+Covent+Garden" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Hub by Premier Inn</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£89/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Compact modern rooms in prime Covent Garden location</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 32px;">
+                <h4 style="font-family: 'Source Sans 3', sans-serif; font-size: 20px; color: #1a1a2e; margin-bottom: 16px;">Mid-Range (£100-250/night)</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Z+Hotel+Piccadilly+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Z Hotel Piccadilly</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£145/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Stylish boutique hotel in the heart of the West End</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Henrietta+Hotel+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Henrietta Hotel</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£220/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Romantic boutique hotel in Covent Garden with Italian restaurant</p>
+                    </div>
+
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Hoxton+Southwark+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Hoxton Southwark</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£185/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Hip hotel near Borough Market with industrial-chic design</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 style="font-family: 'Source Sans 3', sans-serif; font-size: 20px; color: #1a1a2e; margin-bottom: 16px;">Luxury (£250+/night)</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Savoy+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Savoy</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£450/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Iconic luxury hotel with Art Deco glamour and Thames views</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Shangri+La+Hotel+At+The+Shard+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Shangri La at The Shard</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£380/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Sky-high luxury with panoramic city views from floors 34-52</p>
+                    </div>
+
+                    <div style="background: white; padding: 16px; border-radius: 8px;">
+                        <h5 style="margin: 0 0 8px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Ned+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Ned</a></h5>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 18px; font-weight: 700; color: #c9a96e;">£320/night</span>
+                        </div>
+                        <p style="font-size: 14px; margin: 8px 0 0 0; color: #1a1a2e;">Stunning 1920s bank conversion with rooftop pool and multiple restaurants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 32px;">
+            <a href="https://www.booking.com/search.html?ss=London" target="_blank" style="display: inline-block; background: #4a94b4; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-family: 'Source Sans 3', sans-serif; font-weight: 600; font-size: 16px;">Search Hotels</a>
+        </div>
+
+        <div style="background: #e8e0d4; padding: 24px; border-radius: 12px;">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip" style="width: 60px; height: auto; float: left; margin-right: 12px;">
+                <div>
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 8px 0;">🦍 Sasquatch Accommodation Tip</h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin: 0; line-height: 1.5;">Book early for April in London as it's peak spring season! Many hotels offer romantic packages perfect for couples. Consider staying near Borough Market since it's your must-see - you can grab breakfast there daily and explore different vendors. The Southwark area has great LGBTQ+-friendly establishments and is well-connected by tube.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experiences" style="padding: 60px 0; background: #FFFFFE;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #4a94b4, #c9a96e); border-radius: 50%; margin-bottom: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFE;">8</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #1a1a2e; margin: 0 0 16px 0;">Experiences</h2>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Six Must-Do Activities</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px;">
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a2e; margin: 0 0 12px 0;">📍 <a href="https://www.google.com/maps/search/Borough+Market+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Borough Market Food Tour</a></h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">Explore London's oldest food market with over 1,000 years of history, sampling artisanal cheeses, fresh breads, and specialty coffee. The market's vegetarian vendors offer incredible plant-based options and organic produce perfect for your dietary preferences.</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a2e; margin: 0 0 12px 0;">📍 <a href="https://www.google.com/maps/search/Thames+Path+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Thames Riverside Walk</a></h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">Romantic stroll along the Thames from Tower Bridge to Westminster, passing iconic landmarks like Shakespeare's Globe and Tate Modern. The riverside path offers stunning photo opportunities and connects many of London's cultural attractions effortlessly.</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a2e; margin: 0 0 12px 0;">📍 <a href="https://www.google.com/maps/search/West+End+Theatre+District+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">West End Theatre Show</a></h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">Experience world-class theater in London's legendary West End, from long-running classics like The Lion King to cutting-edge new productions. Many shows have LGBTQ+ themes and the theater district's vibrant atmosphere is perfect for a romantic evening out.</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a2e; margin: 0 0 12px 0;">📍 <a href="https://www.google.com/maps/search/British+Museum+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">British Museum Discovery</a></h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">Immerse yourself in 6,000 years of human history at one of the world's greatest museums, home to treasures like the Rosetta Stone and Egyptian mummies. The museum's Great Court provides a stunning architectural backdrop for photos, and entry is completely free.</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a2e; margin: 0 0 12px 0;">📍 <a href="https://www.google.com/maps/search/London+Eye" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">London Eye at Sunset</a></h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">Rise 135 meters above London for breathtaking 360-degree views of the city skyline, perfectly timed for golden hour photography. The 30-minute rotation provides ample time for romantic moments and capturing the perfect couple's photo with Big Ben and Westminster as your backdrop.</p>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 18px; color: #1a1a2e; margin: 0 0 12px 0;">📍 <a href="https://www.google.com/maps/search/Hyde+Park+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Hyde Park & Kensington Gardens</a></h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">Escape the city bustle in London's most famous royal park, featuring the Diana Memorial, Serpentine Lake, and Speaker's Corner. April brings beautiful spring blooms perfect for romantic picnics, and the park connects to Kensington Palace and the Albert Memorial for extended exploration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Top 3 GetYourGuide Experiences</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px; text-align: center;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 16px 0;">London Food Tour with Borough Market</h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin-bottom: 20px; line-height: 1.6;">Guided foodie adventure through Borough Market and surrounding areas with tastings at 6+ stops including vegetarian specialties.</p>
+                    <a href="https://www.getyourguide.com/s/?q=London" target="_blank" style="display: inline-block; background: #c9a96e; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Book Experience</a>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px; text-align: center;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 16px 0;">Thames Evening Cruise with Dinner</h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin-bottom: 20px; line-height: 1.6;">Romantic dinner cruise along the Thames with panoramic views of illuminated London landmarks and vegetarian menu options.</p>
+                    <a href="https://www.getyourguide.com/s/?q=London" target="_blank" style="display: inline-block; background: #c9a96e; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Book Experience</a>
+                </div>
+
+                <div style="background: #f5f3ef; padding: 24px; border-radius: 12px; text-align: center;">
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 16px 0;">LGBTQ+ London Walking Tour</h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin-bottom: 20px; line-height: 1.6;">Discover London's rich LGBTQ+ history through Soho and surrounding areas with insider access to community landmarks and stories.</p>
+                    <a href="https://www.getyourguide.com/s/?q=London" target="_blank" style="display: inline-block; background: #c9a96e; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Book Experience</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #1a1a2e; margin-bottom: 24px;">Hidden Gems</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="background: #e8e0d4; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600; color: #1a1a2e;">📍 <a href="https://www.google.com/maps/search/Leadenhall+Market+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Leadenhall Market</a></h4>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Victorian covered market with stunning architecture, featured in Harry Potter films as Diagon Alley.</p>
+                </div>
+
+                <div style="background: #e8e0d4; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600; color: #1a1a2e;">📍 <a href="https://www.google.com/maps/search/Neal's+Yard+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Neal's Yard</a></h4>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Colorful courtyard in Covent Garden filled with organic shops, vegetarian cafes, and wellness boutiques.</p>
+                </div>
+
+                <div style="background: #e8e0d4; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600; color: #1a1a2e;">📍 <a href="https://www.google.com/maps/search/Dennis+Severs+House+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Dennis Severs' House</a></h4>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Immersive historical experience in Spitalfields, like stepping back in time to 18th century London.</p>
+                </div>
+
+                <div style="background: #e8e0d4; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin: 0 0 8px 0; font-family: 'Source Sans 3', sans-serif; font-weight: 600; color: #1a1a2e;">📍 <a href="https://www.google.com/maps/search/Sky+Garden+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Sky Garden</a></h4>
+                    <p style="font-size: 14px; margin: 0; color: #1a1a2e;">Free panoramic views from London's highest public garden with tropical plants and city vistas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="packing" style="padding: 60px 0; background: #f5f3ef;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #4a94b4, #c9a96e); border-radius: 50%; margin-bottom: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFE;">9</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #1a1a2e; margin: 0 0 16px 0;">Packing for April in London</h2>
+        </div>
+
+        <p style="font-family: 'Source Sans 3', sans-serif; font-size: 18px; line-height: 1.6; color: #1a1a2e; text-align: center; margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto;">April in London brings mild spring weather with temperatures ranging from 45-60°F (7-15°C). Expect occasional showers mixed with sunny spells - perfect weather for exploring Borough Market and romantic walks along the Thames. Pack layers and always carry a compact umbrella!</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 16px 0; display: flex; align-items: center;">👔 Clothing</h3>
+                <ul style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>Light sweaters and cardigans</li>
+                    <li>Long-sleeve shirts and blouses</li>
+                    <li>Jeans and smart casual trousers</li>
+                    <li>One dressy outfit for theater/dining</li>
+                    <li>Warm pajamas</li>
+                    <li>Underwear for 7+ days</li>
+                </ul>
+            </div>
+
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 16px 0; display: flex; align-items: center;">👟 Shoes</h3>
+                <ul style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>Comfortable walking shoes (waterproof)</li>
+                    <li>Dress shoes for evenings out</li>
+                    <li>Indoor slippers for hotel</li>
+                    <li>Extra socks (including wool ones)</li>
+                    <li>Shoe covers or plastic bags</li>
+                </ul>
+            </div>
+
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 16px 0; display: flex; align-items: center;">☔ Weather Gear</h3>
+                <ul style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>Compact travel umbrella</li>
+                    <li>Waterproof jacket or trench coat</li>
+                    <li>Light scarf</li>
+                    <li>Warm hat for cooler days</li>
+                    <li>Light gloves (optional)</li>
+                </ul>
+            </div>
+
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 16px 0; display: flex; align-items: center;">📱 Tech</h3>
+                <ul style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>UK plug adapter (Type G)</li>
+                    <li>Portable phone charger/power bank</li>
+                    <li>Camera with extra batteries</li>
+                    <li>Headphones for flights</li>
+                    <li>Travel router (optional)</li>
+                </ul>
+            </div>
+
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 16px 0; display: flex; align-items: center;">🧴 Essentials</h3>
+                <ul style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>Toiletries in travel containers</li>
+                    <li>Hand sanitizer and masks</li>
+                    <li>Any prescription medications</li>
+                    <li>Sunglasses and sunscreen SPF 30+</li>
+                    <li>Reusable water bottle</li>
+                    <li>Tote bag for Borough Market shopping</li>
+                </ul>
+            </div>
+
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 16px 0; display: flex; align-items: center;">📄 Documents</h3>
+                <ul style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>Valid passport (check expiration)</li>
+                    <li>Flight confirmations (digital + printed)</li>
+                    <li>Hotel reservations</li>
+                    <li>Travel insurance documents</li>
+                    <li>Emergency contact information</li>
+                    <li>Copies stored separately</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 24px; border-radius: 12px; margin-bottom: 32px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a2e; margin: 0 0 16px 0;">Luggage Recommendation</h3>
+            <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; line-height: 1.6; margin: 0;">For a 7-day London trip, we recommend a medium-sized suitcase (24-26 inches) plus a daypack for exploring. Choose luggage with four spinner wheels for easy navigation through tube stations and cobblestone streets. A waterproof or water-resistant exterior is ideal for London's unpredictable weather. Pack cubes help organize clothes efficiently and make unpacking easier for couples sharing space.</p>
+        </div>
+
+        <div style="background: #e8e0d4; padding: 24px; border-radius: 12px; margin-bottom: 32px;">
+            <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 12px 0;">✈️ Carry-On Requirements from Philadelphia (PHL)</h4>
+            <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin: 0 0 12px 0; line-height: 1.5;">Most airlines allow one carry-on bag (22" x 14" x 9") plus one personal item. Liquids must be in containers 3.4oz or smaller in a quart-sized bag. Electronics larger than a phone should be easily accessible for security screening.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="https://amazon.com/luggage" target="_blank" style="display: inline-block; background: #4a94b4; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Shop Luggage on Amazon</a>
+                <a href="https://airalo.com" target="_blank" style="display: inline-block; background: #c9a96e; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Get UK eSIM with Airalo</a>
+            </div>
+        </div>
+
+        <div style="background: #e8e0d4; padding: 24px; border-radius: 12px;">
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/Sasquatch_Holding_Arm_Out.png" alt="Sasquatch Tip" style="width: 60px; height: auto; float: left; margin-right: 12px;">
+                <div>
+                    <h4 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; color: #1a1a2e; margin: 0 0 8px 0;">🦍 Sasquatch Packing Tip</h4>
+                    <p style="font-family: 'Source Sans 3', sans-serif; color: #1a1a2e; margin: 0; line-height: 1.5;">London weather in April is famously unpredictable - you might experience four seasons in one day! Pack layers you can add or remove easily. Bring a stylish umbrella since you'll be carrying it frequently. Pro tip: UK electrical outlets are different from US ones, so don't forget your adapter. Many London restaurants are upscale, so pack at least one smart-casual outfit for dining out.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="book-trip" style="padding: 60px 0; background: #FFFFFE;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, #4a94b4, #c9a96e); border-radius: 50%; margin-bottom: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFE;">10</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: #1a1a2e; margin: 0 0 16px 0;">Book This Trip</h2>
+            <p style="font-family: 'Source Sans 3', sans-serif; font-size: 18px; color: #1a1a2e; max-width: 600px; margin: 0 auto;">Ready to experience London, Korbin? Here's everything you need to book your romantic April getaway. Flights from Philadelphia to London typically range from $650-850 per person during spring season.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-bottom: 48px;">
+            <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 20px 0;">🏨 Accommodation</h3>
+                <div style="margin-bottom: 16px;">
+                    <h4 style="margin: 0 0 4px 0; font-size: 16px; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Henrietta+Hotel+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Henrietta Hotel</a></h4>
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #666;">Romantic Covent Garden boutique hotel</p>
+                    <p style="margin: 0; font-weight: 700; color: #c9a96e;">£220/night</p>
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <h4 style="margin: 0 0 4px 0; font-size: 16px; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Hoxton+Southwark+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Hoxton Southwark</a></h4>
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #666;">Hip hotel near Borough Market</p>
+                    <p style="margin: 0; font-weight: 700; color: #c9a96e;">£185/night</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h4 style="margin: 0 0 4px 0; font-size: 16px; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/The+Z+Hotel+Piccadilly+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">The Z Hotel Piccadilly</a></h4>
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #666;">Stylish West End location</p>
+                    <p style="margin: 0; font-weight: 700; color: #c9a96e;">£145/night</p>
+                </div>
+                <a href="https://www.booking.com/search.html?ss=London" target="_blank" style="display: inline-block; background: #4a94b4; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; width: 100%; text-align: center; box-sizing: border-box;">Book Hotels</a>
+            </div>
+
+            <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 20px 0;">🎯 Activities</h3>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">Borough Market Food Tour</p>
+                    <p style="margin: 0; font-size: 14px; color: #c9a96e;">£45 per person</p>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">Thames Evening Dinner Cruise</p>
+                    <p style="margin: 0; font-size: 14px; color: #c9a96e;">£65 per person</p>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">LGBTQ+ London Walking Tour</p>
+                    <p style="margin: 0; font-size: 14px; color: #c9a96e;">£25 per person</p>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">London Eye Fast Track</p>
+                    <p style="margin: 0; font-size: 14px; color: #c9a96e;">£35 per person</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">West End Theatre Show</p>
+                    <p style="margin: 0; font-size: 14px; color: #c9a96e;">£55 per person</p>
+                </div>
+                <a href="https://www.getyourguide.com/s/?q=London" target="_blank" style="display: inline-block; background: #c9a96e; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; width: 100%; text-align: center; box-sizing: border-box;">Book Activities</a>
+            </div>
+
+            <div style="background: #f5f3ef; padding: 24px; border-radius: 12px;">
+                <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 20px; color: #1a1a2e; margin: 0 0 20px 0;">🍽️ Dining Reservations</h3>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Dishoom+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Dishoom</a></p>
+                    <p style="margin: 0; font-size: 14px; color: #666;">Book online 4 weeks ahead</p>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Sketch+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Sketch Pink Room</a></p>
+                    <p style="margin: 0; font-size: 14px; color: #666;">Essential for afternoon tea</p>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Gauthier+Soho+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Gauthier Soho</a></p>
+                    <p style="margin: 0; font-size: 14px; color: #666;">Michelin-starred vegetarian fine dining</p>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <p style="margin: 0 0 4px 0; font-weight: 600;">📍 <a href="https://www.google.com/maps/search/Nightjar+London" target="_blank" rel="noopener" style="color: #4a94b4; text-decoration: none; border-bottom: 1px dashed rgba(73,148,180,0.5);">Nightjar</a></p>
+                    <p style="margin: 0; font-size: 14px; color: #666;">Call for cocktail reservations</p>
+                </div>
+                <p style="font-size: 14px; color: #666; margin: 16px 0 0 0; font-style: italic;">Book restaurant reservations 2-4 weeks in advance for April visits. Many accept online bookings through OpenTable or directly on their websites.</p>
+            </div>
+        </div>
+
+        <div style="background: #f5f3ef; padding: 32px; border-radius: 12px; margin-bottom: 32px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a2e; margin: 0 0 24px 0; text-align: center;">Budget Breakdown (2 People, 7 Days)</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-family: 'Source Sans 3', sans-serif;">
+                    <tr style="background: #e8e0d4;">
+                        <td style="padding: 12px; font-weight: 700; border-bottom: 1px solid #ddd;">Category</td>
+                        <td style="padding: 12px; font-weight: 700; border-bottom: 1px solid #ddd; text-align: right;">Budget Range</td>
+                        <td style="padding: 12px; font-weight: 700; border-bottom: 1px solid #ddd; text-align: right;">Recommended</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Flights (Philadelphia-London)</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$1,300-1,700</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$1,500</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Accommodation (7 nights)</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$630-1,540</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$1,295</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Food & Dining</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$350-700</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$525</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Activities & Tours</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$200-400</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$300</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Transportation</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$80-150</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$115</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Shopping & Miscellaneous</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$100-300</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right;">$200</td>
+                    </tr>
+                    <tr style="border-top: 3px solid #4a94b4; background: #e8e0d4;">
+                        <td style="padding: 16px; font-weight: 700; font-size: 18px;">Total Trip Cost</td>
+                        <td style="padding: 16px; font-weight: 700; text-align: right; font-size: 18px;">$2,660-4,790</td>
+                        <td style="padding: 16px; font-weight: 700; text-align: right; font-size: 18px; color: #c9a96e;">$3,935</td>
+                    </tr>
+                </table>
+            </div>
+            <p style="font-size: 14px; color: #666; margin: 16px 0 0 0; text-align: center; font-style: italic;">*Prices are estimates and may vary based on specific dates, availability, and personal preferences. Your budget of $2,200 would cover a more budget-conscious version of this trip.</p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #1a1a2e, #4a94b4); padding: 32px; border-radius: 16px; text-align: center; color: white;">
+            <div style="background: linear-gradient(135deg, #c9a96e, #4a94b4); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 14px; font-weight: 700; margin-bottom: 16px;">WORLD EXPLORER UPGRADE</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin: 0 0 16px 0;">Take Your Trip to the Next Level</h3>
+            <p style="margin: 0 0 20px 0; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Get personalized recommendations, exclusive local contacts, and 24/7 travel support. Our London specialists will customize this itinerary specifically for your romantic April getaway and LGBTQ+ travel preferences.</p>
+            <a href="https://planpackstay.com/membership" target="_blank" style="display: inline-block; background: #4a94b4; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">Upgrade Now</a>
+        </div>
+    </div>
+</section>
+
+<footer style="background: #1a1a2e; padding: 40px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+        <div style="margin-bottom: 24px;">
+            <img src="https://raw.githubusercontent.com/Korbin091/planpackstay-guides/main/PLANPACKSTAY_Logo_Social.png" alt="PLANPACKSTAY Logo" style="width: 56px; height: 56px; border-radius: 50%; margin-bottom: 12px;">
+            <div style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 3px; color: #FFFFFE; margin-bottom: 8px;">PLANPACKSTAY</div>
+            <a href="https://planpackstay.com" style="color: #4a94b4; text-decoration: none; font-family: 'Source Sans 3', sans-serif;">planpackstay.com</a>
+        </div>
+        
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+            <a href="https://planpackstay.com/passport-pro" target="_blank" style="background: #4a94b4; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">Join Passport Pro - $9.99/mo</a>
+            <a href="#" style="background: transparent; color: #FFFFFE; padding: 12px 24px; border: 2px solid #FFFFFE; border-radius: 8px; text-decoration: none; font-family: 'Source Sans 3', sans-serif; font-weight: 600;">Download PDF</a>
+        </div>
+        
+        <p style="font-size: 12px; color: #c9a96e; font-family: 'Source Sans 3', sans-serif; margin: 0; max-width: 600px; margin-left: auto; margin-right: auto;">This travel guide was generated using AI technology and local expertise. While we strive for accuracy, please verify all details before booking. Prices and availability are subject to change. Some links may contain affiliate partnerships that support our platform.</p>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('message', function(event) {
+    if (event.data.action === 'blockPrint') {
+        const style = document.createElement('style');
+        style.innerHTML = '@media print { body { display: none !important; } @page { size: 0; } }';
+        document.head.appendChild(style);
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+        event.preventDefault();
+        return false;
+    }
+});
+</script>
+
+</body>
+</html>
