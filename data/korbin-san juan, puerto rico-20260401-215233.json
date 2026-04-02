@@ -1,0 +1,921 @@
+{
+  "firstName": "Korbin",
+  "destination": "San Juan",
+  "country": "Puerto Rico",
+  "tripType": "Romantic Beach Getaway",
+  "travelers": "2 travelers",
+  "dates": "2026-04-01 to 2026-04-08",
+  "tripOverview": {
+    "intro": "San Juan combines vibrant Caribbean culture with stunning beaches and colorful colonial architecture. This tropical paradise offers romantic sunsets, world-class dining, and crystal-clear waters perfect for unforgettable beach days.",
+    "infoCards": [
+      {
+        "icon": "📍",
+        "label": "Destination",
+        "value": "San Juan, Puerto Rico"
+      },
+      {
+        "icon": "✈️",
+        "label": "Departing",
+        "value": "Philadelphia, PA"
+      },
+      {
+        "icon": "📅",
+        "label": "Dates",
+        "value": "Apr 1-8, 2026"
+      },
+      {
+        "icon": "👥",
+        "label": "Travelers",
+        "value": "2 people"
+      },
+      {
+        "icon": "💰",
+        "label": "Budget",
+        "value": "$2,100"
+      },
+      {
+        "icon": "🏷️",
+        "label": "Styles",
+        "value": "Romantic, On-the-Go, LGBTQ+"
+      }
+    ],
+    "glance": [
+      {
+        "day": 1,
+        "theme": "Old San Juan Discovery",
+        "icon": "🏰"
+      },
+      {
+        "day": 2,
+        "theme": "Beach Paradise Day",
+        "icon": "🏖️"
+      },
+      {
+        "day": 3,
+        "theme": "Rainforest Adventure",
+        "icon": "🌿"
+      },
+      {
+        "day": 4,
+        "theme": "Island Culture",
+        "icon": "🎨"
+      },
+      {
+        "day": 5,
+        "theme": "Beach & Romance",
+        "icon": "💕"
+      },
+      {
+        "day": 6,
+        "theme": "Food & Nightlife",
+        "icon": "🍴"
+      },
+      {
+        "day": 7,
+        "theme": "Relaxation & Departure",
+        "icon": "🌅"
+      }
+    ],
+    "vibe": "Your romantic Puerto Rican adventure blends stunning beaches with vibrant culture and delicious cuisine.",
+    "styles": ["Romantic", "Beach", "Cultural", "LGBTQ+ Friendly", "Active"]
+  },
+  "destinationOverview": {
+    "infoCards": [
+      {
+        "icon": "🌡️",
+        "label": "Temperature",
+        "value": "78-85°F (26-29°C)"
+      },
+      {
+        "icon": "💵",
+        "label": "Currency",
+        "value": "US Dollar (USD)"
+      },
+      {
+        "icon": "🗣️",
+        "label": "Language",
+        "value": "Spanish, English"
+      },
+      {
+        "icon": "🕐",
+        "label": "Time Zone",
+        "value": "AST (UTC-4)"
+      },
+      {
+        "icon": "🔌",
+        "label": "Plug Type",
+        "value": "Type A & B (US)"
+      },
+      {
+        "icon": "🛡️",
+        "label": "Safety Rating",
+        "value": "Moderate - Tourist Areas Safe"
+      }
+    ],
+    "bestTime": "April offers perfect weather with warm temperatures, lower humidity, and minimal rainfall - ideal for beach days and exploring.",
+    "seasons": [
+      {
+        "name": "Spring",
+        "tempC": "26-29°C",
+        "tempF": "78-85°F"
+      },
+      {
+        "name": "Summer",
+        "tempC": "28-31°C",
+        "tempF": "82-88°F"
+      },
+      {
+        "name": "Fall",
+        "tempC": "27-30°C",
+        "tempF": "80-86°F"
+      },
+      {
+        "name": "Winter",
+        "tempC": "24-28°C",
+        "tempF": "75-82°F"
+      }
+    ],
+    "attractions": [
+      {
+        "name": "Condado Beach",
+        "desc": "Popular beach with soft sand, clear waters, and beachfront hotels."
+      },
+      {
+        "name": "El Yunque Rainforest",
+        "desc": "Tropical rainforest with waterfalls, hiking trails, and diverse wildlife."
+      },
+      {
+        "name": "Old San Juan",
+        "desc": "Historic colonial district with colorful buildings and cobblestone streets."
+      },
+      {
+        "name": "Fort San Felipe del Morro",
+        "desc": "16th-century fortress with stunning ocean views and rich history."
+      }
+    ],
+    "transportation": "San Juan offers reliable public buses (AMA) connecting major areas for $0.75 per ride. Taxis are readily available but use meters or agree on fares upfront, with rides from the airport costing $15-25. Uber and Lyft operate throughout the metro area with convenient app-based booking and transparent pricing.",
+    "tip": "Rent a car for exploring beyond San Juan, but stick to rideshare in the city center where parking is challenging and walking is more enjoyable.",
+    "safety": "San Juan is generally safe for tourists, especially in Old San Juan and Condado, but avoid walking alone at night in less touristy areas.",
+    "emergency": [
+      {
+        "type": "Emergency Number",
+        "value": "911"
+      },
+      {
+        "type": "Tourist Police",
+        "value": "(787) 726-7020"
+      },
+      {
+        "type": "Hospital",
+        "value": "Hospital Centro Médico: (787) 777-3535"
+      },
+      {
+        "type": "Embassy",
+        "value": "US Territory - Consular Services: (787) 521-2000"
+      }
+    ],
+    "airaloText": "Stay connected with an eSIM for seamless navigation, restaurant bookings, and sharing your beach paradise moments with friends back home."
+  },
+  "itineraryOverview": [
+    {
+      "name": "El Yunque Rainforest Tour",
+      "cost": "$75",
+      "hours": "6 hours",
+      "booking": "GetYourGuide"
+    },
+    {
+      "name": "Bioluminescent Bay Kayak Tour",
+      "cost": "$65",
+      "hours": "3 hours",
+      "booking": "Local tour operator"
+    },
+    {
+      "name": "Beach Equipment Rental",
+      "cost": "$40",
+      "hours": "Full day",
+      "booking": "Beach vendor"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "theme": "Old San Juan Discovery",
+      "intro": "Explore the colorful colonial streets and historic forts of this UNESCO World Heritage site.",
+      "morning": [
+        {
+          "time": "9:00 AM",
+          "name": "Arrive & Check-in",
+          "tag": "Free",
+          "desc": "Get settled and oriented in your accommodation."
+        },
+        {
+          "time": "10:00 AM",
+          "name": "Old San Juan Walking Tour",
+          "tag": "Free",
+          "desc": "Self-guided exploration of cobblestone streets and colorful buildings."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Fort San Felipe del Morro",
+          "tag": "$15",
+          "desc": "Explore the historic fortress with panoramic ocean views."
+        },
+        {
+          "time": "3:00 PM",
+          "name": "Paseo de la Princesa",
+          "tag": "Free",
+          "desc": "Romantic waterfront promenade perfect for photos."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "Sunset at El Morro",
+          "tag": "Free",
+          "desc": "Watch the sunset from the fortress walls."
+        },
+        {
+          "time": "8:00 PM",
+          "name": "Welcome Dinner",
+          "tag": "$45",
+          "desc": "Traditional Puerto Rican cuisine at a local restaurant."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Café Puerto Rico",
+          "cuisine": "Traditional Puerto Rican",
+          "price": "$15",
+          "category": "Lunch",
+          "icon": "🍽️"
+        },
+        {
+          "name": "Barrachina",
+          "cuisine": "Caribbean",
+          "price": "$25",
+          "category": "Dinner",
+          "icon": "🍹"
+        },
+        {
+          "name": "Spiga",
+          "cuisine": "Italian",
+          "price": "$12",
+          "category": "Cafe",
+          "icon": "☕"
+        }
+      ],
+      "tip": "Wear comfortable walking shoes for the cobblestone streets and bring a light jacket for evening fortress visits."
+    },
+    {
+      "day": 2,
+      "theme": "Beach Paradise Day",
+      "intro": "Soak up the sun at Condado Beach with crystal-clear waters and soft sand.",
+      "morning": [
+        {
+          "time": "8:00 AM",
+          "name": "Beach Setup at Condado",
+          "tag": "$20",
+          "desc": "Rent chairs and umbrellas for a comfortable beach day."
+        },
+        {
+          "time": "9:00 AM",
+          "name": "Swimming & Sunbathing",
+          "tag": "Free",
+          "desc": "Enjoy the warm Caribbean waters and beautiful beach."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Beachside Lunch",
+          "tag": "$25",
+          "desc": "Fresh seafood and tropical drinks with ocean views."
+        },
+        {
+          "time": "2:30 PM",
+          "name": "Water Sports",
+          "tag": "$40",
+          "desc": "Try paddleboarding or kayaking in the calm waters."
+        }
+      ],
+      "evening": [
+        {
+          "time": "5:00 PM",
+          "name": "Beach Sunset",
+          "tag": "Free",
+          "desc": "Romantic sunset watching from the beach."
+        },
+        {
+          "time": "7:30 PM",
+          "name": "Condado Dinner",
+          "tag": "$50",
+          "desc": "Upscale beachfront dining experience."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Serafina Beach Hotel Restaurant",
+          "cuisine": "Mediterranean",
+          "price": "$18",
+          "category": "Lunch",
+          "icon": "🐟"
+        },
+        {
+          "name": "Perla",
+          "cuisine": "Seafood",
+          "price": "$35",
+          "category": "Dinner",
+          "icon": "🦞"
+        },
+        {
+          "name": "Café de Coral Princess",
+          "cuisine": "Coffee & Pastries",
+          "price": "$8",
+          "category": "Cafe",
+          "icon": "☕"
+        }
+      ],
+      "tip": "Apply sunscreen frequently and stay hydrated - the Caribbean sun is stronger than you think!"
+    },
+    {
+      "day": 3,
+      "theme": "Rainforest Adventure",
+      "intro": "Discover the lush El Yunque National Forest with waterfalls and hiking trails.",
+      "morning": [
+        {
+          "time": "7:00 AM",
+          "name": "El Yunque Departure",
+          "tag": "$30",
+          "desc": "Drive or tour to the rainforest (1 hour from San Juan)."
+        },
+        {
+          "time": "8:30 AM",
+          "name": "La Mina Falls Hike",
+          "tag": "Free",
+          "desc": "Easy hike to beautiful waterfall and swimming hole."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "12:00 PM",
+          "name": "Yokahu Tower",
+          "tag": "Free",
+          "desc": "Climb the observation tower for rainforest canopy views."
+        },
+        {
+          "time": "2:00 PM",
+          "name": "Luquillo Beach",
+          "tag": "Free",
+          "desc": "Relax at this beautiful beach near El Yunque."
+        }
+      ],
+      "evening": [
+        {
+          "time": "4:00 PM",
+          "name": "Return to San Juan",
+          "tag": "$30",
+          "desc": "Drive back to the city for evening activities."
+        },
+        {
+          "time": "7:00 PM",
+          "name": "Local Food Tour",
+          "tag": "$35",
+          "desc": "Sample traditional Puerto Rican street food."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Luquillo Kiosks",
+          "cuisine": "Street Food",
+          "price": "$12",
+          "category": "Lunch",
+          "icon": "🌮"
+        },
+        {
+          "name": "Verde Mesa",
+          "cuisine": "Vegetarian",
+          "price": "$22",
+          "category": "Dinner",
+          "icon": "🥗"
+        },
+        {
+          "name": "Hacienda San Pedro",
+          "cuisine": "Coffee Farm",
+          "price": "$6",
+          "category": "Cafe",
+          "icon": "☕"
+        }
+      ],
+      "tip": "Bring water shoes for waterfall swimming and a waterproof bag for your phone and valuables."
+    },
+    {
+      "day": 4,
+      "theme": "Island Culture",
+      "intro": "Immerse yourself in Puerto Rican art, music, and local traditions.",
+      "morning": [
+        {
+          "time": "9:00 AM",
+          "name": "Museo de Arte de Puerto Rico",
+          "tag": "$6",
+          "desc": "Explore the island's finest art museum with contemporary and classical works."
+        },
+        {
+          "time": "11:00 AM",
+          "name": "Santurce Art District",
+          "tag": "Free",
+          "desc": "Walk through vibrant street art and murals in this creative neighborhood."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "La Placita de Santurce",
+          "tag": "Free",
+          "desc": "Experience this colorful market square and cultural hub."
+        },
+        {
+          "time": "3:00 PM",
+          "name": "Cueva Ventana",
+          "tag": "$25",
+          "desc": "Tour the stunning cave with dramatic valley views."
+        }
+      ],
+      "evening": [
+        {
+          "time": "6:00 PM",
+          "name": "Salsa Dancing Lesson",
+          "tag": "$20",
+          "desc": "Learn traditional Puerto Rican dance moves together."
+        },
+        {
+          "time": "9:00 PM",
+          "name": "Live Music at La Placita",
+          "tag": "$15",
+          "desc": "Enjoy authentic Puerto Rican music and dancing."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Santaella",
+          "cuisine": "Modern Puerto Rican",
+          "price": "$28",
+          "category": "Lunch",
+          "icon": "🍽️"
+        },
+        {
+          "name": "Jose Enrique",
+          "cuisine": "Contemporary Puerto Rican",
+          "price": "$45",
+          "category": "Dinner",
+          "icon": "⭐"
+        },
+        {
+          "name": "Hacienda San Pedro",
+          "cuisine": "Local Coffee",
+          "price": "$5",
+          "category": "Cafe",
+          "icon": "☕"
+        }
+      ],
+      "tip": "Learn a few Spanish phrases - locals appreciate the effort and it enhances your cultural experience."
+    },
+    {
+      "day": 5,
+      "theme": "Beach & Romance",
+      "intro": "Enjoy intimate beach time and romantic experiences perfect for couples.",
+      "morning": [
+        {
+          "time": "8:00 AM",
+          "name": "Isla Verde Beach",
+          "tag": "Free",
+          "desc": "Discover this beautiful beach with calmer waters and fewer crowds."
+        },
+        {
+          "time": "10:00 AM",
+          "name": "Couples Massage",
+          "tag": "$120",
+          "desc": "Relaxing beachside spa treatment for two."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Ocean Park Beach",
+          "tag": "Free",
+          "desc": "LGBTQ+-friendly beach with a laid-back, welcoming atmosphere."
+        },
+        {
+          "time": "3:00 PM",
+          "name": "Snorkeling Adventure",
+          "tag": "$40",
+          "desc": "Explore underwater coral reefs and tropical fish."
+        }
+      ],
+      "evening": [
+        {
+          "time": "5:30 PM",
+          "name": "Sunset Catamaran",
+          "tag": "$65",
+          "desc": "Romantic sailing trip with champagne and stunning sunset views."
+        },
+        {
+          "time": "8:30 PM",
+          "name": "Fine Dining",
+          "tag": "$85",
+          "desc": "Elegant dinner at an upscale oceanfront restaurant."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Oceano",
+          "cuisine": "Seafood",
+          "price": "$32",
+          "category": "Lunch",
+          "icon": "🦐"
+        },
+        {
+          "name": "Marmalade",
+          "cuisine": "Fine Dining",
+          "price": "$65",
+          "category": "Dinner",
+          "icon": "🍾"
+        },
+        {
+          "name": "Café Regina",
+          "cuisine": "Gelato & Coffee",
+          "price": "$7",
+          "category": "Cafe",
+          "icon": "🍦"
+        }
+      ],
+      "tip": "Book the sunset catamaran in advance - it's popular and offers the most romantic views of the coastline."
+    },
+    {
+      "day": 6,
+      "theme": "Food & Nightlife",
+      "intro": "Savor Puerto Rico's culinary scene and experience the vibrant nightlife.",
+      "morning": [
+        {
+          "time": "9:00 AM",
+          "name": "Coffee Plantation Tour",
+          "tag": "$25",
+          "desc": "Learn about Puerto Rican coffee culture and taste fresh brews."
+        },
+        {
+          "time": "11:30 AM",
+          "name": "Mercado de Río Piedras",
+          "tag": "Free",
+          "desc": "Explore this traditional market for local produce and crafts."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "1:00 PM",
+          "name": "Cooking Class",
+          "tag": "$45",
+          "desc": "Learn to prepare traditional vegetarian Puerto Rican dishes."
+        },
+        {
+          "time": "3:30 PM",
+          "name": "Food Truck Rally",
+          "tag": "$15",
+          "desc": "Sample diverse vegetarian options from local food trucks."
+        }
+      ],
+      "evening": [
+        {
+          "time": "7:00 PM",
+          "name": "Rum Tasting Experience",
+          "tag": "$30",
+          "desc": "Learn about Puerto Rico's rum heritage with guided tastings."
+        },
+        {
+          "time": "10:00 PM",
+          "name": "LGBTQ+ Nightlife Tour",
+          "tag": "$25",
+          "desc": "Experience San Juan's welcoming and vibrant gay nightlife scene."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "El Jibarito",
+          "cuisine": "Traditional Puerto Rican",
+          "price": "$18",
+          "category": "Lunch",
+          "icon": "🌱"
+        },
+        {
+          "name": "1919 Restaurant",
+          "cuisine": "Contemporary",
+          "price": "$55",
+          "category": "Dinner",
+          "icon": "🍽️"
+        },
+        {
+          "name": "Don Ruiz Coffee Shop",
+          "cuisine": "Local Coffee",
+          "price": "$4",
+          "category": "Cafe",
+          "icon": "☕"
+        }
+      ],
+      "tip": "Try the local coffee varieties - Puerto Rican coffee is world-class but often overlooked by tourists."
+    },
+    {
+      "day": 7,
+      "theme": "Relaxation & Departure",
+      "intro": "Enjoy a peaceful final morning before your flight home.",
+      "morning": [
+        {
+          "time": "8:00 AM",
+          "name": "Final Beach Morning",
+          "tag": "Free",
+          "desc": "Last chance to enjoy the beautiful Caribbean waters."
+        },
+        {
+          "time": "10:00 AM",
+          "name": "Souvenir Shopping",
+          "tag": "$30",
+          "desc": "Pick up local crafts and coffee to take home."
+        }
+      ],
+      "afternoon": [
+        {
+          "time": "12:00 PM",
+          "name": "Farewell Lunch",
+          "tag": "$25",
+          "desc": "Final Puerto Rican meal at a local favorite restaurant."
+        },
+        {
+          "time": "2:00 PM",
+          "name": "Airport Transfer",
+          "tag": "$25",
+          "desc": "Head to the airport for your flight home."
+        }
+      ],
+      "evening": [
+        {
+          "time": "4:00 PM",
+          "name": "Flight Departure",
+          "tag": "Included",
+          "desc": "Board your flight back to Philadelphia with amazing memories."
+        }
+      ],
+      "foodPicks": [
+        {
+          "name": "Café Manolín",
+          "cuisine": "Traditional Puerto Rican",
+          "price": "$14",
+          "category": "Lunch",
+          "icon": "🍴"
+        },
+        {
+          "name": "Panadería España",
+          "cuisine": "Bakery",
+          "price": "$6",
+          "category": "Cafe",
+          "icon": "🥐"
+        },
+        {
+          "name": "Airport Food Court",
+          "cuisine": "Various",
+          "price": "$12",
+          "category": "Lunch",
+          "icon": "✈️"
+        }
+      ],
+      "tip": "Leave extra time for airport security and consider arriving 2 hours early for your domestic flight."
+    }
+  ],
+  "food": {
+    "intro": "Puerto Rico's food scene blends Spanish, African, and indigenous influences with fresh local ingredients and creative vegetarian options.",
+    "restaurants": [
+      {
+        "name": "Verde Mesa",
+        "cuisine": "Vegetarian",
+        "rating": 4.6,
+        "price": "$20-30"
+      },
+      {
+        "name": "Santaella",
+        "cuisine": "Modern Puerto Rican",
+        "rating": 4.5,
+        "price": "$25-40"
+      },
+      {
+        "name": "Jose Enrique",
+        "cuisine": "Contemporary Puerto Rican",
+        "rating": 4.7,
+        "price": "$40-60"
+      },
+      {
+        "name": "Marmalade",
+        "cuisine": "Fine Dining",
+        "rating": 4.4,
+        "price": "$60-85"
+      },
+      {
+        "name": "El Jibarito",
+        "cuisine": "Traditional Puerto Rican",
+        "rating": 4.3,
+        "price": "$15-25"
+      }
+    ],
+    "cafes": [
+      {
+        "name": "Hacienda San Pedro",
+        "cuisine": "Coffee & Pastries",
+        "rating": 4.5,
+        "price": "$5-12"
+      },
+      {
+        "name": "Don Ruiz Coffee Shop",
+        "cuisine": "Local Coffee",
+        "rating": 4.4,
+        "price": "$3-8"
+      },
+      {
+        "name": "Café Regina",
+        "cuisine": "Gelato & Coffee",
+        "rating": 4.6,
+        "price": "$4-10"
+      },
+      {
+        "name": "Spiga",
+        "cuisine": "Italian Coffee",
+        "rating": 4.3,
+        "price": "$6-15"
+      },
+      {
+        "name": "Café Manolín",
+        "cuisine": "Traditional Puerto Rican",
+        "rating": 4.2,
+        "price": "$8-18"
+      }
+    ],
+    "bars": [
+      {
+        "name": "La Factoría",
+        "cuisine": "Craft Cocktails",
+        "rating": 4.5,
+        "price": "$12-18"
+      },
+      {
+        "name": "Jungle Bird",
+        "cuisine": "Tiki Bar",
+        "rating": 4.4,
+        "price": "$10-16"
+      },
+      {
+        "name": "El Batey",
+        "cuisine": "Dive Bar",
+        "rating": 4.2,
+        "price": "$5-12"
+      },
+      {
+        "name": "Barrachina",
+        "cuisine": "Caribbean Cocktails",
+        "rating": 4.1,
+        "price": "$8-15"
+      },
+      {
+        "name": "Orozco's Restaurant",
+        "cuisine": "Sports Bar",
+        "rating": 4.0,
+        "price": "$6-14"
+      }
+    ],
+    "tip": "Many restaurants offer excellent vegetarian versions of traditional dishes - don't hesitate to ask about plant-based options."
+  },
+  "hotels": {
+    "neighborhoods": [
+      {
+        "name": "Old San Juan",
+        "desc": "Historic charm with cobblestone streets, colorful buildings, and walkable attractions.",
+        "bestFor": "History lovers and romantic couples",
+        "whyStay": "Immersive cultural experience with easy access to forts, museums, and authentic restaurants."
+      },
+      {
+        "name": "Condado",
+        "desc": "Modern beach district with upscale hotels, restaurants, and beautiful beaches.",
+        "bestFor": "Beach enthusiasts and luxury seekers",
+        "whyStay": "Perfect beach access with high-end amenities and vibrant nightlife scene."
+      },
+      {
+        "name": "Isla Verde",
+        "desc": "Beach area near the airport with resort hotels and water activities.",
+        "bestFor": "Convenience and beach relaxation",
+        "whyStay": "Close to airport with excellent beaches and more affordable than Condado."
+      }
+    ],
+    "budget": [
+      {
+        "name": "Dream Inn PR",
+        "vibe": "Modern hostel with social atmosphere",
+        "rating": 4.1,
+        "price": "$65-85/night",
+        "recommended": true
+      },
+      {
+        "name": "Serafina Beach Hotel",
+        "vibe": "Boutique beachfront property",
+        "rating": 4.0,
+        "price": "$75-95/night",
+        "recommended": false
+      }
+    ],
+    "midRange": [
+      {
+        "name": "Olive Boutique Hotel",
+        "vibe": "Stylish adults-only property",
+        "rating": 4.4,
+        "price": "$120-160/night",
+        "recommended": true
+      },
+      {
+        "name": "Coral Princess Hotel",
+        "vibe": "Classic beach resort",
+        "rating": 4.2,
+        "price": "$110-140/night",
+        "recommended": false
+      }
+    ],
+    "luxury": [
+      {
+        "name": "La Concha Renaissance San Juan Resort",
+        "vibe": "Iconic beachfront luxury",
+        "rating": 4.3,
+        "price": "$220-280/night",
+        "recommended": false
+      },
+      {
+        "name": "O:live Boutique Hotel",
+        "vibe": "Intimate adults-only luxury",
+        "rating": 4.5,
+        "price": "$250-320/night",
+        "recommended": true
+      }
+    ],
+    "tip": "Book accommodations with beach access or within walking distance to beaches for the best romantic experience."
+  },
+  "experiences": {
+    "mustDo": [
+      {
+        "name": "El Yunque Rainforest Hike",
+        "desc": "Tropical waterfalls and lush trails"
+      },
+      {
+        "name": "Old San Juan Walking Tour",
+        "desc": "Historic forts and colorful streets"
+      },
+      {
+        "name": "Condado Beach Day",
+        "desc": "Perfect sand and clear waters"
+      },
+      {
+        "name": "Bioluminescent Bay Tour",
+        "desc": "Magical glowing water experience"
+      },
+      {
+        "name": "Local Food Tour",
+        "desc": "Authentic Puerto Rican cuisine"
+      },
+      {
+        "name": "Sunset Catamaran Cruise",
+        "desc": "Romantic sailing with ocean views"
+      }
+    ],
+    "getYourGuide": [
+      {
+        "name": "El Yunque Waterfalls and Rainforest Tour",
+        "desc": "Full-day guided tour with transportation and hiking to beautiful waterfalls."
+      },
+      {
+        "name": "Bioluminescent Lagoon Kayak Tour",
+        "desc": "Evening kayaking experience in the magical glowing waters of Laguna Grande."
+      },
+      {
+        "name": "San Juan Food and Culture Walking Tour",
+        "desc": "Taste local specialties while learning about Puerto Rican history and culture."
+      }
+    ],
+    "hiddenGems": [
+      {
+        "name": "Casa Blanca Museum",
+        "desc": "Historic house museum with gardens offering peaceful views over San Juan Bay."
+      },
+      {
+        "name": "Cueva Ventana",
+        "desc": "Stunning cave with a natural window overlooking the beautiful Río Grande valley."
+      },
+      {
+        "name": "Ocean Park Beach",
+        "desc": "Local favorite beach with a relaxed, LGBTQ+-friendly atmosphere away from tourist crowds."
+      }
+    ]
+  },
+  "packing": {
+    "title": "April in San Juan, Puerto Rico",
+    "intro": "April offers perfect weather
