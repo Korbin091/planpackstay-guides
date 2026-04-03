@@ -1,0 +1,288 @@
+{
+  "firstName": "Korbin",
+  "destination": "London",
+  "country": "United Kingdom",
+  "tripType": "Romantic City Break",
+  "travelers": "2",
+  "dates": "2026-04-03 to 2026-04-06",
+  "tripOverview": {
+    "intro": "London in April offers the perfect blend of spring blooms and cultural richness, with mild weather ideal for romantic strolls through historic neighborhoods. The city's incredible diversity, world-class museums, and thriving food scene create an unforgettable backdrop for couples seeking both adventure and intimacy.",
+    "infoCards": [
+      {"icon": "🏛️", "label": "Destination", "value": "London, United Kingdom"},
+      {"icon": "✈️", "label": "Departing", "value": "Philadelphia, PA, USA"},
+      {"icon": "📅", "label": "Dates", "value": "April 3-6, 2026"},
+      {"icon": "👥", "label": "Travelers", "value": "2"},
+      {"icon": "💰", "label": "Budget", "value": "$2000"},
+      {"icon": "💕", "label": "Styles", "value": "Romantic, On-the-Go, LGBTQ+"}
+    ],
+    "glance": [
+      {"day": 1, "theme": "Historic Arrival", "icon": "🏰"},
+      {"day": 2, "theme": "Market & Museums", "icon": "🏛️"},
+      {"day": 3, "theme": "Parks & Culture", "icon": "🌸"},
+      {"day": 4, "theme": "Final Farewell", "icon": "✈️"}
+    ],
+    "vibe": "A whirlwind romantic adventure through London's most iconic sights, hidden gems, and incredible vegetarian food scene.",
+    "styles": ["Romantic", "On-the-Go", "LGBTQ+", "Cultural", "Foodie"]
+  },
+  "destinationOverview": {
+    "infoCards": [
+      {"icon": "🌡️", "label": "Temperature", "value": "8-15°C (46-59°F)"},
+      {"icon": "💷", "label": "Currency", "value": "British Pound (GBP)"},
+      {"icon": "🗣️", "label": "Language", "value": "English"},
+      {"icon": "⏰", "label": "Time Zone", "value": "GMT+1 (BST)"},
+      {"icon": "🔌", "label": "Plug Type", "value": "Type G"},
+      {"icon": "🛡️", "label": "Safety Rating", "value": "Very Safe"}
+    ],
+    "bestTime": "April is excellent with mild weather, fewer crowds, and spring blooms throughout the city's parks",
+    "seasons": [
+      {"name": "Spring", "tempC": "8-15", "tempF": "46-59"},
+      {"name": "Summer", "tempC": "14-22", "tempF": "57-72"},
+      {"name": "Autumn", "tempC": "7-14", "tempF": "45-57"},
+      {"name": "Winter", "tempC": "2-7", "tempF": "36-45"}
+    ],
+    "attractions": [
+      {"name": "Tower of London", "desc": "Historic royal castle housing the Crown Jewels and centuries of fascinating history."},
+      {"name": "British Museum", "desc": "World's largest museum with incredible collections spanning human history and culture."},
+      {"name": "Westminster Abbey", "desc": "Gothic abbey where British monarchs have been crowned for nearly 1000 years."},
+      {"name": "Tate Modern", "desc": "Contemporary art gallery housed in a former power station on the Thames."},
+      {"name": "Borough Market", "desc": "London's oldest food market offering incredible artisanal produce and street food."}
+    ],
+    "transportation": "London's extensive Underground (Tube) system connects all major attractions and neighborhoods efficiently. Black cabs are iconic but expensive, while Uber and Bolt offer convenient rideshare options throughout the city. Walking is often the fastest way for short distances, and the city is very pedestrian-friendly with excellent signage.",
+    "tip": "Get an Oyster Card or use contactless payment for seamless tube and bus travel, and always stand right on escalators to let others pass on the left.",
+    "safety": "London is very safe for LGBTQ+ travelers with a vibrant community and welcoming atmosphere throughout the city.",
+    "emergency": [
+      {"type": "Emergency Number", "value": "999"},
+      {"type": "Tourist Police", "value": "+44 20 7230 1212"},
+      {"type": "Hospital", "value": "St. Thomas' Hospital: +44 20 7188 7188"},
+      {"type": "US Embassy", "value": "+44 20 7499 9000"}
+    ],
+    "airaloText": "Stay connected with affordable eSIM data plans that activate instantly upon arrival in London."
+  },
+  "itineraryOverview": [
+    {"name": "Tower of London", "cost": "$35", "hours": "2-3", "booking": "Advance booking recommended"},
+    {"name": "British Museum", "cost": "Free", "hours": "3-4", "booking": "Timed entry slots"},
+    {"name": "Borough Market Food Tour", "cost": "$25", "hours": "2", "booking": "Walk-in friendly"},
+    {"name": "Hyde Park & Kensington Gardens", "cost": "Free", "hours": "2-3", "booking": "No booking required"},
+    {"name": "Tate Modern", "cost": "Free", "hours": "2-3", "booking": "Special exhibitions may require tickets"}
+  ],
+  "days": [
+    {
+      "day": 1,
+      "theme": "Historic Arrival",
+      "intro": "Start your London adventure with iconic sights and a romantic Thames-side stroll.",
+      "morning": [
+        {"time": "9:00 AM", "name": "Tower of London", "tag": "$35", "desc": "Explore the historic fortress and marvel at the Crown Jewels."},
+        {"time": "11:30 AM", "name": "Tower Bridge", "tag": "Free", "desc": "Walk across London's most famous bridge with stunning river views."}
+      ],
+      "afternoon": [
+        {"time": "1:00 PM", "name": "Thames Walk to Borough Market", "tag": "Free", "desc": "Scenic riverside stroll to London's most famous food market."},
+        {"time": "2:30 PM", "name": "Borough Market Exploration", "tag": "$25", "desc": "Sample incredible vegetarian street food and artisanal products."}
+      ],
+      "evening": [
+        {"time": "6:00 PM", "name": "Southwark Street Walk", "tag": "Free", "desc": "Explore the trendy neighborhood around the market."},
+        {"time": "8:00 PM", "name": "Dinner at Champor-Champor", "tag": "$45", "desc": "Authentic vegetarian Thai cuisine in a cozy candlelit setting."}
+      ],
+      "foodPicks": [
+        {"name": "Monmouth Coffee", "cuisine": "Coffee", "price": "$5", "category": "Cafe", "icon": "☕"},
+        {"name": "Neal's Yard Dairy", "cuisine": "Artisanal", "price": "$15", "category": "Lunch", "icon": "🧀"},
+        {"name": "Champor-Champor", "cuisine": "Thai", "price": "$45", "category": "Dinner", "icon": "🍛"}
+      ],
+      "tip": "Borough Market is busiest on weekends, so visit on a weekday if possible for a more romantic experience."
+    },
+    {
+      "day": 2,
+      "theme": "Market & Museums",
+      "intro": "Dive deep into London's incredible cultural offerings with world-class museums and local cafes.",
+      "morning": [
+        {"time": "9:00 AM", "name": "British Museum", "tag": "Free", "desc": "Explore ancient civilizations and world cultures in this magnificent museum."},
+        {"time": "11:00 AM", "name": "Museum Coffee Break", "tag": "$8", "desc": "Relax in the beautiful Great Court with coffee and pastries."}
+      ],
+      "afternoon": [
+        {"time": "1:00 PM", "name": "Covent Garden", "tag": "Free", "desc": "Street performers, boutique shopping, and romantic cobblestone streets."},
+        {"time": "3:00 PM", "name": "National Gallery", "tag": "Free", "desc": "Masterpieces by Van Gogh, Da Vinci, and other European masters."}
+      ],
+      "evening": [
+        {"time": "6:00 PM", "name": "Soho Exploration", "tag": "Free", "desc": "Wander through London's vibrant LGBTQ+ friendly neighborhood."},
+        {"time": "8:00 PM", "name": "Dinner at Dishoom", "tag": "$40", "desc": "Exceptional Indian vegetarian cuisine in a beautiful Bombay cafe setting."}
+      ],
+      "foodPicks": [
+        {"name": "Attendant Coffee", "cuisine": "Coffee", "price": "$6", "category": "Cafe", "icon": "☕"},
+        {"name": "Dishoom", "cuisine": "Indian", "price": "$40", "category": "Lunch", "icon": "🍛"},
+        {"name": "Mildreds Soho", "cuisine": "Vegetarian", "price": "$35", "category": "Dinner", "icon": "🥗"}
+      ],
+      "tip": "Many London museums offer free admission but suggested donations help support their incredible collections."
+    },
+    {
+      "day": 3,
+      "theme": "Parks & Culture",
+      "intro": "Experience London's green spaces and vibrant cultural scene with parks, galleries, and local flavor.",
+      "morning": [
+        {"time": "9:30 AM", "name": "Hyde Park Stroll", "tag": "Free", "desc": "Romantic walk through London's most famous park with spring blooms."},
+        {"time": "11:00 AM", "name": "Kensington Palace Gardens", "tag": "$20", "desc": "Beautiful royal gardens and palace with fascinating royal history."}
+      ],
+      "afternoon": [
+        {"time": "1:00 PM", "name": "Notting Hill", "tag": "Free", "desc": "Colorful houses, vintage shops, and charming neighborhood vibes."},
+        {"time": "3:00 PM", "name": "Portobello Road Market", "tag": "Free", "desc": "Browse antiques, vintage finds, and unique local crafts."}
+      ],
+      "evening": [
+        {"time": "6:00 PM", "name": "Tate Modern", "tag": "Free", "desc": "Contemporary art in a stunning converted power station setting."},
+        {"time": "8:30 PM", "name": "Dinner at Sketch", "tag": "$65", "desc": "Unique vegetarian fine dining in an artistic, Instagram-worthy setting."}
+      ],
+      "foodPicks": [
+        {"name": "Gail's Bakery", "cuisine": "Bakery", "price": "$7", "category": "Cafe", "icon": "🥐"},
+        {"name": "The Gate Notting Hill", "cuisine": "Vegetarian", "price": "$30", "category": "Lunch", "icon": "🌱"},
+        {"name": "Sketch", "cuisine": "Modern European", "price": "$65", "category": "Dinner", "icon": "🎨"}
+      ],
+      "tip": "April is perfect for picnicking in London's parks - grab supplies from local markets for a romantic outdoor meal."
+    },
+    {
+      "day": 4,
+      "theme": "Final Farewell",
+      "intro": "Make the most of your final morning with last-minute sights and souvenir shopping.",
+      "morning": [
+        {"time": "9:00 AM", "name": "Westminster Abbey", "tag": "$30", "desc": "Marvel at Gothic architecture and centuries of royal history."},
+        {"time": "11:00 AM", "name": "Big Ben & Parliament", "tag": "Free", "desc": "Iconic photos at London's most recognizable landmarks."}
+      ],
+      "afternoon": [
+        {"time": "12:30 PM", "name": "Camden Market", "tag": "Free", "desc": "Alternative shopping, street art, and diverse food vendors."},
+        {"time": "2:30 PM", "name": "Regent's Park", "tag": "Free", "desc": "Final peaceful stroll through beautiful gardens and rose beds."}
+      ],
+      "evening": [
+        {"time": "4:00 PM", "name": "Airport Transfer", "tag": "$25", "desc": "Heathrow Express or Tube to catch your evening flight home."}
+      ],
+      "foodPicks": [
+        {"name": "Caravan Coffee", "cuisine": "Coffee", "price": "$5", "category": "Cafe", "icon": "☕"},
+        {"name": "Tibits", "cuisine": "Vegetarian Buffet", "price": "$18", "category": "Lunch", "icon": "🥗"},
+        {"name": "Gelupo", "cuisine": "Gelato", "price": "$8", "category": "Dessert", "icon": "🍦"}
+      ],
+      "tip": "Leave extra time for airport travel and arrive at Heathrow at least 2 hours before international flights."
+    }
+  ],
+  "food": {
+    "intro": "London's vegetarian scene is incredibly diverse, offering everything from traditional British pub fare to innovative international cuisine.",
+    "restaurants": [
+      {"name": "Dishoom", "cuisine": "Indian", "rating": 4.6, "price": "$35-45"},
+      {"name": "Mildreds", "cuisine": "Vegetarian", "rating": 4.4, "price": "$25-35"},
+      {"name": "The Gate", "cuisine": "Modern Vegetarian", "rating": 4.5, "price": "$30-40"},
+      {"name": "Tibits", "cuisine": "Vegetarian Buffet", "rating": 4.3, "price": "$15-25"},
+      {"name": "Sketch", "cuisine": "Fine Dining", "rating": 4.2, "price": "$60-80"}
+    ],
+    "cafes": [
+      {"name": "Monmouth Coffee", "cuisine": "Coffee", "rating": 4.5, "price": "$4-8"},
+      {"name": "Attendant Coffee", "cuisine": "Coffee", "rating": 4.4, "price": "$5-9"},
+      {"name": "Gail's Bakery", "cuisine": "Bakery", "rating": 4.3, "price": "$6-12"},
+      {"name": "Caravan Coffee", "cuisine": "Coffee & Brunch", "rating": 4.4, "price": "$8-15"},
+      {"name": "Workshop Coffee", "cuisine": "Specialty Coffee", "rating": 4.5, "price": "$4-7"}
+    ],
+    "bars": [
+      {"name": "Nightjar", "cuisine": "Cocktails", "rating": 4.6, "price": "$15-20"},
+      {"name": "The George Tavern", "cuisine": "Pub", "rating": 4.4, "price": "$8-15"},
+      {"name": "G-A-Y Bar", "cuisine": "LGBTQ+ Bar", "rating": 4.2, "price": "$7-12"},
+      {"name": "Heaven", "cuisine": "LGBTQ+ Club", "rating": 4.3, "price": "$10-15"},
+      {"name": "Sketch Bar", "cuisine": "Cocktails", "rating": 4.4, "price": "$18-25"}
+    ],
+    "tip": "Most restaurants offer excellent vegetarian options, and many pubs now have dedicated plant-based menus alongside traditional fare."
+  },
+  "hotels": {
+    "neighborhoods": [
+      {"name": "Covent Garden", "desc": "Central location near theaters, restaurants, and shopping", "bestFor": "First-time visitors", "whyStay": "Walking distance to major attractions"},
+      {"name": "South Bank", "desc": "Thames-side location near Borough Market and Tate Modern", "bestFor": "Culture lovers", "whyStay": "Romantic river views and food scene"},
+      {"name": "Shoreditch", "desc": "Trendy East London with great nightlife and street art", "bestFor": "Young travelers", "whyStay": "Vibrant LGBTQ+ friendly area"}
+    ],
+    "budget": [
+      {"name": "YHA London Central", "vibe": "Modern hostel with private rooms", "rating": 4.1, "price": "$80-100", "recommended": true},
+      {"name": "Premier Inn London County Hall", "vibe": "Reliable chain hotel near attractions", "rating": 4.3, "price": "$95-120", "recommended": false}
+    ],
+    "midRange": [
+      {"name": "The Z Hotel Piccadilly", "vibe": "Boutique hotel in prime location", "rating": 4.4, "price": "$150-200", "recommended": true},
+      {"name": "Hub by Premier Inn", "vibe": "Contemporary design hotel", "rating": 4.2, "price": "$130-180", "recommended": false}
+    ],
+    "luxury": [
+      {"name": "The Hoxton Southwark", "vibe": "Stylish boutique near Borough Market", "rating": 4.5, "price": "$250-350", "recommended": false},
+      {"name": "The Ned", "vibe": "Grand hotel in former banking hall", "rating": 4.6, "price": "$400-600", "recommended": true}
+    ],
+    "tip": "Book accommodations near tube stations for easy access to all areas of London, and consider staying south of the river for better value."
+  },
+  "experiences": {
+    "mustDo": [
+      {"name": "Borough Market Food Tour", "desc": "Sample incredible artisanal foods"},
+      {"name": "Thames River Walk", "desc": "Romantic stroll along river"},
+      {"name": "British Museum Visit", "desc": "World-class cultural treasures"},
+      {"name": "Hyde Park Picnic", "desc": "Spring blooms and serenity"},
+      {"name": "Covent Garden Street Performers", "desc": "Live entertainment and atmosphere"},
+      {"name": "Tate Modern Art", "desc": "Contemporary masterpieces and views"}
+    ],
+    "getYourGuide": [
+      {"name": "Jack the Ripper Walking Tour", "desc": "Explore Victorian London's mysteries through historic East End streets."},
+      {"name": "London Food Walking Tour", "desc": "Taste your way through Borough Market and South London's best vegetarian spots."},
+      {"name": "Thames Sunset Cruise", "desc": "Romantic evening cruise past London's illuminated landmarks and bridges."}
+    ],
+    "hiddenGems": [
+      {"name": "Neal's Yard", "desc": "Colorful courtyard filled with wholefood shops and vegetarian cafes in Covent Garden."},
+      {"name": "Leake Street Tunnel", "desc": "Legal graffiti tunnel under Waterloo Station showcasing incredible street art."},
+      {"name": "Sky Garden", "desc": "Free panoramic city views from London's highest public garden space."}
+    ]
+  },
+  "packing": {
+    "title": "April in London",
+    "intro": "Pack layers for changeable spring weather with occasional rain showers and cool evenings.",
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": ["Light sweaters", "Long pants", "Light jacket", "Comfortable walking shirts", "Casual dress clothes"]
+      },
+      {
+        "name": "Shoes",
+        "items": ["Comfortable walking shoes", "Waterproof boots", "Dressy shoes for dinners", "Warm socks"]
+      },
+      {
+        "name": "Weather Gear",
+        "items": ["Compact umbrella", "Light rain jacket", "Warm scarf", "Light gloves"]
+      },
+      {
+        "name": "Tech",
+        "items": ["UK plug adapter (Type G)", "Portable charger", "Camera", "Phone with offline maps"]
+      },
+      {
+        "name": "Essentials",
+        "items": ["Daypack for sightseeing", "Reusable water bottle", "Sunglasses", "Hand sanitizer", "Face masks"]
+      },
+      {
+        "name": "Documents",
+        "items": ["Passport", "Travel insurance", "Emergency contacts", "Accommodation confirmations", "Credit cards"]
+      }
+    ],
+    "luggage": "A carry-on suitcase and personal item should be sufficient for a 4-day trip with careful packing.",
+    "airlines": [
+      {"name": "American Airlines", "carryOn": "22x14x9 inches", "personalItem": "18x14x8 inches", "weight": "50 lbs checked"},
+      {"name": "British Airways", "carryOn": "22x18x10 inches", "personalItem": "16x12x6 inches", "weight": "50 lbs checked"},
+      {"name": "Virgin Atlantic", "carryOn": "22x14x9 inches", "personalItem": "16x12x6 inches", "weight": "50 lbs checked"}
+    ],
+    "tip": "London weather can change quickly, so always carry a light jacket and umbrella regardless of the morning forecast."
+  },
+  "bookTrip": {
+    "intro": "Expect flight costs around $600-800 per person from Philadelphia to London in April 2026.",
+    "hotels": [
+      {"name": "YHA London Central", "tier": "Budget", "price": "$80-100/night"},
+      {"name": "The Z Hotel Piccadilly", "tier": "Mid-Range", "price": "$150-200/night"},
+      {"name": "The Ned", "tier": "Luxury", "price": "$400-600/night"}
+    ],
+    "bookingItems": [
+      {"name": "Tower of London Tickets", "type": "Activity"},
+      {"name": "Borough Market Food Tour", "type": "Tour"},
+      {"name": "Dishoom Dinner", "type": "Restaurant"},
+      {"name": "Thames River Cruise", "type": "Activity"}
+    ],
+    "departureCurrency": "USD",
+    "destCurrency": "GBP",
+    "budget": [
+      {"category": "Flights", "total": "$1400", "perPersonHome": "$700", "perPersonDest": "£560"},
+      {"category": "Accommodation", "total": "$300", "perPersonHome": "$150", "perPersonDest": "£120"},
+      {"category": "Food", "total": "$200", "perPersonHome": "$100", "perPersonDest": "£80"},
+      {"category": "Activities", "total": "$150", "perPersonHome": "$75", "perPersonDest": "£60"},
+      {"category": "Transport", "total": "$80", "perPersonHome": "$40", "perPersonDest": "£32"},
+      {"category": "Shopping", "total": "$70", "perPersonHome": "$35", "perPersonDest": "£28"},
+      {"category": "Total", "total": "$2000", "perPersonHome": "$1000", "perPersonDest": "£800"}
+    ]
+  }
+}
