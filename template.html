@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLANPACKSTAY Travel Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;600;700&family=Barlow:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#4a94b4;--dark:#1a1a2e;--light:#f5f3ef;--warm:#e8e0d4;--gold:#c9a96e;--bg:#FFFFFE;--red:#e74c3c;--green:#27ae60;--orange:#f39c12}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:#333;line-height:1.6;font-size:15px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+.brand{font-family:'Barlow',sans-serif;font-weight:700;letter-spacing:3px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px dashed rgba(73,148,180,0.5)}
+a:hover{opacity:0.85}
+.guide-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+.sec-div{display:flex;align-items:center;gap:16px;margin:48px 0 32px;padding-bottom:12px;border-bottom:3px solid var(--accent)}
+.sec-num{background:var(--accent);color:#fff;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--dark);text-transform:uppercase;letter-spacing:2px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.info-card{background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid var(--warm);display:flex;align-items:center;gap:12px}
+.info-card .ic-icon{font-size:22px;flex-shrink:0}
+.info-card .ic-label{font-size:11px;text-transform:uppercase;color:#888;letter-spacing:1px}
+.info-card .ic-value{font-size:15px;font-weight:600;color:var(--dark)}
+.tip-box{display:flex;gap:16px;background:#edf6fa;border:1px solid rgba(73,148,180,0.2);border-radius:12px;padding:16px 20px;margin:24px 0}
+.tip-box img{width:60px;height:60px;object-fit:contain;flex-shrink:0}
+.tip-box .tip-text{font-size:15px;color:#333;line-height:1.6}
+.tip-box strong{color:var(--accent)}
+.timeline-entry{display:flex;gap:20px;margin-bottom:24px}
+.tl-time{width:72px;text-align:right;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;padding-top:2px}
+.tl-line{width:3px;background:linear-gradient(var(--accent),transparent);position:relative;flex-shrink:0}
+.tl-line::before{content:'';width:11px;height:11px;background:var(--accent);border-radius:50%;position:absolute;top:4px;left:-4px}
+.tl-content{flex:1}
+.tl-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
+.tl-name a{color:var(--accent);border-bottom:1px dashed rgba(73,148,180,0.5)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;margin-left:8px}
+.tag-free{background:#e8f5e9;color:var(--green)}
+.tag-price{background:#e3f2fd;color:#1976d2}
+.tag-booking{background:#fff3e0;color:var(--orange)}
+.tl-desc{font-size:14px;color:#555;margin-top:4px}
+.time-block{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin:28px 0 16px;padding-bottom:8px;border-bottom:1px solid #eee}
+.meal-card{display:flex;gap:12px;padding:10px 16px;background:#faf8f5;border-radius:10px;border:1px solid var(--warm);margin-bottom:8px}
+.meal-card .mc-icon{font-size:22px;flex-shrink:0}
+.meal-card .mc-name{font-size:15px;font-weight:700}
+.meal-card .mc-name a{color:var(--accent)}
+.meal-card .mc-meta{font-size:12px;color:#888}
+.meal-card .mc-type{font-size:11px;color:var(--accent);text-transform:uppercase;font-weight:600}
+.place-row{display:flex;justify-content:space-between;align-items:center;padding:14px 12px;border-bottom:1px solid #eee}
+.place-row .pr-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
+.place-row .pr-name a{color:var(--accent);border-bottom:1px dashed rgba(73,148,180,0.5)}
+.place-row .pr-tags{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.pill{display:inline-block;padding:3px 12px;border-radius:14px;font-size:12px;font-weight:600}
+.pill-accent{background:rgba(73,148,180,0.12);color:var(--accent)}
+.pill-style{background:rgba(73,148,180,0.1);color:var(--accent);padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;margin:4px}
+.hood-card{background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,0.08);overflow:hidden;margin-bottom:16px}
+.hood-bar{height:8px;background:linear-gradient(90deg,var(--accent),var(--gold))}
+.hood-body{padding:20px 24px}
+.hood-body h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;margin-bottom:8px}
+.hood-body h3 a{color:var(--dark);border:none}
+.hood-best{font-size:13px;color:var(--accent);font-weight:600;margin-top:8px}
+.hood-why{font-size:13px;color:#777;font-style:italic;margin-top:4px}
+.aff-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;color:#fff;border:none;cursor:pointer;text-decoration:none}
+.aff-gyg{background:#ff5533}.aff-booking{background:#003580}.aff-amazon{background:#ff9900}.aff-airalo{background:#00c2a8}
+.guide-table{width:100%;border-collapse:collapse;margin:16px 0}
+.guide-table th{background:var(--dark);color:#fff;padding:12px 16px;text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.guide-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid #eee}
+.guide-table tr:nth-child(even){background:#edf6fa}
+.guide-table td a{color:var(--accent)}
+.guide-table .total-row{border-top:3px solid var(--accent);font-weight:700}
+.cover{min-height:500px;background:linear-gradient(135deg,#1a1a2e 0%,#2a3a52 40%,#4a94b4 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;color:#fff;position:relative}
+.cover-pill{display:inline-block;padding:6px 20px;border:1px solid rgba(255,255,255,0.3);border-radius:50px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(56px,10vw,96px);font-weight:900;line-height:1.05;margin-bottom:4px}
+.cover .cover-country{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:rgba(255,255,255,0.7);margin-bottom:16px}
+.cover-divider{width:60px;height:3px;background:var(--gold);margin:16px auto}
+.cover-meta{display:flex;gap:24px;justify-content:center;font-size:14px;color:rgba(255,255,255,0.6);margin-top:12px;flex-wrap:wrap}
+.cover-brand{display:flex;align-items:center;gap:10px;margin-top:24px}
+.cover-brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.cover-curated{font-size:14px;color:rgba(255,255,255,0.5);margin-top:16px;font-style:italic}
+.day-div{display:flex;align-items:center;gap:12px;margin:36px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+.day-div .day-num{background:var(--accent);color:#fff;font-family:'Playfair Display',serif;font-size:15px;font-weight:700;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.day-div .day-theme{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--dark)}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.season-card{background:#fff;border-radius:10px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid var(--warm)}
+.season-card h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.season-card .temp{font-size:14px;color:#555}
+.emergency-box{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px 20px;margin:16px 0}
+.emergency-box h4{color:var(--red);margin-bottom:8px}
+.emergency-box .em-item{font-size:14px;margin-bottom:4px}
+.hotel-tier{margin:20px 0}
+.hotel-tier h4{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.hotel-row{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eee}
+.hotel-row .hr-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700}
+.hotel-row .hr-name a{color:var(--accent)}
+.hotel-row .hr-meta{font-size:13px;color:#777}
+.hotel-row .hr-price{font-size:15px;font-weight:700;color:var(--dark)}
+.rec-tag{background:var(--gold);color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;margin-left:8px;text-transform:uppercase;letter-spacing:1px}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.exp-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid var(--warm)}
+.exp-card h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;color:var(--dark);margin-bottom:6px}
+.exp-card p{font-size:13px;color:#555}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.pack-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid var(--warm)}
+.pack-card h4{font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.pack-card ul{list-style:none;padding:0}
+.pack-card li{font-size:13px;color:#555;padding:2px 0}
+.airline-tabs{display:flex;gap:0;margin:16px 0}
+.airline-tab{padding:10px 20px;border:1px solid #ddd;background:#f9f9f9;cursor:pointer;font-size:13px;font-weight:600;color:#666;transition:all 0.2s}
+.airline-tab:first-child{border-radius:8px 0 0 8px}
+.airline-tab:last-child{border-radius:0 8px 8px 0}
+.airline-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.airline-content{background:#fff;border:1px solid #ddd;border-radius:0 0 8px 8px;padding:16px;margin-top:-1px}
+.promo-card{border-radius:16px;padding:28px 32px;margin:16px 0;color:#fff}
+.promo-pp{background:linear-gradient(135deg,#4a94b4,#6bb5d4)}
+.promo-we{background:linear-gradient(135deg,#1a1a2e,#2a3a52)}
+.promo-card .promo-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.promo-pp .promo-label{color:#fff}
+.promo-we .promo-label{color:var(--gold)}
+.promo-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;margin-bottom:8px}
+.promo-card p{font-size:14px;opacity:0.85;margin-bottom:16px}
+.promo-btn{display:inline-block;padding:10px 28px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:var(--accent);text-decoration:none;border:none}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;margin:20px 0}
+.toc a{font-size:14px;color:var(--accent);padding:6px 0;border-bottom:1px solid #eee;display:block}
+.guide-footer{background:var(--dark);text-align:center;padding:48px 24px;margin-top:48px}
+.guide-footer img{width:56px;height:56px;border-radius:50%;margin-bottom:12px}
+.guide-footer .brand{color:#fff;font-size:18px;margin-bottom:8px}
+.guide-footer a{color:var(--accent);font-size:14px;border:none}
+.guide-footer .disclaimer{font-size:12px;color:rgba(255,255,255,0.4);margin-top:16px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.5}
+.glance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.glance-card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,0.06);border:1px solid var(--warm);text-align:center;cursor:pointer;transition:transform 0.2s}
+.glance-card:hover{transform:translateY(-2px)}
+.glance-card .gc-day{font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.glance-card .gc-icon{font-size:28px;margin:8px 0}
+.glance-card .gc-theme{font-size:14px;font-weight:600;color:var(--dark)}
+.attr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
+.attr-item{padding:8px 0;font-size:14px}
+.attr-item a{color:var(--accent)}
+.airalo-card{background:linear-gradient(135deg,#00c2a8,#009688);border-radius:14px;padding:24px;color:#fff;margin:20px 0;display:flex;align-items:center;justify-content:space-between}
+.airalo-card h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:4px}
+.airalo-card p{font-size:13px;opacity:0.85}
+.gems-list{margin:16px 0}
+.gem-item{padding:10px 0;border-bottom:1px solid #eee;font-size:14px}
+.gem-item a{color:var(--accent);font-weight:600}
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:20px}
+.loading .spinner{width:48px;height:48px;border:4px solid #eee;border-top:4px solid var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading p{font-family:'Playfair Display',serif;font-size:20px;color:var(--dark)}
+
+/* === PRINT / PDF LAYOUT ===
+   ?printMode=1 for html2pdf   |   @media print for Ctrl+P
+   Each .section = new page    |   Each .day-section = new page
+   Content blocks never split  |   Interactive elements hidden   */
+
+.print-mode .section{page-break-before:always}
+.print-mode .section.cover-section{page-break-before:avoid}
+.print-mode .day-section{page-break-before:always}
+.print-mode .info-card,.print-mode .info-grid,.print-mode .tip-box,.print-mode .hood-card,.print-mode .hotel-tier,.print-mode .hotel-row,.print-mode .place-row,.print-mode .meal-card,.print-mode .exp-card,.print-mode .pack-card,.print-mode .pack-grid,.print-mode .season-card,.print-mode .season-grid,.print-mode .glance-card,.print-mode .emergency-box,.print-mode .airalo-card,.print-mode .timeline-entry,.print-mode .gem-item,.print-mode .guide-table{page-break-inside:avoid}
+.print-mode h1,.print-mode h2,.print-mode h3,.print-mode h4,.print-mode .sec-div,.print-mode .day-div,.print-mode .time-block{page-break-after:avoid}
+.print-mode .cover{height:100vh;min-height:auto;page-break-after:always}
+.print-mode .guide-footer{page-break-before:always;page-break-inside:avoid}
+.print-mode .toc,.print-mode .airline-tabs,.print-mode .aff-btn,.print-mode .promo-card{display:none!important}
+.print-mode .airline-content{display:block!important;border:none;padding:8px 0;margin-bottom:8px}
+.print-mode body,.print-mode .guide-wrap{background:#fff!important}
+.print-mode .info-card,.print-mode .hood-card,.print-mode .exp-card,.print-mode .pack-card,.print-mode .season-card,.print-mode .glance-card{box-shadow:none!important;border:1px solid #ddd!important}
+.print-mode .sec-div{margin:24px 0 16px}
+.print-mode .day-div{margin:16px 0 12px}
+
+@media print{
+  @page{size:letter;margin:0.75in}
+  .section{page-break-before:always}
+  .section.cover-section{page-break-before:avoid}
+  .day-section{page-break-before:always}
+  .cover{height:100vh;min-height:auto;page-break-after:always}
+  .guide-footer{page-break-before:always;page-break-inside:avoid}
+  .info-card,.info-grid,.tip-box,.hood-card,.hotel-tier,.hotel-row,.place-row,.meal-card,.exp-card,.pack-card,.pack-grid,.season-card,.season-grid,.glance-card,.emergency-box,.airalo-card,.timeline-entry,.gem-item,.guide-table{page-break-inside:avoid}
+  h1,h2,h3,h4,.sec-div,.day-div,.time-block{page-break-after:avoid}
+  .toc,.airline-tabs,.aff-btn,.promo-card{display:none!important}
+  .airline-content{display:block!important;border:none;padding:8px 0}
+  body,.guide-wrap{background:#fff!important}
+  .info-card,.hood-card,.exp-card,.pack-card,.season-card,.glance-card{box-shadow:none!important;border:1px solid #ddd!important}
+  .sec-div{margin:24px 0 16px}
+  .day-div{margin:16px 0 12px}
+}
+
+@media(max-width:700px){.info-grid,.exp-grid,.pack-grid{grid-template-columns:1fr 1fr}.season-grid{grid-template-columns:1fr 1fr}.glance-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="app" class="loading"><div class="spinner"></div><p>Loading your guide...</p></div>
+<script>
+var isPrintMode=window.location.search.includes('printMode=1');
+if(isPrintMode)document.documentElement.classList.add('print-mode');
+
+function mapsLink(n,c){return'https://www.google.com/maps/search/'+encodeURIComponent(n+' '+c).replace(/%20/g,'+')}
+function placeLink(n,c){return'<a href="'+mapsLink(n,c)+'" target="_blank" rel="noopener">📍 '+esc(n)+'</a>'}
+function esc(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function stars(n){return'⭐'.repeat(Math.min(Math.round(n),5))}
+function secDiv(n,t){return'<div class="sec-div" id="sec'+n+'"><span class="sec-num">'+n+'</span><h2 class="sec-title">'+t+'</h2></div>'}
+function tipBox(t){return'<div class="tip-box"><img src="https://raw.githubusercontent.com/korbin091/planpackstay-guides/main/sasquatch_holding_arm_out.png" alt="Sasquatch"><div class="tip-text"><strong>Sasquatch Tip:</strong> '+esc(t)+'</div></div>'}
+function infoCard(i,l,v){return'<div class="info-card"><span class="ic-icon">'+(i||'📌')+'</span><div><div class="ic-label">'+esc(l)+'</div><div class="ic-value">'+esc(v)+'</div></div></div>'}
+function showAirline(el,idx){document.querySelectorAll('.airline-tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.airline-content').forEach(function(c){c.style.display='none'});el.classList.add('active');document.getElementById('airline-'+idx).style.display='block'}
+
+async function loadGuide(){
+  var params=new URLSearchParams(window.location.search);var file=params.get('guide');
+  if(!file){document.getElementById('app').innerHTML='<p style="text-align:center;padding:60px;font-size:18px;color:#999">No guide specified.</p>';return}
+  try{
+    var base=window.location.href.split('?')[0].split('/').slice(0,-1).join('/');
+    var resp=await fetch(base+'/data/'+file+'.json');
+    if(!resp.ok)resp=await fetch(base+'/data/'+encodeURIComponent(file)+'.json');
+    if(!resp.ok)throw new Error('Not found');
+    var d=await resp.json();render(d);
+  }catch(e){document.getElementById('app').innerHTML='<p style="text-align:center;padding:60px;font-size:18px;color:#999">Guide not found. It may still be generating.</p>'}
+}
+
+function render(d){
+  var city=d.destination||'';var h='';
+
+  // COVER
+  h+='<div class="section cover-section cover"><div class="cover-pill">Complete Travel Guide</div><h1>'+esc(city)+'</h1><div class="cover-country">'+esc(d.country||'')+'</div><div class="cover-divider"></div><div class="cover-meta"><span>'+esc(d.tripType||'Leisure')+'</span><span>'+esc(d.travelers||'2')+' Travelers</span><span>'+esc(d.dates||'')+'</span></div><div class="cover-brand"><img src="https://raw.githubusercontent.com/korbin091/planpackstay-guides/main/planpackstay_logo_social.png" alt="logo"><span class="brand" style="color:#fff;font-size:16px">PLANPACKSTAY</span></div><div class="cover-curated">Curated for '+esc(d.firstName)+'</div></div>';
+  h+='<div class="guide-wrap">';
+
+  // SEC 2: TRIP OVERVIEW
+  h+='<div class="section">'+secDiv(2,'Trip Overview');
+  h+='<p style="font-family:Playfair Display,serif;font-style:italic;font-size:18px;color:#555;margin-bottom:24px">'+esc(d.tripOverview?.intro||'')+'</p>';
+  h+='<div class="info-grid">';(d.tripOverview?.infoCards||[]).forEach(function(c){h+=infoCard(c.icon,c.label,c.value)});h+='</div>';
+  if(d.tripOverview?.glance){h+='<h3 style="font-family:Playfair Display,serif;font-size:20px;font-weight:800;margin:28px 0 12px;color:var(--dark)">Your Trip at a Glance</h3><div class="glance-grid">';d.tripOverview.glance.forEach(function(g){h+='<div class="glance-card"><div class="gc-day">Day '+g.day+'</div><div class="gc-icon">'+(g.icon||'🗓️')+'</div><div class="gc-theme">'+esc(g.theme)+'</div></div>'});h+='</div>'}
+  if(d.tripOverview?.vibe)h+='<p style="margin:16px 0;font-size:15px;color:#555">'+esc(d.tripOverview.vibe)+'</p>';
+  if(d.tripOverview?.styles){h+='<div style="margin:12px 0">';d.tripOverview.styles.forEach(function(s){h+='<span class="pill-style">'+esc(s)+'</span>'});h+='</div>'}
+  h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:28px 0 12px">Table of Contents</h3><div class="toc">';
+  ['Cover Page','Trip Overview','Destination Overview','Itinerary Overview','Day-by-Day Itinerary','Food & Drink','Where to Stay','Experiences','Packing','Book This Trip'].forEach(function(t,i){h+='<a href="#sec'+(i+1)+'">'+(i+1)+'. '+t+'</a>'});
+  h+='</div></div>';
+
+  // SEC 3: DESTINATION OVERVIEW
+  h+='<div class="section">'+secDiv(3,'Destination Overview');
+  h+='<div class="info-grid">';(d.destinationOverview?.infoCards||[]).forEach(function(c){h+=infoCard(c.icon,c.label,c.value)});h+='</div>';
+  if(d.destinationOverview?.bestTime)h+='<p style="margin:16px 0"><strong>Best Time to Visit:</strong> '+esc(d.destinationOverview.bestTime)+'</p>';
+  if(d.destinationOverview?.seasons){h+='<div class="season-grid">';d.destinationOverview.seasons.forEach(function(s){h+='<div class="season-card"><h4>'+esc(s.name)+'</h4><div class="temp">'+esc(s.tempC)+' / '+esc(s.tempF)+'</div></div>'});h+='</div>'}
+  if(d.destinationOverview?.attractions){h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Must-See Attractions</h3><div class="attr-grid">';d.destinationOverview.attractions.forEach(function(a){h+='<div class="attr-item">'+placeLink(a.name,city)+' — '+esc(a.desc)+'</div>'});h+='</div>'}
+  if(d.destinationOverview?.transportation)h+='<p style="margin:16px 0">'+esc(d.destinationOverview.transportation)+'</p>';
+  if(d.destinationOverview?.tip)h+=tipBox(d.destinationOverview.tip);
+  if(d.destinationOverview?.safety)h+='<p style="margin:12px 0"><strong>Safety:</strong> '+esc(d.destinationOverview.safety)+'</p>';
+  if(d.destinationOverview?.emergency){h+='<div class="emergency-box"><h4>🚨 Emergency Contacts</h4>';(d.destinationOverview.emergency||[]).forEach(function(e){h+='<div class="em-item"><strong>'+esc(e.type)+':</strong> '+esc(e.value)+'</div>'});h+='</div>'}
+  h+='<div class="airalo-card"><div><h4>📱 Stay Connected</h4><p>'+esc(d.destinationOverview?.airaloText||'Get an eSIM for seamless data abroad.')+'</p></div><a href="https://airalo.tpo.lv/nbi6aRNh" target="_blank" class="aff-btn aff-airalo" style="border:none">Get Airalo eSIM →</a></div></div>';
+
+  // SEC 4: ITINERARY OVERVIEW
+  h+='<div class="section">'+secDiv(4,'Itinerary Overview');
+  h+='<table class="guide-table"><thead><tr><th>Activity</th><th>Cost</th><th>Hours</th><th>Booking</th></tr></thead><tbody>';
+  (d.itineraryOverview||[]).forEach(function(item){h+='<tr><td>'+placeLink(item.name,city)+'</td><td>'+esc(item.cost)+'</td><td>'+esc(item.hours)+'</td><td>'+esc(item.booking)+'</td></tr>'});
+  h+='</tbody></table></div>';
+
+  // SEC 5: DAY BY DAY (header section)
+  h+='<div class="section">'+secDiv(5,'Day-by-Day Itinerary')+'</div>';
+  // Each day = its own page
+  (d.days||[]).forEach(function(day){
+    h+='<div class="day-section"><div class="day-div"><span class="day-num">'+day.day+'</span><span class="day-theme">'+esc(day.theme)+'</span></div>';
+    if(day.intro)h+='<p style="font-family:Playfair Display,serif;font-style:italic;color:#555;margin-bottom:20px">'+esc(day.intro)+'</p>';
+    ['morning','afternoon','evening'].forEach(function(period){
+      var emoji=period==='morning'?'🌅':period==='afternoon'?'☀️':'🌙';
+      var items=day[period]||[];if(items.length===0)return;
+      h+='<div class="time-block">'+emoji+' '+period.toUpperCase()+'</div>';
+      items.forEach(function(act){
+        h+='<div class="timeline-entry"><div class="tl-time">'+esc(act.time)+'</div><div class="tl-line"></div><div class="tl-content"><div class="tl-name">'+placeLink(act.name,city);
+        if(act.tag){var tc=act.tag==='Free'?'tag-free':act.tag.includes('Book')?'tag-booking':'tag-price';h+='<span class="tag '+tc+'">'+esc(act.tag)+'</span>'}
+        h+='</div>';if(act.desc)h+='<div class="tl-desc">'+esc(act.desc)+'</div>';h+='</div></div>';
+      });
+    });
+    if(day.foodPicks){h+='<h4 style="margin:20px 0 10px;font-size:14px;color:var(--accent);text-transform:uppercase;letter-spacing:1px">Optional Food Picks</h4>';day.foodPicks.forEach(function(f){h+='<div class="meal-card"><span class="mc-icon">'+(f.icon||'🍽️')+'</span><div><div class="mc-name">'+placeLink(f.name,city)+'</div><div class="mc-meta">'+esc(f.cuisine)+' · '+esc(f.price)+'</div><div class="mc-type">'+esc(f.category)+'</div></div></div>'})}
+    if(day.tip)h+=tipBox(day.tip);
+    h+='</div>';
+  });
+
+  // SEC 6: FOOD & DRINK
+  h+='<div class="section">'+secDiv(6,'Food & Drink');
+  if(d.food?.intro)h+='<p style="margin-bottom:20px">'+esc(d.food.intro)+'</p>';
+  ['restaurants','cafes','bars'].forEach(function(cat){
+    var items=d.food?.[cat]||[];if(items.length===0)return;
+    var titles={restaurants:'Top 5 Restaurants',cafes:'Top 5 Cafes',bars:'Top 5 Bars & Nightlife'};
+    h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">'+titles[cat]+'</h3>';
+    items.forEach(function(p){h+='<div class="place-row"><div class="pr-name">'+placeLink(p.name,city)+'</div><div class="pr-tags"><span class="pill pill-accent">'+esc(p.cuisine)+'</span><span>'+stars(p.rating)+'</span><span style="font-size:14px;color:#555">'+esc(p.price)+'</span></div></div>'});
+  });
+  if(d.food?.tip)h+=tipBox(d.food.tip);h+='</div>';
+
+  // SEC 7: WHERE TO STAY
+  h+='<div class="section">'+secDiv(7,'Where to Stay');
+  (d.hotels?.neighborhoods||[]).forEach(function(n){h+='<div class="hood-card"><div class="hood-bar"></div><div class="hood-body"><h3>'+placeLink(n.name,city)+'</h3><p style="font-size:14px;color:#555">'+esc(n.desc)+'</p><div class="hood-best">Best For: '+esc(n.bestFor)+'</div><div class="hood-why">'+esc(n.whyStay)+'</div></div></div>'});
+  ['budget','midRange','luxury'].forEach(function(tier){
+    var items=d.hotels?.[tier]||[];if(items.length===0)return;
+    var titles={budget:'Budget',midRange:'Mid-Range',luxury:'Luxury'};
+    h+='<div class="hotel-tier"><h4>'+titles[tier]+'</h4>';
+    items.forEach(function(ht){h+='<div class="hotel-row"><div><span class="hr-name">'+placeLink(ht.name,city)+(ht.recommended?'<span class="rec-tag">Recommended</span>':'')+'</span><div class="hr-meta">'+esc(ht.vibe)+' · '+stars(ht.rating)+'</div></div><div class="hr-price">'+esc(ht.price)+'/night</div></div>'});
+    h+='</div>';
+  });
+  h+='<div style="text-align:center;margin:24px 0"><a href="https://www.booking.com/search.html?ss='+encodeURIComponent(city)+'" target="_blank" class="aff-btn aff-booking" style="border:none">🔍 Search Hotels on Booking.com</a></div>';
+  if(d.hotels?.tip)h+=tipBox(d.hotels.tip);h+='</div>';
+
+  // SEC 8: EXPERIENCES
+  h+='<div class="section">'+secDiv(8,'Experiences');
+  if(d.experiences?.mustDo){h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin-bottom:16px">Must-Do Activities</h3><div class="exp-grid">';d.experiences.mustDo.forEach(function(e){h+='<div class="exp-card"><h4>'+esc(e.name)+'</h4><p>'+esc(e.desc)+'</p></div>'});h+='</div>'}
+  if(d.experiences?.getYourGuide){h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Top GetYourGuide Experiences</h3>';d.experiences.getYourGuide.forEach(function(e){h+='<div class="place-row"><div><span class="pr-name" style="font-size:15px">'+esc(e.name)+'</span><div style="font-size:13px;color:#555;margin-top:4px">'+esc(e.desc)+'</div></div></div>'});h+='<div style="text-align:center;margin:16px 0"><a href="https://www.getyourguide.com/s/?q='+encodeURIComponent(city)+'" target="_blank" class="aff-btn aff-gyg" style="border:none">Book on GetYourGuide →</a></div>'}
+  if(d.experiences?.hiddenGems){h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Hidden Gems</h3><div class="gems-list">';d.experiences.hiddenGems.forEach(function(g){h+='<div class="gem-item">'+placeLink(g.name,city)+' — '+esc(g.desc)+'</div>'});h+='</div>'}
+  h+='</div>';
+
+  // SEC 9: PACKING
+  h+='<div class="section">'+secDiv(9,'Packing');
+  if(d.packing?.title)h+='<h3 style="font-family:Playfair Display,serif;font-size:20px;font-weight:800;margin-bottom:8px">'+esc(d.packing.title)+'</h3>';
+  if(d.packing?.intro)h+='<p style="margin-bottom:20px;color:#555">'+esc(d.packing.intro)+'</p>';
+  if(d.packing?.categories){h+='<div class="pack-grid">';d.packing.categories.forEach(function(c){h+='<div class="pack-card"><h4>'+esc(c.name)+'</h4><ul>';(c.items||[]).forEach(function(item){h+='<li>• '+esc(item)+'</li>'});h+='</ul></div>'});h+='</div>'}
+  if(d.packing?.luggage)h+='<p style="margin:12px 0"><strong>Luggage:</strong> '+esc(d.packing.luggage)+'</p>';
+  if(d.packing?.airlines){
+    h+='<h4 style="margin:20px 0 8px;font-size:15px;font-weight:700">Carry-On Requirements</h4><div class="airline-tabs">';
+    d.packing.airlines.forEach(function(a,i){h+='<div class="airline-tab'+(i===0?' active':'')+'" onclick="showAirline(this,'+i+')">'+esc(a.name)+'</div>'});h+='</div>';
+    d.packing.airlines.forEach(function(a,i){h+='<div class="airline-content" id="airline-'+i+'" style="'+(i>0?'display:none':'')+'"><strong>'+esc(a.name)+'</strong><br>Carry-on: '+esc(a.carryOn)+'<br>Personal item: '+esc(a.personal)+'<br>Weight: '+esc(a.weight)+'</div>'});
+  }
+  h+='<div style="margin:20px 0"><a href="https://airalo.tpo.lv/nbi6aRNh" target="_blank" class="aff-btn aff-airalo" style="border:none">📱 Get Airalo eSIM →</a></div>';
+  if(d.packing?.tip)h+=tipBox(d.packing.tip);h+='</div>';
+
+  // SEC 10: BOOK THIS TRIP
+  h+='<div class="section">'+secDiv(10,'Book This Trip');
+  if(d.bookTrip?.intro)h+='<p style="margin-bottom:20px">'+esc(d.bookTrip.intro)+'</p>';
+  if(d.bookTrip?.hotels){h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:20px 0 12px">Recommended Hotels</h3>';d.bookTrip.hotels.forEach(function(ht){h+='<div class="place-row"><div class="pr-name"><a href="https://www.booking.com/search.html?ss='+encodeURIComponent(ht.name+' '+city)+'" target="_blank" style="border-bottom:1px dashed rgba(73,148,180,0.5)">🏨 '+esc(ht.name)+'</a> <span class="pill pill-accent">'+esc(ht.tier)+'</span></div><div style="font-size:14px;color:#555">'+esc(ht.price)+'</div></div>'})}
+  if(d.bookTrip?.bookingItems){h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Reservations Needed</h3>';d.bookTrip.bookingItems.forEach(function(b){h+='<div class="place-row"><div class="pr-name">'+placeLink(b.name,city)+'</div><div style="font-size:13px;color:#777">'+esc(b.type)+'</div></div>'})}
+  if(d.bookTrip?.budget){
+    h+='<h3 style="font-family:Playfair Display,serif;font-size:18px;font-weight:800;margin:24px 0 12px">Budget Breakdown</h3>';
+    h+='<table class="guide-table"><thead><tr><th>Category</th><th>Total ('+esc(d.travelers||'2')+' travelers)</th><th>Per Person ('+esc(d.bookTrip.departureCurrency||'USD')+')</th><th>Per Person ('+esc(d.bookTrip.destCurrency||'EUR')+')</th></tr></thead><tbody>';
+    d.bookTrip.budget.forEach(function(b){var cls=b.category==='Total'?' class="total-row"':'';h+='<tr'+cls+'><td>'+esc(b.category)+'</td><td>'+esc(b.total)+'</td><td>'+esc(b.perPersonHome)+'</td><td>'+esc(b.perPersonDest)+'</td></tr>'});
+    h+='</tbody></table>';
+  }
+  h+='<div class="promo-card promo-pp"><div class="promo-label">Passport Pro</div><h3>Unlimited Guides & Downloads</h3><p>Unlimited guides, downloadable PDFs, printable layouts, and Notion-powered travel guides — all included.</p><a href="https://planpackstay.com/membership" class="promo-btn" style="border:none">Upgrade Now →</a></div>';
+  h+='<div class="promo-card promo-we"><div class="promo-label">World Explorer</div><h3>The Ultimate Travel Experience</h3><p>Everything in Passport Pro plus custom trip planning consultation and 10% off Gear.</p><a href="https://planpackstay.com/membership" class="promo-btn" style="border:none">Upgrade Now →</a></div>';
+  h+='</div>';
+
+  h+='</div>'; // guide-wrap
+
+  // FOOTER
+  h+='<div class="guide-footer"><img src="https://raw.githubusercontent.com/korbin091/planpackstay-guides/main/planpackstay_logo_social.png" alt="PLANPACKSTAY"><div class="brand">PLANPACKSTAY</div><a href="https://planpackstay.com" target="_blank">planpackstay.com</a><div class="disclaimer">Generated by PLANPACKSTAY. Verify details and pricing prior to booking. Affiliate links may be included that help support guide creation at no cost to you.</div></div>';
+
+  document.getElementById('app').className='';
+  document.getElementById('app').innerHTML=h;
+}
+
+window.addEventListener('message',function(event){
+  if(event.data&&event.data.action==='blockPrint'){
+    var s=document.createElement('style');
+    s.textContent='@media print{body{display:none!important}@page{size:0}}';
+    document.head.appendChild(s);
+    document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='p')e.preventDefault()});
+  }
+});
+
+loadGuide();
+</script>
+</body>
+</html>
